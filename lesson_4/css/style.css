@@ -1,0 +1,55 @@
+@import url("reset.css");
+
+* {
+	color: darkgreen;
+}
+
+h2 {
+	color: crimson;
+}
+
+.title h1 {
+	color: blue;
+}
+
+.subsection h3 {
+	color: violet;
+}
+
+#remark1,
+#remark2,
+#remark3 {
+	color: olivedrab;
+}
+
+.menu ol * {
+	color: lightseagreen;
+}
+
+.subsection.subsection1 .remark {
+	color: chartreuse;
+}
+
+.subsection.subsection2 > h3 {
+	color: olive;
+}
+
+.subparagraph.subparagraph2 p {
+	color: firebrick;
+}
+
+div.text p {
+	color: royalblue;
+}
+
+div.emblem p > a {
+	color: magenta;
+}
+
+li a {
+	color: cornflowerblue;
+}
+
+.subsection3 h3 ~ p {
+	color: darkgoldenrod;
+}
