@@ -1,0 +1,288 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+.title {
+	font-family: "Oswald", sans-serif;
+	color: rgb(112, 112, 157);
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: underline;
+	margin: 30px 0;
+}
+
+/* ------------------------------.consulting-page --------------------*/
+/* ------------------------------стилі .consulting-page */
+
+.consulting-page {
+	font-family: "Inter", sans-serif;
+	color: #7d7d7d;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.46; /* 26.31/18 */
+	max-width: 692px;
+	margin: 0 auto;
+}
+
+.consulting-page .top-image {
+	margin-bottom: 37px;
+}
+
+.consulting-page .top-image img {
+	width: 100%;
+}
+
+.consulting-page h1 {
+	color: #37393f;
+	font-size: 30px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	line-height: 1.27; /* 38.1/30 */
+	margin-bottom: 12.5px;
+}
+
+.consulting-page .top-section .text {
+	margin-bottom: 42px;
+	text-align: justify;
+}
+
+.consulting-page h3 {
+	color: #6b77e5;
+	font-family: "Poppins", sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.27;
+	margin-bottom: 12px;
+}
+
+.consulting-page .middle-section .text {
+	margin-bottom: 40px;
+	text-align: justify;
+}
+
+.consulting-page h2 {
+	color: #37393f;
+	font-size: 25px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	line-height: 1.27; /* 31.75/25 */
+	margin-bottom: 15px;
+}
+
+.consulting-page h4 {
+	color: #40ddb6;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	line-height: 1.27; /* 25.4/20 */
+	margin-bottom: 23.5px;
+}
+
+.consulting-page .lower-section li {
+	font-family: "Inter", sans-serif;
+	color: #7d7d7d;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.46; /* 26.31/18 */
+}
+
+/*------------------------- відступи .consulting-page*/
+
+.consulting-page .lower-section {
+	margin-bottom: 100px;
+	font-size: 0;
+}
+
+/* https://codepen.io/techhuiz-the-selector/pen/dyweGPq 
+	https://discord.com/channels/691962563298066503/1130089909110194176/1156548539321700354
+*/
+
+.consulting-page .lower-image {
+	max-width: 331px;
+	display: inline-block;
+	margin-right: 29px;
+	vertical-align: top;
+}
+
+.consulting-page .lower-image img {
+	width: 100%;
+}
+
+.consulting-page .lower-section .list {
+	display: inline-block;
+	max-width: 332px;
+}
+
+.consulting-page .lower-section .list li {
+	margin-bottom: 30px;
+}
+
+/*-----------------------------.jewelry-page -------------------*/
+/*-------------------стилі .jewelry-page*/
+
+.left-container h3 {
+	color: #d06b00;
+	font-family: Inter;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.left-container h2 {
+	color: #0e333d;
+	font-family: "DM Serif Text";
+	font-size: 59px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 146.5%; /* 86.435px */
+}
+
+.jewelry-page .left-container .text {
+	color: #474747;
+	font-family: Inter, serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.8;
+}
+
+/*-----------------відступи .jewelry-page*/
+
+.jewelry-page {
+	margin: 0 auto;
+	max-width: 1169px;
+	font-size: 0px;
+}
+
+.left-container {
+	display: inline-block;
+	padding: 21px 0;
+	margin-right: 38px;
+	max-width: 563px;
+	vertical-align: top;
+}
+
+.left-container h3 {
+	margin-bottom: 13px;
+}
+
+.left-container h2 {
+	margin-bottom: 25px;
+}
+
+.right-container {
+	display: inline-block;
+	max-width: 606px;
+}
+
+.right-container .left-img {
+	display: inline-block;
+	max-width: 273px;
+	margin-right: 22px;
+	vertical-align: top;
+}
+
+.right-container .left-img img {
+	max-width: 100%;
+}
+
+.right-container .right-image {
+	display: inline-block;
+	max-width: 273px;
+	vertical-align: top;
+}
+
+.right-container .right-img img {
+	max-width: 100%;
+}
+
+/*------------------практика----------*/
+
+.news {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	color: rgb(42, 106, 118);
+	font-size: 18px;
+	line-height: 1.2;
+	max-width: 1295px;
+	margin-left: 50px;
+}
+
+.news .top-section {
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	min-width: 500px;
+	padding: 0 20px;
+	margin-bottom: 30px;
+}
+
+.news .middle-section {
+	font-size: 0px;
+}
+
+.news .middle-section .text {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	color: rgb(42, 106, 118);
+	font-size: 18px;
+	line-height: 1.2;
+	display: inline-block;
+	max-width: 745px;
+	margin-right: 150px;
+	text-align: justify;
+}
+
+.news .middle-section .text p {
+	margin-bottom: 30px;
+}
+
+.news .middle-section .list {
+	padding: 15px 0 0 30px;
+}
+
+.news .middle-section .list h4,
+.news .under-section h3,
+.news .under-section h4 {
+	font-weight: 600;
+	text-decoration: underline;
+	padding-left: 20px;
+}
+
+.news .middle-section .image-description {
+	display: inline-block;
+	max-width: 400px;
+	vertical-align: top;
+}
+
+.news .middle-section .image-description .subtitle {
+	font-family: "Oswald", sans-serif;
+	font-weight: 600;
+	color: rgb(42, 106, 118);
+	font-size: 18px;
+	text-align: center;
+	line-height: 1.2;
+}
+
+.news .middle-section .image-description .image img {
+	max-width: 300px;
+	display: block;
+	margin: 0 auto;
+}
+
+.news .prehistory,
+.news .ukraine,
+.news .rf {
+	margin-bottom: 15px;
+	text-align: justify;
+}
+
+.news .rf {
+	max-height: 80px;
+	max-width: 150px;
+	overflow: auto;
+}
+
+.news .prehistory,
+.news .versions-of-the-event {
+	padding: 0 50px;
+}
