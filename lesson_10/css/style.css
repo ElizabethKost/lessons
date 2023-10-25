@@ -1,0 +1,62 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+	background-color: rgb(172, 192, 180);
+	font-family: "Ubuntu Mono", sans-serif;
+	font-weight: 700;
+	font-size: 40px;
+	color: #33353c;
+}
+
+header {
+	max-width: 1800px;
+	margin: 10px auto;
+	box-shadow: 10px 10px 25px -10px #9680a4;
+	border-radius: 10px;
+	background-color: #3e8476;
+	padding: 25px;
+}
+
+.title {
+	font-size: 80px;
+	text-align: center;
+}
+
+.content {
+	max-width: 1600px;
+	padding: 20px 50px;
+	margin: 0 auto;
+}
+
+.content > *:not(:last-child) {
+	margin-bottom: 50px;
+}
+.subtitle:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.icons,
+.logos,
+.content-photo {
+	box-shadow: 10px 10px 25px -10px #9680a4;
+	border-radius: 10px;
+	background-color: #9a7ea7;
+	padding: 25px;
+}
+
+.logos {
+	background-color: #7a6485;
+}
+
+.content-photo {
+	background-color: #57485f;
+}
+
+.content-photo img {
+	max-width: 100%;
+}
