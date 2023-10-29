@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Lesson #11</title>
+</head>
+
+<body>
+	<header>
+		<div class="navigation-bar">
+			<a href="#" class="navigation-bar__logo-link logo-link">
+				<div class="logo-link__logo-wraper">
+					<img src="img/logo/logo.svg" alt="logo">
+				</div>
+			</a>
+			<ul class="navigation-bar__menu shop-menu">
+				<li><a href="#" class="shop-menu__category">Shop</a></li>
+				<li><a href="#" class="shop-menu__category">Men</a></li>
+				<li><a href="#" class="shop-menu__category">Women</a></li>
+				<li><a href="#" class="shop-menu__category">Combos</a></li>
+				<li><a href="#" class="shop-menu__category">Joggers</a></li>
+			</ul>
+			<div class="navigation-bar__search-bar search-bar">
+				<img src="img/header/icon__search.svg" alt="icon search">
+				<p>Search</p>
+			</div>
+			<ul class="navigation-bar__account-bar account-bar">
+				<li class="account-bar__item">
+					<a href="#" class="account-bar__link">
+						<div class="account-bar__icon-wraper">
+							<img src="img/header/icon__my-favorite.svg" alt="heart">
+						</div>
+					</a>
+				</li>
+				<li class="account-bar__item">
+					<a href="#" class="account-bar__link">
+						<div class="account-bar__icon-wraper">
+							<img src="img/header/icon__my-account.svg" alt="my account">
+						</div>
+					</a>
+				</li>
+				<li class="account-bar__item">
+					<a href="#" class="account-bar__link">
+						<div class="account-bar__icon-wraper">
+							<img src="img/header/icon__my-cart.svg" alt="cart">
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<div class="product-page">
+			<div class="product-page__new-product product-layout">
+				<div class="product-layout__slider slider-product">
+					<ul class="slider-product__list">
+						<li class="slider-product__item">
+							<img src="img/new-product/slider-product/slider-product-1.png" alt="woman in pink hoodie">
+						</li>
+						<li class="slider-product__item">
+							<img src="img/new-product/slider-product/slider-product-2.png" alt="woman in black hoodie">
+						</li>
+						<li class="slider-product__item">
+							<img src="img/new-product/slider-product/slider-product-3.png" alt="woman in pink hoodie">
+						</li>
+					</ul>
+					<div class="slider-product__buttons slider-buttons">
+						<a class="slider-buttons__link" href="#">
+							<div class="sliders-button__wraper">
+								<img src="img/new-product/icons/slider-product__arrow-up.svg" alt="стрілка вгору">
+							</div>
+						</a>
+						<a class="slider-buttons__link" href="#">
+							<div class="sliders-button__wraper">
+								<img src="img/new-product/icons/slider-product__arrow-down.svg" alt="стрілка вгору">
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="product-layout__main-image">
+					<img src="img/new-product/main-image.webp" alt="woman in black hoodie">
+				</div>
+				<div class="product-layout__buy-product buy-product">
+					<div class="bread-crumbs">
+						<ul class="bread-crumbs__list">
+							<li>
+								<a class="bread-crumbs__item" href="#">Shop</a>
+							</li>
+							<li>
+								<!--  стрілка перед пунктом через CSS ::before або як відпрацювання через <img> як наведено нижче-->
+								<a class="bread-crumbs__item" href="#">Women</a>
+							</li>
+							<li>
+								<img class="bread-crumbs__arrow-right" src="img/new-product/icons/bread-crumbs__arrow-right.svg"
+									alt="стрілка вправо">
+								<a class="bread-crumbs__item" href="#">Top</a>
+							</li>
+						</ul>
+					</div>
+					<h1 class="buy-product__title">
+						Raven Hoodie With Black colored Design
+					</h1>
+					<div class="buy-product__rating rating-product">
+						<img src="img/new-product/icons/buy-product__rating-star.svg" alt="star">
+						<img src="img/new-product/icons/buy-product__rating-star.svg" alt="star">
+						<img src="img/new-product/icons/buy-product__rating-star.svg" alt="star">
+						<img src="img/new-product/icons/buy-product__rating-star.svg" alt="star">
+						<img src="img/new-product/icons/buy-product__rating-star.svg" alt="star">
+						<p class="rating-product__value">3.5</p>
+					</div>
+					<div class="buy-product__comments comments">
+						<img src="img/new-product/icons/buy-product__comment-icon.svg" alt="comment icon">
+						<a class="comments__link" href="#">120 comment</a>
+					</div>
+					<div class="buy-product__size-chart size-chart">
+						<h3 class="size-chart__title options-title">Select Size</h3>
+						<!--  стрілка після "Size Guide" - через CSS ::after-->
+						<a href="#" class="size-chart__guide">Size Guide</a>
+						<ul class="size-chart__sizing-list">
+							<li>XS</li>
+							<li>S</li>
+							<li>M</li>
+							<li>L</li>
+							<li>XL</li>
+						</ul>
+					</div>
+					<div class="buy-product__colors-chart colors-chart">
+						<h3 class="colors-chart__title options-title">Colors Available</h3>
+						<ul class="colors-chart__colors">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<div class="buy-product__button button">
+						<a class="button__cart" href="#">Add to cart</a>
+						<a class="button__price button__price--usd" href="#">$63.00</a>
+					</div>
+					<div class="buy-product__benefits benefits">
+						<ul class="benefits__list">
+							<li class="benefits__item">
+								<a href="#">Secure payment</a>
+							</li>
+							<li>
+								<a href="#">Size & Fit</a>
+							</li>
+							<li>
+								<a href="#">Free shipping</a>
+							</li>
+							<li>
+								<a href="#">Free Shipping & Returns</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="product-page__description description">
+				<h2 class="description__title subtitle">
+					Product Description
+				</h2>
+				<div class="description__tabbed-menu tabbed-menu">
+					<ul class="tabbed-menu__tabs tabs">
+						<li class="tabs__item">
+							<a href="#" class="tabs__link">Description</a>
+						</li>
+						<li class="tabs__item">
+							<a href="#" class="tabs__link">User comments</a>
+							<span class="tabs__count tabs__count--purple-square">21</span>
+						</li>
+						<li class="tabs__item">
+							<a href="#" class="tabs__link">Question & Answer</a>
+							<span class="tabs__count tabs__count--black-square">4</span>
+						</li>
+					</ul>
+					<div class="tabbed-menu__content-tabs content-tabs">
+						<div class="content-tabs__item">
+							<div class="content-tabs__text">
+								<p>
+									100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely
+									stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of
+									matte-finish HD prints.
+								</p>
+							</div>
+							<div class="content-tabs__properties chart">
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Fabric
+									</h6>
+									<div class="chart__text">
+										<p>
+											Bio-washed Cotton
+										</p>
+									</div>
+								</div>
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Pattern
+									</h6>
+									<div class="chart__text">
+										<p>
+											Printed
+										</p>
+									</div>
+								</div>
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Fit
+									</h6>
+									<div class="chart__text">
+										<p>
+											Regular-fit
+										</p>
+									</div>
+								</div>
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Neck
+									</h6>
+									<div class="chart__text">
+										<p>
+											Round Neck
+										</p>
+									</div>
+								</div>
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Sleeve
+									</h6>
+									<div class="chart__text">
+										<p>
+											Half-sleeves
+										</p>
+									</div>
+								</div>
+								<div class="chart__item">
+									<h6 class="chart__title">
+										Style
+									</h6>
+									<div class="chart__text">
+										<p>
+											Casual Wear
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-tabs__item">
+							<div class="content-tabs__text">
+								<p></p>
+							</div>
+						</div>
+						<div class="content-tabs__item">
+							<div class="content-tabs__text">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="description__video">
+					<img src="img/new-product/video/video__black--hoodie.webp" alt="video black hoodie">
+				</div>
+			</div>
+			<div class="product-page__similar">
+				<h2 class="similar__title subtitle">
+					Similar Products
+				</h2>
+				<div class="similar__display">
+					<ul class="similar__list">
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00001/product__00001_1x.webp" alt="woman in white t-shirt"
+										srcset="img/products/product__00001/product__00001_1x.webp 1x, img/products/product__00001/product__00001_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										White T-Shirt
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Jhanvi's Brand
+										</p>
+									</div>
+								</div>
+							</a>
+							<!--Якщо це кнопка, що додає в кошик, якщо ні - нижчий код-->
+							<a class="button__price button__price--usd" href="#">
+								$13.00
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00002/product__00002_1x.webp" alt="man in dark green sweatshirt"
+										srcset="img/products/product__00002/product__00002_1x.webp 1x, img/products/product__00002/product__00002_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Dark Green Sweatshirt
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Roboto's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$127.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00003/product__00003_1x.webp" alt="woman in lavender sweatshirt"
+										srcset="img/products/product__00003/product__00003_1x.webp 1x, img/products/product__00003/product__00003_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Lavender Sweatshirt
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Jhanvi's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$133.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00004/product__00004_1x.webp" alt="man in urban jacket with white"
+										srcset="img/products/product__00004/product__00004_1x.webp 1x, img/products/product__00004/product__00004_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Urban jacket with white
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Sagar's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$79.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00005/product__00005_1x.webp" alt="man in plain white t-shirt"
+										srcset="img/products/product__00005/product__00005_1x.webp 1x, img/products/product__00005/product__00005_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Plain White T-Shirt
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Jhanvi's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$123.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00006/product__00006_1x.webp" alt="man in checks shirt with white"
+										srcset="img/products/product__00006/product__00006_1x.webp 1x, img/products/product__00006/product__00006_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Checks Shirt with white
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											H.M's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$123.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00007/product__00007_1x.webp" alt="woman in black top & white skirt"
+										srcset="img/products/product__00007/product__00007_1x.webp 1x, img/products/product__00007/product__00007_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										One piece black top &
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											Nike's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$123.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="similar__item">
+							<a href="#" class="similar__favorite-button favorite-button">
+								<div class="favorite-button__wraper">
+									<img src="img/icons/icon__favorite.svg" alt="heart">
+								</div>
+							</a>
+							<a class="similar__link product-link" target="_blank" href="#">
+								<div class="product-link__wraper">
+									<img src="img/products/product__00008/product__00008_1x.webp" alt="man in denim blue shirt"
+										srcset="img/products/product__00008/product__00008_1x.webp 1x, img/products/product__00008/product__00008_2x.webp 2x">
+								</div>
+								<div class="product-link__text-wraper">
+									<h5 class="product-link__title product-name">
+										Denim Blue Shirt
+									</h5>
+									<div class="product-link__subtext brand-name">
+										<p>
+											MOMO's Brand
+										</p>
+									</div>
+									<!--Якщо це не кнопка-->
+									<div class="product-link__price price">
+										<p>$38.00</p>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="footer">
+			<div class="footer__menu menu-footer">
+				<ul class="menu-footer__columns columns-footer">
+					<li class="columns-footer__wraper">
+						<h4 class="columns-footer__title title title--white">Need Help</h4>
+						<ul class="columns-footer__list">
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Contact Us
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Track Order
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Returns & Refunds
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									FAQ's
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Career
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="columns-footer__wraper">
+						<h4 class="columns-footer__title title title--white">Company</h4>
+						<ul class="columns-footer__list">
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									About Us
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									euphoria Blog
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									euphoriastan
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Collaboration
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Media
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="columns-footer__wraper">
+						<h4 class="columns-footer__title title title title--white">More Info</h4>
+						<ul class="columns-footer__list">
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Term and Conditions
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Privacy Policy
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Shipping Policy
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link" target="_blank" href="#">
+									Sitemap
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="columns-footer__wraper">
+						<h4 class="columns-footer__title title title--white">Location</h4>
+						<ul class="columns-footer__list">
+							<li class="columns-footer__item">
+								<a class="columns-footer__link mail" target="_blank" href="mailto:support@euphoria.in">
+									support@euphoria.in
+								</a>
+							</li>
+							<li class="columns-footer__item">
+								<a class="columns-footer__link adress" target="_blank"
+									href="https://www.google.com/maps/dir/Eklingpura/By+Pass+Chouraha,+Pratap+Nagar,+%D0%A3%D0%B4%D0%B0%D0%B9%D0%BF%D1%83%D1%80,+%D0%A0%D0%B0%D0%B4%D0%B6%D0%B0%D1%81%D1%82%D1%85%D0%B0%D0%BD+313001,+%D0%86%D0%BD%D0%B4%D1%96%D1%8F/@24.5550658,73.7403934,20z/data=!4m13!4m12!1m5!1m1!1s0x3967ef36255fc77f:0xdecf8056b8c31351!2m2!1d73.7404306!2d24.5524704!1m5!1m1!1s0x3967e5e280566fa7:0x423c7b5ae7e976bf!2m2!1d73.7476018!2d24.5920279?entry=ttu">
+									Eklingpura Chouraha, Ahmedabad Main Road (NH 8- Near Mahadev Hotel) Udaipur, India- 313002
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__external-services external-services">
+				<div class="external-services__socials socials">
+					<a href="#" class="socials__link">
+						<div class="socials__icon-wraper">
+							<img src="img/icons/socials/socials__facebook.svg" alt="facebook">
+						</div>
+					</a>
+					<a href="#" class="socials__link">
+						<div class="socials__icon-wraper">
+							<img src="img/icons/socials/socials__instagram.svg" alt="instagram">
+						</div>
+					</a>
+					<a href="#" class="socials__link">
+						<div class="socials__icon-wraper">
+							<img src="img/icons/socials/socials__twitter.svg" alt="twitter">
+						</div>
+					</a>
+					<a href="#" class="socials__link">
+						<div class="socials__icon-wraper">
+							<img src="img/icons/socials/socials__linkedin.svg" alt="linkedin">
+						</div>
+					</a>
+				</div>
+				<div class="external-services__apps apps">
+					<h4 class="external-services__title title title--white">
+						Download The App
+					</h4>
+					<a href="#" class="apps__link">
+						<div class="apps__icon-wraper">
+							<img src="img/icons/apps/apps__appstore.svg" alt="AppStore">
+						</div>
+					</a>
+					<a href="#" class="apps__link">
+						<div class="apps__icon-wraper">
+							<img src="img/icons/apps/apps__google-play.svg" alt="google play">
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="footer__categories-menu categories-menu">
+				<h4 class="categories-menu__title title title--white">
+					Popular Categories
+				</h4>
+				<a href="#" class="categories-menu__button">
+					<div class="categories-menu__icon-wraper">
+						<img src="img/icons/icon__down.svg" alt="arrow down">
+					</div>
+				</a>
+			</div>
+			<div class="footer__copyright">
+				<p>
+					Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
