@@ -1,0 +1,878 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+}
+
+.practicing-block > * {
+	margin-bottom: 120px;
+}
+
+.practicing-block > *:last-child {
+	margin-bottom: 0px;
+}
+
+.transform-wrapper {
+	padding: 30px;
+	background: url("../img//5250461.jpg") 0 0/250px;
+}
+
+.transform {
+	background-color: #81a8c2;
+	padding: 40px;
+	font-family: "Ubuntu Mono", monospace;
+	font-size: 24px;
+	color: rgb(38, 76, 107);
+	border-radius: 30px;
+	box-shadow: inset 0 0 15px 1px #6d787d;
+}
+
+.transform > * {
+	margin-bottom: 80px;
+}
+
+.transform > *:last-child {
+	margin-bottom: 0px;
+}
+
+.transform__title {
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	/*text-decoration: underline;*/
+	text-shadow: #484b4d63 3px 5px 2px;
+	color: rgb(29, 64, 93);
+}
+
+.transform__title:hover {
+	text-shadow: #484b4d63 10px 10px 2px;
+	/*text-decoration: none;*/
+}
+
+.transform__block > * {
+	margin-bottom: 15px;
+}
+.transform__block > *:last-child {
+	margin-bottom: 0px;
+}
+
+.transform__block .transform__text {
+	margin-bottom: 40px;
+}
+
+.transform__subtitle {
+	font-size: 28px;
+}
+
+.transform__text {
+	text-align: justify;
+}
+
+.transform__text span,
+.transform__subtitle {
+	font-weight: bold;
+}
+
+.transform__subtitle {
+	text-decoration: underline;
+}
+
+.transform__body {
+	font-size: 0px;
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+[class*="transform__box"] {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	background-color: #b1a9bbc7;
+	width: 170px;
+	height: 170px;
+	font-size: 20px;
+	outline: 4px double #8c8594;
+}
+
+.transform__deformation {
+	padding: 40px 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.transform__box:not(:last-child) {
+	margin-right: 40px;
+}
+
+/*_____________:hover________*/
+
+.transform__box:hover .transform__deformation {
+	background-color: #957ea9a1;
+	outline: 4px double #60536ca1;
+	width: 170px;
+	height: 170px;
+}
+
+/*_______________translate-20px_________*/
+
+.transform__box:hover .transform__deformation--translate-20px {
+	transform: translate(20px, 20px);
+}
+
+/*_______________translate-20px__________*/
+
+.transform__box:hover .transform__deformation--translate-50per {
+	transform: translate(50%, -20%);
+}
+
+/*_______________scale-04__________*/
+
+.transform__box:hover .transform__deformation--scale-08 {
+	transform: scale(0.8, 0.5);
+}
+
+/*_______________scale-1.2__________*/
+
+.transform__box:hover .transform__deformation--scale-12 {
+	transform: scale(1.2);
+}
+
+/*_______________scale-mirror__________*/
+
+.transform__box:hover .transform__deformation--scale-mirror {
+	transform: scale(-1, 1);
+}
+
+/*_______________rotate-30__________*/
+
+.transform__box:hover .transform__deformation--rotate-30 {
+	transform: rotate(30deg);
+}
+
+/*_______________rotate_-45__________*/
+
+.transform__box:hover .transform__deformation--rotate-45 {
+	transform: rotate(-45deg);
+}
+
+/*_______________rotateX_-70__________*/
+
+.transform__box:hover .transform__deformation--rotatex-70 {
+	transform: rotateX(-70deg);
+}
+
+/*_______________skew-15__________*/
+
+.transform__box:hover .transform__deformation--skew-15 {
+	transform: skew(15deg, 15deg);
+}
+
+/*_______________skew-0__________*/
+
+.transform__box:hover .transform__deformation--skew-0 {
+	transform: skew(0, 15deg);
+}
+
+/*_______________skew-20__________*/
+
+.transform__box:hover .transform__deformation--skew-20 {
+	transform: skew(20deg);
+}
+
+/*_______________matrix__________*/
+
+.transform__box:hover .transform__deformation--matrix {
+	transform: matrix(0.8, -0.5, 0.3, 0.7, 15, 10);
+}
+
+/*_______________matrix__________*/
+
+.transform__deformation--transform-mix {
+	padding-top: 10px;
+}
+.transform__box:hover .transform__deformation--transform-mix {
+	transform: scale(0.8, 0.7) skew(20.56deg, -35.54deg) translate(10.6px, 22px);
+}
+
+/*_______________transform-origin__________*/
+
+.transform__box:hover [class*="transform__deformation--transform-origin"] {
+	transform: rotate(-45deg);
+}
+
+/*_______________transform-origin-50__________*/
+
+.transform__box:hover .transform__deformation--transform-origin-50 {
+	transform-origin: 50%;
+}
+
+/*_______________transform-origin-50-0__________*/
+
+.transform__box:hover .transform__deformation--transform-origin-left {
+	transform-origin: 50% 0;
+}
+
+/*_______________transform-origin-top left__________*/
+
+.transform__deformation--transform-origin-top {
+	transform-origin: top left;
+}
+
+/*_______________perspective-0__________*/
+
+.transform__box.transform__box--perspective-0 {
+	perspective: none;
+}
+
+.transform__box--perspective-0:hover .transform__deformation--perspective-0 {
+	transform: rotateX(45deg);
+}
+
+/*_______________perspective-500px__________*/
+
+.transform__box.transform__box--perspective-500px {
+	perspective: 500px;
+}
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--perspective-500px {
+	transform: rotateX(45deg);
+}
+
+/*_______________perspective-origin-400px__________*/
+
+.transform__deformation--perspective-origin-400px {
+	padding-top: 10px;
+}
+
+.transform__box.transform__box--perspective-origin-400px {
+	perspective: 400px;
+	perspective-origin: 0 0;
+}
+
+.transform__box.transform__box--perspective-origin-400px:hover .transform__deformation--perspective-origin-400px {
+	transform: rotateX(45deg);
+}
+
+/*_______________translate3d-0__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--translate3d-0 {
+	transform: translate3d(0px, 0px, 0px);
+}
+
+/*_______________translate3d-50px__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--translate3d-50px {
+	transform: translate3d(20px, 20px, 50px);
+}
+
+/*_______________scale3d-1__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--scale3d-1 {
+	transform: scale3d(1, 1, 1);
+}
+
+/*_______________scale3d-1.5__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--scale3d-15 {
+	transform: scale3d(1.2, 1.6, 5);
+}
+
+/*_______________rotate3d-0__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--rotate3d-0 {
+	transform: rotate3d(1, 1, 1, 0deg);
+}
+
+/*_______________rotate3d-60__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--rotate3d-60 {
+	transform: rotate3d(1, 1, 1, 60deg);
+}
+
+/*_______________matrix3d__________*/
+
+.transform__deformation--matrix3d {
+	visibility: hidden;
+}
+.transform__box:hover .transform__deformation--matrix3d {
+	visibility: visible;
+}
+
+/*_______________3d-mix__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--3d-mix {
+	transform: translate3d(20px, 30px, 10px) rotate3d(1, 1, 1, 30deg);
+}
+
+/*_______________preserve-3d__________*/
+
+.transform__box--preserve3d {
+	transform-style: preserve-3d;
+}
+
+.transform__box.transform__box--perspective-500px.transform__box--preserve3d:hover
+	.transform__deformation--preserve-3d {
+	transform: rotateX(45deg);
+}
+
+/*_______________backface-visibility__________*/
+
+.transform__box.transform__box--perspective-500px:hover .transform__deformation--backface-visibility {
+	backface-visibility: hidden;
+	transform: rotateY(360deg);
+	/*анімація для прикладу, не знаю чи правильно*/
+	transition: all 2s;
+}
+
+.car-wrapper {
+	/*max-width: 1000px;*/
+	min-height: 800px;
+	padding-left: 15px;
+	padding-right: 15px;
+	/*margin: 0 auto;*/
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, 0);
+	/*background-color: chocolate;*/
+}
+
+.car-container {
+	width: 800px;
+	height: 300px;
+	position: absolute;
+	left: 50%;
+	top: 63%;
+	transform: translate(-50%, -50%);
+	/*background: rgb(52, 55, 158);
+	background: radial-gradient(circle, rgb(106, 108, 174) 55%, rgba(29, 1, 86, 1) 100%);*/
+}
+
+.car-body {
+	width: 700px;
+	position: relative;
+	perspective: 1000px;
+	transform: scale(1.2);
+}
+.side-car__down-1-1 {
+	width: 672px;
+	height: 20px;
+	background: rgb(15, 48, 98);
+	background: linear-gradient(180deg, rgba(15, 48, 98, 1) 0%, rgba(30, 69, 140, 1) 100%);
+	border-radius: 1px 0px 1px 5px;
+	box-shadow: 0px 8px 15px 5px rgba(31, 9, 32, 0.496);
+	transform: skew(8deg);
+	position: absolute;
+	top: 198px;
+	left: 15px;
+	z-index: 5;
+}
+
+.side-car__down-1-2 {
+	width: 30px;
+	height: 20px;
+	background: rgb(15, 48, 98);
+	background: linear-gradient(180deg, rgba(15, 48, 98, 1) 0%, rgba(30, 69, 140, 1) 100%);
+	border-radius: 1px 0px 1px 5px;
+	/*box-shadow: 0px 0px 2px 2px rgba(10, 14, 21, 0.5);*/
+	transform: skew(-30deg);
+	position: absolute;
+	top: 198px;
+	left: 680px;
+	z-index: 5;
+	border-radius: 0px 0px 3px 0px;
+}
+
+.side-car__down-2 {
+	width: 700px;
+	height: 40px;
+	position: absolute;
+	top: 160px;
+	left: 20px;
+	border-radius: 1px 0px 8px 1px;
+	background: rgb(64, 114, 201);
+	background: linear-gradient(160deg, rgba(64, 114, 201, 1) 0%, rgba(41, 85, 188, 1) 48%, rgba(64, 114, 201, 1) 80%);
+	transform: skew(-5deg);
+	z-index: 2;
+}
+
+.side-car__middle-line {
+	width: 700px;
+	height: 3px;
+	position: absolute;
+	top: 158px;
+	left: 22px;
+	background: radial-gradient(circle, rgb(89, 147, 213) 56%, rgb(53, 75, 161) 100%);
+	z-index: 7;
+	transform: skew(-6deg);
+}
+
+.side-car__up-1 {
+	width: 699.7px;
+	height: 10px;
+	position: absolute;
+	top: 149px;
+	left: 22.5px;
+	border-radius: 2px 0 0 0;
+	background: #4088d7;
+	z-index: 6;
+	transform: skew(-6deg);
+}
+
+.side-car__up-2 {
+	width: 471px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 254px;
+	z-index: 5;
+	border-radius: 1px 6px 0px 1px;
+	transform: skew(-6deg);
+	background: rgb(50, 66, 183);
+	background: linear-gradient(
+		180deg,
+		rgba(50, 66, 183, 1) 0%,
+		/*	rgba(122, 159, 202, 1) 33%,*/ rgba(80, 145, 219, 1) 61%,
+		rgba(64, 136, 215, 1) 95%
+	);
+}
+
+.side-car__up-3 {
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 116px;
+	z-index: 4;
+	/*border-radius: 1px 6px 0px 1px;*/
+	transform: skew(-75deg);
+	background: rgb(50, 66, 183);
+	background: linear-gradient(
+		180deg,
+		rgba(50, 66, 183, 1) 0%,
+		/*	rgba(122, 159, 202, 1) 33%,*/ rgba(80, 145, 219, 1) 61%,
+		rgba(64, 136, 215, 1) 95%
+	);
+}
+
+.roof-box {
+	width: 332px;
+	height: 63px;
+	position: absolute;
+	top: 31px;
+	left: 290px;
+	z-index: 3;
+	border-radius: 5px 5px 5px 5px;
+	perspective: 80px;
+	perspective-origin: 45% top;
+}
+
+.roof {
+	width: 100%;
+	height: 100%;
+	transform: rotateX(65deg) /*skew(-28deg)*/;
+	border-radius: 15px 15px 4px 3px;
+	background: rgb(50, 66, 183);
+	background: linear-gradient(0deg, rgba(50, 66, 183, 1) 20%, rgba(68, 24, 164, 1) 100%);
+}
+
+.windows__left {
+	width: 36px;
+	height: 45px;
+	position: absolute;
+	top: 53px;
+	left: 258px;
+	z-index: 6;
+	border-radius: 5px 0px 0px 5px;
+	transform: skew(-64.5deg);
+	background: rgb(9, 13, 61);
+	background: linear-gradient(135deg, rgba(9, 13, 61, 1) 0%, rgb(15, 26, 56) 50%, rgba(9, 13, 61, 1) 100%);
+	box-shadow:
+		-4px -4px 8px -4px rgba(61, 202, 213, 0.79) inset,
+		10px 5px 4px -3px rgba(129, 61, 213, 0.79) inset;
+}
+
+.windows__middle-box {
+	width: 140px;
+	height: 55px;
+	position: absolute;
+	top: 43px;
+	left: 310px;
+	z-index: 6;
+	border-radius: 5px 5px 5px 5px;
+	perspective: 100px;
+	perspective-origin: 95% top;
+	/*	transform-style: preserve-3d;*/
+}
+
+.windows__middle {
+	background: #090d3d;
+	width: 100%;
+	height: 100%;
+	transform: rotateX(55deg) skew(-28deg);
+	border-radius: 15px 15px 4px 3px;
+	box-shadow:
+		-4px -4px 6px -3px rgba(61, 202, 213, 0.79) inset,
+		5px 8px 4px -3px rgba(129, 61, 213, 0.79) inset;
+}
+
+.car-body:hover .windows__middle,
+.car-body:hover .windows__left,
+.car-body:hover .windows__back,
+.car-body:hover .windows__right {
+	/*	background: rgba(177, 163, 13, 0.449);*/
+	background: rgba(171, 167, 224, 0.879);
+	background: linear-gradient(90deg, rgba(199, 167, 224, 0.149) 0%, rgba(242, 220, 139, 0.499) 100%);
+	box-shadow:
+		-4px -4px 6px -3px rgba(61, 202, 213, 0.79) inset,
+		5px 8px 4px -3px rgba(129, 61, 213, 0.79) inset,
+		0px 0px 5px 1px rgba(242, 220, 139, 0.53);
+}
+
+.windows__right-box {
+	width: 55px;
+	height: 87px;
+	position: absolute;
+	top: 18px;
+	left: 493px;
+	z-index: 6;
+	border-radius: 5px 5px 5px 5px;
+	perspective: 70px;
+	perspective-origin: 20% top;
+}
+
+.windows__right {
+	background: #090d3d;
+	width: 100%;
+	height: 100%;
+	transform: rotateX(105deg);
+	border-radius: 15px 15px 4px 3px;
+	box-shadow:
+		-4px -4px 5px -3px rgba(61, 202, 213, 0.79) inset,
+		5px 8px 4px -1px rgba(129, 61, 213, 0.79) inset;
+}
+
+.windows__back-box {
+	width: 55px;
+	height: 51px;
+	position: absolute;
+	top: 45px;
+	left: 591px;
+	z-index: 6;
+	border-radius: 3px 5px 5px 5px;
+	perspective: 70px;
+	perspective-origin: -250% top;
+}
+
+.windows__back {
+	width: 100%;
+	height: 100%;
+	transform: rotateX(52deg) skew(10deg);
+	border-radius: 10px 10px 6px 3px;
+	background: rgb(73, 92, 165);
+	background: radial-gradient(circle, rgb(66, 57, 163) 20%, rgb(35, 36, 102) 80%);
+	box-shadow:
+		0px -4px 4px -3px rgba(61, 202, 213, 0.79) inset,
+		8px 10px 4px -5px rgba(129, 61, 213, 0.79) inset;
+}
+
+.door__top {
+	width: 203px;
+	height: 48px;
+	position: absolute;
+	top: 52px;
+	left: 255px;
+	z-index: 7;
+	border-radius: 5px 10px 5px 1px;
+	transform: skew(-30deg);
+	border-right: 2px solid #090d3d93;
+}
+
+.door__middle {
+	width: 203px;
+	height: 60px;
+	position: absolute;
+	top: 100px;
+	left: 245px;
+	z-index: 7;
+	border-radius: 5px 10px 0px 1px;
+	transform: skew(-8deg);
+	border-right: 2px solid #090d3d93;
+	border-left: 2px solid #090d3d93;
+}
+
+.door__bottom {
+	width: 203px;
+	height: 58px;
+	position: absolute;
+	top: 160px;
+	left: 245px;
+	z-index: 7;
+	border-radius: 1px 1px 10px 10px;
+	transform: skew(8deg);
+	border-right: 2px solid #090d3d93;
+	border-left: 2px solid #090d3d93;
+}
+
+.door__handle-box {
+	width: 35px;
+	height: 15px;
+	position: absolute;
+	top: 115px;
+	left: 395px;
+	z-index: 7;
+	border-radius: 3px;
+	border: 2px solid #0e1351a0;
+	background: rgb(48, 124, 203);
+	background: radial-gradient(circle, rgba(48, 124, 203, 1) 22%, rgba(65, 112, 186, 1) 100%);
+	box-shadow:
+		2px 2px 2px -1px rgba(61, 202, 213, 0.79) inset,
+		-8px -10px 2px -8px rgba(129, 61, 213, 0.79) inset;
+}
+
+.door__handle {
+	width: 23px;
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	left: 10px;
+	z-index: 8;
+	border-radius: 3px;
+	background: #181c47d1;
+	box-shadow: -8px -10px 6px -8px rgba(129, 61, 213, 0.79) inset;
+}
+
+.left-wheel {
+	position: absolute;
+	top: 140px;
+	left: 105px;
+}
+
+.right-wheel {
+	position: absolute;
+	top: 140px;
+	left: 545px;
+}
+
+[class*="-wheel__arc"] {
+	width: 120px;
+	height: 80px;
+	position: absolute;
+	border-radius: 130px 130px 0 0;
+	background: rgb(12, 22, 38);
+	z-index: 11;
+	box-shadow: 18px 11px 10px 2px rgba(33, 37, 86, 0.61) inset;
+}
+
+[class*="-wheel__tire"] {
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	top: 8px;
+	left: 5px;
+	border-radius: 50%;
+	background: rgb(10, 20, 65);
+	background: radial-gradient(circle, rgb(7, 14, 45) 10%, rgb(5, 3, 41) 48%, rgb(23, 28, 37) 64%, rgb(3, 1, 29) 100%);
+	z-index: 12;
+	box-shadow:
+		-5px 4px 4px -3px rgba(61, 202, 213, 0.79) inset,
+		7px -5px 4px -5px rgba(129, 61, 213, 0.79) inset;
+}
+
+.car-body:hover .left-wheel__tire,
+.car-body:hover .right-wheel__tire {
+	transform: rotate(25deg);
+}
+
+[class*="-wheel__disc"] {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 50%;
+	background: rgb(40, 73, 180);
+	background: linear-gradient(52deg, rgba(40, 73, 180, 1) 14%, rgba(53, 112, 204, 1) 100%);
+	z-index: 13;
+	box-shadow:
+		-5px 4px 4px -3px rgba(61, 202, 213, 0.79) inset,
+		7px -5px 4px -5px rgba(129, 61, 213, 0.79) inset;
+}
+
+[class*="-wheel__cap-1"] {
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	border-radius: 50%;
+	z-index: 14;
+	/*border:1px solid #15294e9d;*/
+	outline: 2px solid rgba(35, 12, 64, 0.264);
+	box-shadow:
+		-5px 4px 10px -3px rgba(28, 109, 114, 0.79) inset,
+		7px -5px 10px -6px rgba(46, 21, 78, 0.79) inset,
+		-5px 4px 4px -3px rgba(61, 203, 213, 0.541) inset,
+		7px -5px 4px -5px rgba(129, 61, 213, 0.556) inset;
+	background: rgb(32, 71, 166);
+	background: linear-gradient(52deg, rgba(32, 71, 166, 1) 28%, rgba(65, 136, 222, 1) 100%);
+}
+
+[class*="-wheel__cap-2"] {
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	top: 33px;
+	left: 33px;
+	border-radius: 50%;
+	z-index: 15;
+	border: 5px solid rgba(10, 31, 93, 0.532);
+	box-shadow:
+		-5px 4px 4px -3px rgba(61, 202, 213, 0.79) inset,
+		7px -5px 4px -5px rgba(129, 61, 213, 0.79) inset,
+		9px -10px 15px -28px rgba(21, 40, 108, 0.55);
+	outline: 2px solid rgba(26, 78, 79, 0.534);
+}
+
+[class*="-wheel__line"] {
+	width: 15px;
+	height: 4.5px;
+	position: absolute;
+	top: 53px;
+	left: 82px;
+	border-radius: 1px;
+	z-index: 16;
+	background: rgb(38, 100, 188);
+	background: linear-gradient(52deg, rgb(31, 80, 149) 7%, rgba(51, 42, 174, 0.833) 80%);
+}
+
+.car-body__exhaust {
+	width: 30px;
+	height: 18px;
+	background: rgb(32, 71, 166);
+	background: linear-gradient(0deg, rgb(20, 45, 107) 1%, rgba(65, 136, 222, 1) 58%, rgb(38, 77, 123) 100%);
+	transform: skew(-5deg);
+	position: absolute;
+	top: 190px;
+	left: 705px;
+	z-index: 1;
+	border-radius: 0px 0px 3px 0px;
+	outline: 1px solid rgba(35, 12, 64, 0.137);
+	box-shadow:
+		-5px 4px 10px -3px rgba(28, 109, 114, 0.79) inset,
+		7px -5px 10px -6px rgba(46, 21, 78, 0.79) inset;
+}
+
+.gas-tank {
+	width: 27px;
+	height: 27px;
+	background: rgb(50, 66, 183);
+	background: linear-gradient(
+		20deg,
+		rgba(64, 81, 207, 0.697) 0%,
+		/*	rgba(122, 159, 202, 1) 33%,*/ rgb(92, 154, 225) 61%,
+		rgba(64, 137, 215, 0.77) 95%
+	);
+	position: absolute;
+	top: 120px;
+	left: 660px;
+	z-index: 8;
+	border-radius: 50%;
+	outline: 1px solid rgba(35, 12, 64, 0.585);
+	box-shadow:
+		8px -5px 10px -8px rgba(21, 40, 108, 0.429) inset,
+		-8px 5px 10px -8px rgba(24, 152, 178, 0.429) inset;
+	overflow: hidden;
+}
+
+.gas-tank__handle {
+	width: 15px;
+	height: 4px;
+	background: rgb(50, 66, 183);
+	background: linear-gradient(
+		20deg,
+		rgba(45, 57, 147, 0.697) 0%,
+		/*	rgba(122, 159, 202, 1) 33%,*/ rgb(65, 123, 189) 61%,
+		rgba(31, 66, 104, 0.77) 95%
+	);
+	position: absolute;
+	top: 11px;
+	left: 19px;
+	z-index: 9;
+	border-radius: 3%;
+	outline: 1px solid rgba(35, 12, 64, 0.585);
+	box-shadow: 1px 1px 3px 1px rgba(21, 40, 108, 0.244) inset;
+}
+
+[class*="lights__"] {
+	position: absolute;
+}
+
+.lights__front {
+	width: 45px;
+	height: 5px;
+	top: 153px;
+	left: 49px;
+	z-index: 20;
+	background: rgb(224, 191, 167);
+	background: linear-gradient(90deg, rgb(167, 177, 224) 0%, rgb(83, 78, 155) 100%);
+	border-radius: 12%;
+	border-top: 2px solid #1a2170ba;
+	/*transform: skew(-20deg);*/
+}
+
+.car-body:hover .lights__front {
+	border-top: 2px solid #604110ba;
+	background: rgb(224, 191, 167);
+	background: linear-gradient(90deg, rgba(224, 191, 167, 1) 0%, rgba(242, 220, 139, 1) 100%);
+	box-shadow: 1px 1px 35px 20px rgba(242, 220, 139, 0.53);
+}
+
+.lights__back {
+	width: 15px;
+	height: 40px;
+	top: 109px;
+	left: 715px;
+	z-index: 25; /*
+	background: rgb(161, 32, 125);
+background: linear-gradient(-90deg, rgb(121, 33, 84) 0%, rgb(189, 58, 113) 100%);*/
+	background: rgb(73, 32, 187);
+	background: linear-gradient(90deg, rgb(73, 32, 187) 0%, rgba(108, 0, 180, 0.896) 17%, rgba(220, 36, 85, 0.725) 100%);
+	box-shadow:
+		-5px 4px 5px -3px rgba(61, 203, 213, 0.625) inset,
+		7px -5px 4px -5px rgba(129, 61, 213, 0.892) inset;
+	border-radius: 12%;
+	border-top: 2px solid #1a2170ba;
+	border-bottom: 2px solid #1a2170ba;
+	border-left: 2px solid #1a2170ba;
+	transform: skew(-8deg);
+}
+
+.car-body:hover .lights__back {
+	background: rgb(255, 147, 225);
+	background: linear-gradient(-90deg, rgb(225, 110, 219) 0%, rgb(176, 40, 158) 100%);
+	box-shadow: 7px -5px 4px -5px rgba(97, 56, 148, 0.892) inset, 10px 12px 48px 28px rgba(224, 86, 137, 0.53);
+	border-top: 2px solid #822a46ba;
+	border-bottom: 2px solid #822a46ba;
+	border-left: 2px solid #822a46ba;
+}
+
+.car-body:hover .side-car__down-1-1 {
+	box-shadow: 0px 8px 15px 5px rgba(230, 69, 232, 0.344);
+
+}
+
+
+.car-wrapper::before {
+	content: "";
+	background: url("../img/background.webp") center/cover no-repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}

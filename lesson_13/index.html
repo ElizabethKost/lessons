@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #12</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header></header>
+		<main class="page">
+			<div class="practicing-block">
+				<div class="transform-wrapper">
+					<div class="transform">
+						<h3 class="transform__title">
+							CSS transform. 2D и 3D трансформації
+						</h3>
+						<h3 class="transform__title">
+							2D трансформації
+						</h3>
+						<div class="transform__text">
+							Використовуючи перетворення 2D та 3D, ми можемо змістити, повертати, масштабувати елементи та робити
+							набагато більше! Перетворення з властивістю transform та встановлено такі значення:
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Translate (x, y)
+							</h4>
+							<div class="transform__text">
+								Переміщує елемент на нове місце, рухаючись відносно початкового положення об'єкта праворуч і вниз,
+								використовуючи координати X і Y. Далі записується: <span>translate(x, y)</span> або <span>translateX(x,
+									y)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--translate-20px">
+										:translate (20px, 20px)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--translate-50per">
+										:translate (50%, -20%)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Scale (x, y)
+							</h4>
+							<div class="transform__text">
+								Масштабує елементи, роблячи їх більшими або меншими. Далі записується: <span>scale(x, y)</span> або
+								<span>scale(n)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--scale-08">
+										:scale (0.8, 0.5)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--scale-12">
+										:scale (1.2)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--scale-mirror">
+										mirror <br>:scale (-1, 1)
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Rotate (n + deg)
+							</h4>
+							<div class="transform__text">
+								Повертає елементи. Далі записується: <span>rotate(n + deg)</span> або <span>rotateX(n + deg)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--rotate-30">
+										:rotate (30deg)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--rotate-45">
+										:rotate(-45deg)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--rotatex-70">
+										:rotateX (-70deg)
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Skew (x + deg, y + deg)
+							</h4>
+							<div class="transform__text">
+								Деформує (розтягує) елементи. Далі записується: <span>skew(x + deg, y + deg)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--skew-15">
+										:skew(15deg, 15deg)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--skew-0">
+										:skew(0deg, 15deg)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--skew-20">
+										:skew(20deg)
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Matrix (a, c, b, d, x, y)
+							</h4>
+							<div class="transform__text">
+								Метод <span>matrix()</span> приймає шість параметрів, що містять математичні функції, які дозволяють
+								обертати, масштабувати, переміщувати (переводити) та нахиляти елементи. <br>Параметри по порядку
+								слідування: <span>matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()).</span> Далі
+								записується: <span>matrix (a, c, b, d, x, y)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--matrix">
+										:matrix (0.8, -0.5, 0.3, 0.7, 15, 10)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--transform-mix">
+										transform: scale(0.8, 0.7) skew(20.56deg, -35.54deg) translate(10.6px, 22px)
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Transform-origin
+							</h4>
+							<div class="transform__text">
+								Дозволяє змінити центр трансформації, відносно якого відбувається зміна положення/розміру/форми
+								елемента. Далі записується: <span>transform-origin:top (%)left (%)</span>.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--transform-origin-50">
+										transform-origin: 50% (за замовч.)
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--transform-origin-left">
+										transform-origin: 0 50%
+									</div>
+								</div>
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--transform-origin-top">
+										transform-origin: top left
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<h3 class="transform__title">
+							3D трансформації
+						</h3>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Perspective, perspective-origin
+							</h4>
+							<div class="transform__text">
+								Встановлення глибини та зміни початку координати. Не може бути від'ємним значенням.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-0">
+									<div class="transform__deformation transform__deformation--perspective-0">
+										perspective: 0; transform: rotateX(45deg)
+									</div>
+								</div>
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--perspective-500px">
+										perspective: 500px; transform: rotateX(45deg)
+									</div>
+								</div>
+								<div class="transform__box transform__box--perspective-origin-400px">
+									<div class="transform__deformation transform__deformation--perspective-origin-400px">
+										perspective: 400px; perspective-origin: 0 0; transform: rotateX(45deg)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Translate3d (x, y, z)
+							</h4>
+							<div class="transform__text">
+								За аналогією зі своїм 2D братом, це значення встановлює рух елемента, але в 3D -просторі. Окрім осі X і
+								Y, додається вісь Z.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--translate3d-0">
+										perspective: 500px; <br>:translate3d (0px, 0px, 0px)
+									</div>
+								</div>
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--translate3d-50px">
+										perspective: 500px; <br>:translate3d (20px, 20px, 50px)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Scale3d (x, y, z)
+							</h4>
+							<div class="transform__text">
+								Встановлює тривимірне масштабування вздовж однієї з осей x y z. Насправді він повторює функціональність
+								свого 2D аналога.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--scale3d-1">
+										perspective: 500px; <br>:scale3d (1, 1, 1)
+									</div>
+								</div>
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--scale3d-15">
+										perspective: 500px; <br>:scale3d (1.2, 1.6, 5)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Rotate3d (x, y, z, deg)
+							</h4>
+							<div class="transform__text">
+								Обертає елемент відносно трьох осей. Елемент обертається під кутом, встановленим останнім параметром
+								відносно напрямку напрямку X, Y, Z.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--rotate3d-0">
+										perspective: 500px; <br>:rotate3d (1, 1, 1, 0deg)
+									</div>
+								</div>
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--rotate3d-60">
+										perspective: 500px; <br>:rotate3d (1, 1, 1, 60deg)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Matrix3d (n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
+							</h4>
+							<div class="transform__text">
+								Встановлює тривимірну трансформацію як однорідну матрицю з розміром 4 на 4 з шістнадцятьма значеннями у
+								стовпцях.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box">
+									<div class="transform__deformation transform__deformation--matrix3d">
+										на цьому мої повноваження - все...<br> Є генератор
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Множині 3D трансформації
+							</h4>
+							<div class="transform__text">
+								Дозволяє поєднувати кілька 3D -перетворень в одному.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--3d-mix">
+										:translate3d (20px, 30px, 10px) rotate3d (1,1,1,30deg)
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Transform-style
+							</h4>
+							<div class="transform__text">
+								Визначає, як дочірні елементи повинні відображатися в просторі 3D.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px transform__box--preserve3d">
+									<div class="transform__deformation transform__deformation--preserve-3d">
+										perspective: 500px; <br>transform-style: preserve-3d
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transform__block">
+							<h4 class="transform__subtitle">
+								Backface-visibility
+							</h4>
+							<div class="transform__text">
+								Відображення задньої частини об'єкта.
+							</div>
+							<div class="transform__body">
+								<div class="transform__box transform__box--perspective-500px">
+									<div class="transform__deformation transform__deformation--backface-visibility">
+										backface-visibility: hidden
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="car-wrapper">
+					<div class="car-container">
+						<div class="car">
+							<div class="car-body">
+								<div class="car-body__side side-car">
+									<div class="side-car__down-1-1"></div>
+									<div class="side-car__down-1-2"></div>
+									<div class="side-car__down-2"></div>
+									<div class="side-car__middle-line"></div>
+									<div class="side-car__up-1"></div>
+									<div class="side-car__up-2"></div>
+									<div class="side-car__up-3"></div>
+								</div>
+								<div class="car-body__roof roof-box">
+									<div class="roof"></div>
+								</div>
+								<div class="car-body__windows windows">
+									<div class="windows__left"></div>
+									<div class="windows__middle-box">
+										<div class="windows__middle"></div>
+									</div>
+									<div class="windows__right-box">
+										<div class="windows__right"></div>
+									</div>
+									<div class="windows__back-box">
+										<div class="windows__back"></div>
+									</div>
+								</div>
+								<div class="car-body__door door">
+									<div class="door__top">
+									</div>
+									<div class="door__middle">
+									</div>
+									<div class="door__bottom">
+									</div>
+									<div class="door__handle-box">
+										<div class="door__handle"></div>
+									</div>
+								</div>
+								<div class="car-body__wheel wheel">
+									<div class="left-wheel">
+										<div class="left-wheel__arc"></div>
+										<div class="left-wheel__tire">
+											<div class="left-wheel__disc"></div>
+											<div class="left-wheel__cap-1"></div>
+											<div class="left-wheel__cap-2"></div>
+											<div class="left-wheel__line"></div>
+										</div>
+									</div>
+									<div class="right-wheel">
+										<div class="right-wheel__arc"></div>
+										<div class="right-wheel__tire">
+											<div class="right-wheel__disc"></div>
+											<div class="right-wheel__cap-1"></div>
+											<div class="right-wheel__cap-2"></div>
+											<div class="right-wheel__line"></div>
+										</div>
+									</div>
+								</div>
+								<div class="car-body__exhaust"></div>
+								<div class="car-body__gas-tank gas-tank">
+									<div class="gas-tank__handle"></div>
+								</div>
+								<div class="car-body__lights lights">
+									<div class="lights__front"></div>
+									<div class="lights__back"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
