@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #14</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header></header>
+		<main class="page">
+			<div class="practicing-block">
+				<div class="transition-animation-wrapper">
+					<div class="transition">
+						<h3 class="transition__title">
+							CSS переходи (CSS transition)
+						</h3>
+						<div class="transition__text">
+							CSS - переходи або CSS - transitions можуть застосовуватися до всіх елементів і навіть псевдоелементів.
+							Використовується для оживлення нашого макета. Що, в свою чергу, призводить до вдосконалення взаємодії з
+							користувачем, як правило, завдяки приємній анімованій реакції на його дії. Наприклад - наведення та
+							натиснення на кнопку. <br>Також властивості переходу можна використовувати для створення простих сценаріїв
+							анімації. Насправді, CSS - переходи забезпечують зміну значень інших властивостей із певною анімацією та
+							сценарієм.<br> Вся ця магія може бути описана універсальною CSS властивістю transition або наступними
+							окремими властивостями:
+						</div>
+						<div class="transition__block">
+							<h4 class="transition__subtitle">
+								Transition-duration
+							</h4>
+							<div class="transition__text">
+								Визначає період часу, протягом якого слід здійснювати перехід. Власне - тут ми вказуємо час, за який
+								одне значення властивості переходить (анімується) до іншого. Властивість не успадковується.
+							</div>
+							<div class="transition__body">
+								<div class="transition__box">
+									<p>
+										:0s
+									</p>
+									<a class="transition__button transition__button--duration-0s">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:0.4s
+									</p>
+									<div class="transition__button transition__button--duration-04s">
+										button
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="transition__block">
+							<h4 class="transition__subtitle">
+								Transition-property
+							</h4>
+							<div class="transition__text">
+								Містить назву CSS-властивості, до якої буде застосований ефект переходу. Значення властивості може
+								містити одну властивість так і перелік властивостей через кому. Власність не успадковується.
+							</div>
+							<div class="transition__body">
+								<div class="transition__box">
+									<p>
+										:all
+									</p>
+									<a class="transition__button transition__button--property-all">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:padding
+									</p>
+									<a class="transition__button transition__button--property-name1">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:padding, border-radius
+									</p>
+									<a class="transition__button transition__button--property-name2">
+										button
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="transition__block">
+							<h4 class="transition__subtitle">
+								Transition-delay
+							</h4>
+							<div class="transition__text">
+								Затримка виконання переходу. Дозволяє зробити так, що зміна властивості відбудеться не миттєво, а з
+								певною затримкою. Час затримки переходу вказується в секундах або мілісекундах. Властивість не
+								успадковується.
+							</div>
+							<div class="transition__body">
+								<div class="transition__box">
+									<p>
+										:0s
+									</p>
+									<a class="transition__button transition__button--delay-0s">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:1s
+									</p>
+									<a class="transition__button transition__button--delay-1s">
+										button
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="transition__block">
+							<h4 class="transition__subtitle">
+								Transition-timing-function
+							</h4>
+							<div class="transition__text">
+								Встановлює стиль нашого переходу, тобто певний сценарій, згідно з якою буде проведена анімація.
+							</div>
+							<div class="transition__body">
+								<div class="transition__box">
+									<p>
+										:ease
+									</p>
+									<a class="transition__button transition__button--transition-timing-function-ease">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:linear
+									</p>
+									<a class="transition__button transition__button--transition-timing-function-linear">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:steps(3, end)
+									</p>
+									<a class="transition__button transition__button--transition-timing-function-steps">
+										button
+									</a>
+								</div>
+								<div class="transition__box">
+									<p>
+										:cubic-bezier(0.55, -0.22, 0.77, -0.2)
+									</p>
+									<a class="transition__button transition__button--transition-timing-function-cubic-bezier">
+										button
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="transition__block">
+							<h4 class="transition__subtitle">
+								Універсальний запис
+							</h4>
+							<div class="transition__text">
+								Для елемента можна встановити кілька послідовних переходів, перелічивши їх через кому.
+							</div>
+							<div class="transition__body">
+								<div class="transition__box">
+									<p>
+										:___,___,___
+									</p>
+									<a class="transition__button transition__button--transition-universal">
+										button
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="animation">
+						<h3 class="animation__title">
+							CSS анімація (CSS animation & @keyframes)
+						</h3>
+						<div class="animation__text">
+							Як і властивість CSS плавних переходів transition, властивість анімації розроблена для того, щоб зробити
+							наш макет більш динамічним, кращим для взаємодії з користувачем та створити ефект WOW. <br> Але на відміну
+							від переходів CSS, створення анімації базується на ключових кадрах @keyframes, які дозволяють автоматично
+							відтворювати та повторювати ефекти за заданий час, а також призупинити анімацію за певної події.
+							<br>Іншими словами, використання анімації та @keyframes дозволяє нам створювати більш складні сценарії
+							анімації.
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-name
+							</h4>
+							<div class="animation__text">
+								Визначає перелік елементів анімації (ключових кадрів). Можна вказати через кому. Пріоритет у останнього
+								запису.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										animation-name: pulse;
+									</p>
+									<p>
+										@keyframes pulse {<br>
+										0%{} <br>
+										100%{} <br>
+										}
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								animation-duration
+							</h4>
+							<div class="animation__text">
+								Відповідає за тривалість анімації.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:1s
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--duration-1s">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:2s
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--duration-2s">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-timing-function
+							</h4>
+							<div class="animation__text">
+								Встановлює сценарій для програвання анімації між ключовим кадрами.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:ease
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--timing-function-ease">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:ease-in-out
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--timing-function-ease-in-out">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:steps(3,end)
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--timing-function-steps">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:cubic-bezier <br>(0.6,-0.3,0.8,-0.2)
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--timing-function-cubic">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-iteration-count
+							</h4>
+							<div class="animation__text">
+								Відповідає за повторення відтворення ключових кадрів.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:1
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--iteration-count-1">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:3
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--iteration-count-3">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:infinite
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--iteration-count-infinite">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								animation-direction
+							</h4>
+							<div class="animation__text">
+								Визначає напрямок та тип відтворення ключових кадрів.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:normal
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-direction-normal">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:reverse
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-direction-reverse">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:alternate
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-direction-alternate">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:alternate-reverse
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-direction-alternate-reverse">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-play-state
+							</h4>
+							<div class="animation__text">
+								Дозволяє запускати або зупиняти анімацію за подією.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:running
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-play-state-running">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:paused
+										:hover
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-play-state-paused">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:running
+										:hover
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-play-state-running-hover">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-delay
+							</h4>
+							<div class="animation__text">
+								Відповідає за затримку перед відтворенням.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:0s
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-delay-0s">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:3s
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-delay-3s">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Animation-fill-mode
+							</h4>
+							<div class="animation__text">
+								Визначає, які значення анімованих властивостей CSS застосовуються до об'єкта після завершення анімації.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:none
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-fill-mode-none">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:forwards
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-fill-mode-forwards">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:backwards
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-fill-mode-backwards">
+										</a>
+									</div>
+								</div>
+								<div class="animation__box">
+									<p>
+										:both
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-fill-mode-both">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="animation__block">
+							<h4 class="animation__subtitle">
+								Універсальний запис
+							</h4>
+							<div class="animation__text">
+								Для елемента можна встановити кілька анімацій, перелічивши їх через кому.
+							</div>
+							<div class="animation__body">
+								<div class="animation__box">
+									<p>
+										:__ __ __, __ __ __
+									</p>
+									<div class="animation__button-wrapper">
+										<a class="animation__button animation__button--animation-universal">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="car-wrapper">
+					<div class="road-line">
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+						<div class="road-line__item"></div>
+
+					</div>
+					<div class="traffic-lights">
+						<img src="img/traffic-lights.png" alt="traffic lights">
+						<div class="traffic-lights__red"></div>
+						<div class="traffic-lights__green"></div>
+					</div>
+					<div class="clouds">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+						<img src="img/pixel-cloud.png" alt="pixel-cloud">
+					</div>
+					<div class="cyber-truck">
+						<img src="img/cyber-truck.png" alt="">
+					</div>
+					<div class="car-container">
+						<div class="car">
+							<div class="car-body">
+								<div class="car-body__side side-car">
+									<div class="side-car__down-1-1"></div>
+									<div class="side-car__down-1-2"></div>
+									<div class="side-car__down-2"></div>
+									<div class="side-car__middle-line"></div>
+									<div class="side-car__up-1"></div>
+									<div class="side-car__up-2"></div>
+									<div class="side-car__up-3"></div>
+								</div>
+								<div class="car-body__roof roof-box">
+									<div class="roof"></div>
+								</div>
+								<div class="car-body__windows windows">
+									<div class="windows__left"></div>
+									<div class="windows__middle-box">
+										<div class="windows__middle"></div>
+									</div>
+									<div class="windows__right-box">
+										<div class="windows__right"></div>
+									</div>
+									<div class="windows__back-box">
+										<div class="windows__back"></div>
+									</div>
+								</div>
+								<div class="car-body__door door">
+									<div class="door__top">
+									</div>
+									<div class="door__middle">
+									</div>
+									<div class="door__bottom">
+									</div>
+									<div class="door__handle-box">
+										<div class="door__handle"></div>
+									</div>
+								</div>
+								<div class="car-body__wheel wheel">
+									<div class="left-wheel">
+										<div class="left-wheel__arc"></div>
+										<div class="left-wheel__tire">
+											<div class="left-wheel__disc"></div>
+											<div class="left-wheel__cap-1"></div>
+											<div class="left-wheel__cap-2"></div>
+											<div class="left-wheel__line"></div>
+										</div>
+									</div>
+									<div class="right-wheel">
+										<div class="right-wheel__arc"></div>
+										<div class="right-wheel__tire">
+											<div class="right-wheel__disc"></div>
+											<div class="right-wheel__cap-1"></div>
+											<div class="right-wheel__cap-2"></div>
+											<div class="right-wheel__line"></div>
+										</div>
+									</div>
+								</div>
+								<div class="car-body__exhaust"></div>
+								<div class="car-body__gas-tank gas-tank">
+									<div class="gas-tank__handle"></div>
+								</div>
+								<div class="car-body__lights lights">
+									<div class="lights__front"></div>
+									<div class="lights__back"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
