@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #16</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="practicing">
+				<div class="practicing__container">
+					<div class="practicing__form">
+						<h2 class="practicing__title">HTML-форми</h2>
+						<form action="#" class="form-practice" method="get" enctype="multipart/form-data">
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="text" — за замовчуванням
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-text-name">
+										Ім'я:
+									</label>
+									<input id="input-text-name" class="form-practice__item" type="text" name="name" placeholder="Ім'я"
+										autocomplete="on" required tabindex="1" maxlength="25" minlength="3">
+								</div>
+								<div class="form-practice__line">
+									<label for="input-text-surname">
+										Прізвище:
+									</label>
+									<input id="input-text-surname" class="form-practice__item" type="text" name="surname"
+										placeholder="Прізвище" autocomplete="on" required tabindex="2" maxlength="25" minlength="3"
+										disabled>
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="email"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-email">
+										Електронна пошта:
+									</label>
+									<input id="input-email" class="form-practice__item" type="email" name="email" placeholder="Пошта"
+										autocomplete="on" required minlength="5">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="hidden"
+								</legend>
+								<div class="form-practice__line">
+									<h5>
+										Технічне поле:
+									</h5>
+									<input class="form-practice__item" type="hidden" name="hidden">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="tel"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-tel">
+										Номер телефону:
+									</label>
+									<input id="input-tel" class="form-practice__item" type="tel" name="telephone" placeholder="+380"
+										minlength="13" maxlength="13" required autocomplete="on">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="password"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-password">
+										Пароль:
+									</label>
+									<input id="input-password" class="form-practice__item" type="password" name="password"
+										placeholder="Пароль" minlength="8" maxlength="20" required>
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="number"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-number">
+										Число:
+									</label>
+									<input id="input-number" class="form-practice__item" type="number" name="number" placeholder="Число">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="color"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-color">
+										Колір:
+									</label>
+									<input id="input-color" class="form-practice__item" type="color" name="color">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="search"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-search">
+										Пошук:
+									</label>
+									<input id="input-search" class="form-practice__item" type="search" name="search" placeholder="Пошук">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="date"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-date">
+										Дата:
+									</label>
+									<input id="input-date" class="form-practice__item" type="date" name="date">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="range"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-range">
+										Діапазон (цін):
+									</label>
+									<input id="input-range" class="form-practice__item" type="range" name="range">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="checkbox"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-checkbox-cutlery">
+										Додати до замовлення прибори:
+									</label>
+									<input id="input-checkbox-cutlery" class="form-practice__item" type="checkbox" name="checkbox-cutlery"
+										value="cutlery" checked>
+								</div>
+								<div class="form-practice__line">
+									<label for="input-checkbox-packaging">
+										Додати до замовлення термо-пакування:
+									</label>
+									<input id="input-checkbox-packaging" class="form-practice__item" type="checkbox"
+										name="checkbox-packaging" value="thermal-packaging">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="radio"
+								</legend>
+								<div class="form-practice__line">
+									<input id="input-radio-white-sauce" class="form-practice__item" type="radio" name="sauce"
+										value="white-sauce">
+									<label for="input-radio-white-sauce">
+										:білий соус до піци
+									</label>
+								</div>
+								<div class="form-practice__line">
+									<input id="input-radio-red-sauce" class="form-practice__item" type="radio" name="sauce"
+										value="red-sauce" checked>
+									<label for="input-radio-red-sauce">
+										:томатний соус до піци
+									</label>
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег input з type="file"
+								</legend>
+								<div class="form-practice__line">
+									<label for="input-file">
+										Прикріпити файл:
+									</label>
+									<input id="input-file" class="form-practice__item" type="file" name="file" multiple
+										accept="image/png, image/jpeg">
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег textarea
+								</legend>
+								<div class="form-practice__line">
+									<label class="textarea-practice-title" for="textarea-practice">
+										Відгук:
+									</label>
+									<textarea id="textarea-practice" class="form-practice__item" name="response-practice" cols="30"
+										rows="5" placeholder="Відгук"></textarea>
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег select
+								</legend>
+								<div class="form-practice__line">
+									<label for="select-practice">
+										Виберіть розмір:
+									</label>
+									<select id="select-practice" class="form-practice__item" name="size-list-practice">
+										<option value="S">S розмір</option>
+										<option selected value="M">M розмір</option>
+										<option value="L">L розмір</option>
+									</select>
+								</div>
+								<div class="form-practice__line">
+									<label for="select-2-practice">
+										Виберіть колір:
+									</label>
+									<select id="select-2-practice" class="form-practice__item" name="color-list-practice" multiple>
+										<option value="red">Червоний</option>
+										<option value="black">Чорний</option>
+										<option selected value="yellow">Жовтий</option>
+										<option value="blue">Синій</option>
+									</select>
+								</div>
+							</fieldset>
+							<fieldset class="form-practice__group">
+								<legend class="form-practice__title">
+									Тег button
+								</legend>
+								<div class="form-practice__line">
+									<button type="button">Просто кнопка</button>
+									<button type="reset">Очистити</button>
+									<button type="submit">Підтвердити</button>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="info">
+				<div class="info__container">
+					<h2 class="info__title">
+						My Info
+					</h2>
+					<h3 class="info__subtitle">
+						Add Address
+					</h3>
+					<form action="#" class="info__form form-info" method="get" enctype="multipart/form-data">
+						<div class="form-info__body">
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__name">
+									First Name*
+								</label>
+								<input id="form-info__name" class="form-info__item form-info__item--flex" type="text" name="name"
+									placeholder="First Name" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__last-name">
+									Last Name*
+								</label>
+								<input id="form-info__last-name" class="form-info__item form-info__item--flex" type="text"
+									name="last-name" placeholder="Last Name" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__country-region">
+									Country / Region*
+								</label>
+								<input id="form-info__country-region" class="form-info__item form-info__item--flex" type="text"
+									name="country-region" placeholder="Country / Region" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__company">
+									Company Name
+								</label>
+								<input id="form-info__company" class="form-info__item form-info__item--flex" type="text" name="company"
+									placeholder="Company (optional)" autocomplete="on">
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__street-address">
+									Street Address*
+								</label>
+								<input id="form-info__street-address" class="form-info__item form-info__item--flex" type="text"
+									name="street-address" placeholder="House number and street name" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__apt-suite-unit">
+									Apt, suite, unit
+								</label>
+								<input id="form-info__apt-suite-unit" class="form-info__item form-info__item--flex" type="text"
+									name="apt-suite-unit" placeholder="Apartment, suite, unit, etc. (optional)" autocomplete="on">
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__city">
+									City*
+								</label>
+								<input id="form-info__city" class="form-info__item form-info__item--flex" type="text" name="city"
+									placeholder="Town / City" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per form-info__group--button">
+								<label class="form-info__title form-info__title--flex form-info__title--button" for="form-info__state">
+									State*
+								</label>
+								<!--приклад selected без стилізації кнопки-->
+								<select name="state" id="form-info__state"
+									class="form-info__item form-info__item--flex form-info__item--button">
+									<option value="State">
+										State
+									</option>
+									<option value="Alaska">
+										Alaska
+									</option>
+									<option value="Ohio">
+										Ohio
+									</option>
+									<option value="Utah">
+										Utah
+									</option>
+								</select>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__telephone">
+									Phone*
+								</label>
+								<input id="form-info__telephone" class="form-info__item form-info__item--flex" type="tel"
+									name="telephone" placeholder="Phone" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title form-info__title--flex" for="form-info__postal-code">
+									Postal Code*
+								</label>
+								<input id="form-info__postal-code" class="form-info__item form-info__item--flex" type="text"
+									name="postal-code" placeholder="Postal Code" autocomplete="on" required>
+							</div>
+							<div class="form-info__group form-info__group--flex-50per">
+								<label class="form-info__title" for="form-info__delivery-instruction">
+									Delivery Instruction
+								</label>
+								<textarea id="form-info__delivery-instruction" class="form-info__item form-info__item--height"
+									name="delivery-instruction" placeholder="Delivery Instruction"></textarea>
+							</div>
+						</div>
+						<div class="info__checkbox checkbox">
+							<div class="checkbox__group">
+								<input id="default-shipping-address" class="checkbox__item" type="checkbox"
+									name="default-shipping-address" value="set">
+								<label for="default-shipping-address" class="checkbox__title">
+									Set as default shipping address
+								</label>
+							</div>
+							<div class="checkbox__group">
+								<input id="default-billing-address" class="checkbox__item" type="checkbox"
+									name="default-billing-address" value="set">
+								<label for="default-billing-address" class="checkbox__title">
+									Set as default billing address
+								</label>
+							</div>
+						</div>
+						<div class="info__button">
+							<button class="button button--violet" type="submit">Save</button>
+							<button class="button button--grey" type="reset">Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="check-out">
+				<div class="billing-details">
+					<div class="billing-details__container">
+						<h2 class="billing-details__title">
+							Check Out
+						</h2>
+						<h3 class="billing-details__subtitle">
+							Billing Details
+						</h3>
+						<form action="#" class="billing-details__form form-billing-details" method="get"
+							enctype="multipart/form-data">
+							<div class="form-billing-details__inputs">
+								<div class="form-billing-details__body form-billing-details__body--flex-2col">
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__name">
+											First Name*
+										</label>
+										<input id="form-billing-details__name"
+											class="form-billing-details__item form-billing-details__item--flex" type="text" name="name"
+											placeholder="First Name" autocomplete="on" required>
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__last-name">
+											Last Name*
+										</label>
+										<input id="form-billing-details__last-name"
+											class="form-billing-details__item form-billing-details__item--flex" type="text" name="last-name"
+											placeholder="Last Name" autocomplete="on" required>
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__country-region">
+											Country / Region*
+										</label>
+										<input id="form-billing-details__country-region"
+											class="form-billing-details__item form-billing-details__item--flex" type="text"
+											name="country-region" placeholder="Country / Region" autocomplete="on" required>
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__company">
+											Company Name
+										</label>
+										<input id="form-billing-details__company"
+											class="form-billing-details__item form-billing-details__item--flex" type="text" name="company"
+											placeholder="Company (optional)" autocomplete="on">
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__street-address">
+											Street Address*
+										</label>
+										<input id="form-billing-details__street-address"
+											class="form-billing-details__item form-billing-details__item--flex" type="text"
+											name="street-address" placeholder="House number and street name" autocomplete="on" required>
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__apt-suite-unit">
+											Apt, suite, unit
+										</label>
+										<input id="form-billing-details__apt-suite-unit"
+											class="form-billing-details__item form-billing-details__item--flex" type="text"
+											name="apt-suite-unit" placeholder="Apartment, suite, unit, etc. (optional)" autocomplete="on">
+									</div>
+								</div>
+								<div class="form-billing-details__body form-billing-details__body--flex-3col">
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__city">
+											City*
+										</label>
+										<input id="form-billing-details__city"
+											class="form-billing-details__item form-billing-details__item--flex" type="text" name="city"
+											placeholder="Town / City" autocomplete="on" required>
+									</div>
+									<div class="form-billing-details__group form-billing-details__group--button">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__state">
+											State*
+										</label>
+										<input id="form-billing-details__state"
+											class="form-billing-details__item form-billing-details__item--button form-billing-details__item--flex"
+											type="text" name="state" placeholder="State" autocomplete="on" required>
+										<button class="form-billing-details__button" type="button">
+										</button>
+									</div>
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__postal-code">
+											Postal Code*
+										</label>
+										<input id="form-billing-details__postal-code"
+											class="form-billing-details__item form-billing-details__item--flex" type="text" name="postal-code"
+											placeholder="Postal Code" autocomplete="on" required>
+									</div>
+								</div>
+								<div class="form-billing-details__body form-billing-details__body--flex-2col">
+									<div class="form-billing-details__group">
+										<label class="form-billing-details__title form-billing-details__title--flex"
+											for="form-billing-details__telephone">
+											Phone*
+										</label>
+										<input id="form-billing-details__telephone"
+											class="form-billing-details__item form-billing-details__item--flex" type="tel" name="telephone"
+											placeholder="Phone" autocomplete="on" required>
+									</div>
+								</div>
+							</div>
+							<div class="billing-details__button">
+								<button class="button button--violet button--padding-16px-20px button--font" type="submit">Continue to
+									delivery</button>
+							</div>
+							<div class="billing-details__checkbox checkbox">
+								<div class="checkbox__group">
+									<input id="default-billing-information" class="checkbox__item" type="checkbox"
+										name="default-billing-information" value="save">
+									<label for="default-billing-information" class="checkbox__title">
+										Save my information for a faster checkout
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="shipping-and-payment">
+					<form action="#" class="shipping-and-payment__form form-shipping-and-payment" method="get"
+						enctype="multipart/form-data">
+						<div class="shipping-and-payment__input">
+							<div class="form-shipping-and-payment__shipping-address">
+								<h3 class="form-shipping-and-payment__subtitle">
+									Shipping Address
+								</h3>
+								<div class="form-shipping-and-payment__text">
+									<p>
+										Select the address that matches your card or payment method.
+									</p>
+								</div>
+								<div class="form-shipping-and-payment__item radio">
+									<div class="radio__group">
+										<input id="same-shipping-address" class="radio__item" type="radio" name="shipping-address"
+											value="same" checked>
+										<label for="same-shipping-address" class="radio__title">
+											Same as Billing address
+										</label>
+									</div>
+									<div class="radio__group">
+										<input id="different-shipping-address" class="radio__item" type="radio" name="shipping-address"
+											value="different">
+										<label for="different-shipping-address" class="radio__title">
+											Use a different shipping address
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-shipping-and-payment__shipping-method">
+								<h3 class="form-shipping-and-payment__subtitle">
+									Shipping Method
+								</h3>
+								<div class="form-shipping-and-payment__item item">
+									<div class="item__text">
+										<p>
+											Arrives by Monday, June 7
+										</p>
+									</div>
+									<div class="item__box">
+										<div class="item__left-side">
+											<div class="item__text">
+												<p>
+													Delivery Charges
+												</p>
+											</div>
+											<div class="item__subtext">
+												<p>
+													Additional fess may apply
+												</p>
+											</div>
+										</div>
+										<div class="item__right-side">
+											<div class="item__text">
+												<p>
+													$5.00
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--3 варіант з спробою центрування стилізація radio-->
+							<div class="form-shipping-and-payment__payment-method payment-method">
+								<h3 class="form-shipping-and-payment__subtitle">
+									Payment Method
+								</h3>
+								<div class="form-shipping-and-payment__text">
+									<p>
+										All transactions are secure and encrypted.
+									</p>
+								</div>
+								<div class="form-shipping-and-payment__item payment-method-radio">
+									<div class="payment-method-radio__group payment-method-radio__group--flex">
+										<input id="credit-card" class="payment-method-radio__item" type="radio" name="payment-method"
+											value="credit-card" checked>
+										<label for="credit-card" class="payment-method-radio__title payment-method-radio__title--position">
+											Credit Card
+										</label>
+										<div class="payment-method-radio__text">
+											<p>
+												We accept all major credit cards.
+											</p>
+										</div>
+										<div class="payment-method-radio__card card">
+											<div class="card__icons">
+												<div class="card__image">
+													<img src="img/euphoria/payment__google.svg" alt="google">
+												</div>
+												<div class="card__image">
+													<img src="img/euphoria/payment__visa.svg" alt="visa">
+												</div>
+												<div class="card__image">
+													<img src="img/euphoria/payment__paypal.svg" alt="paypal">
+												</div>
+												<div class="card__image">
+													<img src="img/euphoria/payment__paypass.svg" alt="paypass">
+												</div>
+											</div>
+											<div class="card__container">
+												<div class="card__content">
+													<div class="card__info">
+														<input class="card__item" type="tel" name="card-number" placeholder="Card number" required>
+													</div>
+													<div class="card__info">
+														<input class="card__item" type="text" name="name-of-card" placeholder="Name of card"
+															required>
+													</div>
+													<div class="card__info">
+														<input class="card__item" type="text" name="expiration-date"
+															placeholder="Expiration date (MM/YY)" required>
+													</div>
+													<div class="card__info card__info--button">
+														<input class="card__item card__item--button" type="password" name="security-code"
+															placeholder="Security Code" required>
+														<button class="card__button" type="button">
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="payment-method-radio__group payment-method-radio__group--flex">
+										<input id="cash" class="payment-method-radio__item" type="radio" name="payment-method" value="cash">
+										<label for="cash" class="payment-method-radio__title payment-method-radio__title--position">
+											Cash on delivery
+										</label>
+										<div class="payment-method-radio__text">
+											<p>
+												Pay with cash upon delivery.
+											</p>
+										</div>
+									</div>
+									<div class="payment-method-radio__group payment-method-radio__group--flex">
+										<input id="paypal" class="payment-method-radio__item" type="radio" name="payment-method"
+											value="paypal">
+										<label for="paypal" class="payment-method-radio__title">
+											Paypal
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="shipping-and-payment__button">
+							<button class="button button--violet button--padding-16px-20px button--font" type="submit">Pay
+								Now</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="call-back">
+				<div class="call-back__container">
+					<h4 class="call-back__subtitle">
+						Contact Us
+					</h4>
+					<h2 class="call-back__title">
+						Request A Call Back !
+					</h2>
+					<form action="#" class="call-back__form" enctype="multipart/form-data">
+						<div class="call-back__input call-back__input--2-col-flex input-call-back">
+							<div class="input-call-back__info">
+								<input class="input-call-back__item" type="text" name="name" placeholder="Your Name" required>
+							</div>
+							<div class="input-call-back__info">
+								<input class="input-call-back__item" type="email" name="email" placeholder="Email Address" required>
+							</div>
+							<div class="input-call-back__info">
+								<input class="input-call-back__item" type="tel" name="phone" placeholder="Phone Number" required>
+							</div>
+							<div class="input-call-back__info">
+								<input class="input-call-back__item" type="text" name="subject" placeholder="Subject" required>
+							</div>
+						</div>
+						<div class="call-back__textarea">
+							<textarea name="message" placeholder="Message..." required></textarea>
+						</div>
+						<div class="call-back__button">
+							<button class="blue-button" type="submit">
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
