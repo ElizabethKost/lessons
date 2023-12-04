@@ -706,7 +706,7 @@
 	display: flex;
 	gap: 32px;
 	justify-content: center;
-	align-items: flex-satrt;
+	align-items: flex-start;
 }
 
 .blue-hero__image-wrap {
