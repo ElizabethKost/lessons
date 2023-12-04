@@ -718,7 +718,7 @@
 
 .blue-hero__image {
 	width: 100%;
-	/*height: 100%;*/
+	height: 100%;
 	aspect-ratio: 247/468;
 	object-fit: cover;
 }
@@ -741,6 +741,7 @@
 @media (min-width: 992px) {
 	.blue-hero__body {
 		flex: 0 0 44.957265%; /* 526/1170 */
+		align-items: flex-start;
 	}
 }
 
