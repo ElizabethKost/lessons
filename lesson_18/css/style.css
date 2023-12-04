@@ -706,6 +706,7 @@
 	display: flex;
 	gap: 32px;
 	justify-content: center;
+	align-items: flex-satrt;
 }
 
 .blue-hero__image-wrap {
@@ -741,7 +742,6 @@
 @media (min-width: 992px) {
 	.blue-hero__body {
 		flex: 0 0 44.957265%; /* 526/1170 */
-		align-items: flex-start;
 	}
 }
 
