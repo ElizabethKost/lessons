@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #19</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="practicing">
+				<div class="practicing__wrapper">
+					<div class="practicing__grid grid">
+						<h2 class="grid__title">
+							CSS Grid Layout
+						</h2>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Властивість display зі значенням grid / inline-grid
+							</h3>
+							<div class="grid__text">
+								<span>Контейнер-сітка</span> - буває двох типів: <br><span>display: grid</span> - звичайний, генерує
+								grid-контейнер рівня блоку;
+								<br>display: inline-grid - вбудований, генерує grid-контейнер рівня лінії.
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									Властивість .grid-контейнера <br> <span>{display: grid;}</span>
+								</div>
+								<div class="grid__body grid__body--display-grid">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									Властивість .grid-контейнера <br> <span>{display: inline-grid;}</span>
+								</div>
+								<div class="grid__body grid__body--display-inline-grid">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+								<img src="img/background.webp" alt="flower">
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Побудова явної сітки
+							</h3>
+							<h3 class="grid__subtitle">
+								Властивість grid-template-columns
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Grid-template-columns</span> - визначає кількість стовпців явної сітки. Значення можуть бути в:
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>%</span> - обчислюється з ширини контейнера-сітки;
+									</p>
+									<P>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template-columns: 20% 30%
+											20%;}</span>
+									</P>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-per">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>px</span> - задаються фіксовані px;
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br>grid-template-columns:50px 200px
+											300px;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-px">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>fr</span> - специфічна одиниця довжини, одиниця гнучкості. Відмінність і плюси fr перед
+										%, приклад: <br> У нас є контейнер, в якому 5 div. Щоб рівномірно розділити ширину 100% між кожним
+										div,
+										нам потрібно вказати індивідуальну ширину для кожного в 20% (100% / 5 div = 20%). <br> <span>Але,
+											якщо
+											ще додається один div, то нам доведеться все перерахувати (100% / 6 div = 16,66%)!</span> <br>
+										Саме
+										цю
+										проблему вирішує fr — одиниця гнучкості. <span>Якщо вказати ширину в 1fr</span>, то ширина кожного
+										елемента буде рівномірно розділена між дочірніми. Приклад:<br> Загальна частка = <span>1.5fr + 3fr +
+											4.5fr = 9fr</span> <br> Якщо батьківський контейнер має ширину <span>900px</span> <br> <span>I
+											значення</span> = 1.5fr / 9fr * 900px = 150px. <br> <span>II значення</span> = 3fr / 9fr * 900px =
+										300px. <br> <span>III значення</span> = 4.5fr / 9fr * 900px = 450px.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br>grid-template-columns: 1.5fr 3fr
+											4.5fr;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>repeat</span> - дозволяє записувати в більш компактній формі велику кількість стовпців або
+										рядків, однакових за розміром;
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br>grid-template-columns: repeat(3,
+											33.333%);}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-repeat">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>minmax(min,max)</span> - визначає діапазон розмірів більше-дорівнює min та менше-дорівнює max.
+										Якщо max менше min, то max
+										ігнорується, а minmax(min,max) обробляється як min. Значення в fr можуть бути встановлені лише як
+										максимальне.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br>grid-template-columns:
+											minmax(200px,300px) minmax(100px,200px) minmax(250px,150px);}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-minmax">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>auto-fill</span> - не враховує наявність всіх елементів; завжди отримаємо хоча б один
+										стовпчик, навіть якщо з якихось причин він не вписується в контейнер-сітку; при збільшені ширини
+										контейнера елементи = 1fr = 200px і збережеться місце для недоданих елементів по 200px.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br>grid-template-columns:
+											repeat(auto-fill,minmax(200px, 1fr));}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-auto-fill">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>auto-fit</span> - враховує наявність всіх елементів; якщо елементів менше, то сітка
+										розтягнеться; при збільшені ширини контейнера елементи розтягнуться заповнюючи весь контейнер >
+										200px.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> width: 2000px;
+											<br>grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-columns-auto-fit">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<h3 class="grid__subtitle">
+								Властивість grid-template-rows
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Grid-template-rows</span> - визначає кількість рядків явної сітки. Значення можуть бути в:
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>%</span> - обчислюється з висоти контейнера-сітки;
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template-columns: 1.5fr 3fr 4.5fr;
+											<br> grid-template-rows: 40% 60%;}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-per">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>px</span> - задаються фіксовані px;
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid;<br> grid-template-columns: 1.5fr 3fr 4.5fr;
+											<br>grid-template-rows:50px 200px 100px;}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-px">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>fr</span> - специфічна одиниця довжини, одиниця гнучкості.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template-columns: 1.5fr 3fr 4.5fr;
+											<br>grid-template-rows: 2fr 1fr 1fr;}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-fr">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>repeat</span> - дозволяє записувати в більш компактній формі велику кількість стовпців або
+										рядків, однакових за розміром;
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template-columns: 1.5fr 3fr 4.5fr;
+											<br>grid-template-rows: repeat(3, 33.333%);}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-repeat">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>minmax(min,max)</span> - визначає діапазон розмірів більше-дорівнює min та менше-дорівнює max.
+										Якщо max менше min, то max
+										ігнорується, а minmax(min,max) обробляється як min. Значення в fr можуть бути встановлені лише як
+										максимальне.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid;<br> grid-template-columns: 1.5fr 3fr
+											4.5fr; <br>grid-template-rows: minmax(200px,300px) minmax(100px,200px)
+											minmax(250px,150px);}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-minmax">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>auto-fill</span> - не враховує наявність всіх елементів; при збільшені висоти контейнера
+										елементи = 1fr більше-дорівнює 200px і збережеться місце-рядок для недоданих елементів по
+										більше-дорівнює 200px.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid;<br> height: 1000px; <br>
+											grid-template-columns: 1.5fr 3fr 4.5fr; <br>grid-template-rows: repeat(auto-fill,minmax(200px,
+											1fr));}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-auto-fill">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										<span>auto-fit</span> - враховує наявність всіх елементів; якщо елементів менше, то сітка
+										розтягнеться; при збільшені висоти контейнера елементи розтягнуться заповнюючи весь контейнер >
+										200px.
+									</p>
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> height: 1000px; <br>
+											grid-template-columns: 1.5fr 3fr 4.5fr; <br>grid-template-rows: repeat(auto-fit,minmax(200px,
+											1fr));}</span>
+									</p>
+								</div>
+								<div
+									class="grid__body grid__body--display-grid grid__body--grid-template-columns-fr grid__body--grid-template-rows-auto-fit">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<h3 class="grid__subtitle">
+								Властивість grid-template
+							</h3>
+							<div class="grid__box">
+								<div class="grid__text">
+									<p>
+										<span>Grid-template</span> - універсальний запис: rows / columns;
+									</p>
+								</div>
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: 1.5fr 3fr 4.5fr /
+											repeat(auto-fill, minmax(200px, 1fr));}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Побудова неявної сітки
+							</h3>
+							<div class="grid__text">
+								<p>
+									Якщо елемент сітки розташований у лінії або стовпці, розмір яких не визначається явною сіткою,
+									створюються неявні доріжки сітки для їх відображення. Це може статися, якщо рядок або стовпець
+									знаходяться поза встановленим розміром сітки.
+								</p>
+								<p>
+									Елементи сітки, які не розміщуються в явній частині, автоматично розміщуються в незайнятому просторі в
+									контейнері-сітці, використовуючи алгоритм автоматичного розміщення. Властивість сітки grid-auto-flow
+									контролює автоматичне розміщення елементів сітки без явного положення. Після заповнення явної сітки
+									(або якщо немає явної сітки), автоматичне розміщення також призведе до генерації неявної частини
+									сітки. Властивість не успадковується.
+								</p>
+							</div>
+							<h3 class="grid__subtitle">
+								Властивість grid-auto-columns та grid-auto-flow: column
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Grid-auto-columns</span> - дозволяє керувати розміром стовпців неявної частини сітки. Якщо
+									наведено кілька розмірів частини, шаблон повторюється за необхідності, щоб знайти розмір неявних
+									частин. Перша неявна частина сітки після явної сітки отримує перший заданий розмір і т.д. Властивості
+									не успадковуються.
+								</p>
+								<p>
+									<span>Grid-auto-flow: column</span> - автоматично розміщує елементи, заповнюючи кожен стовпець по
+									черзі зліва на право, додаючи нові стовпці за необхідності.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<P>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: 1fr / repeat(3,200px);
+											<br>grid-auto-flow: column <br>
+											grid-auto-columns: 50px;}</span>
+									</P>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-auto-columns">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+									<div class="grid__item grid__item--pink-1">Елемент #7</div>
+									<div class="grid__item grid__item--olive-2">Елемент #8</div>
+									<div class="grid__item grid__item--green-3">Елемент #9</div>
+								</div>
+							</div>
+							<h3 class="grid__subtitle">
+								Властивість grid-auto-rows та grid-auto-flow: row
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Grid-auto-rows</span> - дозволяє керувати розміром рядків неявної частини сітки.
+								</p>
+								<p>
+									<span>Grid-auto-flow: row</span> - за замовчуванням, автоматично розміщує елементи, заповнюючи кожен
+									рядок у чергу зліва на право, додаючи нові рядки за необхідності.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: 1fr / repeat(3,200px);
+											<br>grid-auto-flow: row; <br>
+											grid-auto-rows: 100px;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-auto-rows">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+									<div class="grid__item grid__item--pink-1">Елемент #7</div>
+									<div class="grid__item grid__item--olive-2">Елемент #8</div>
+									<div class="grid__item grid__item--green-3">Елемент #9</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Вирівнювання ВМІСТУ вздовж горизонтальної лінії
+							</h3>
+							<h3 class="grid__subtitle">
+								Властивість justify-items
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Justify-items</span> - вирівнює вміст сітки вздовж горизонтальної осі. Це значення
+									застосовується до всіх елементів сітки всередині контейнера. Власність не успадкована.
+								</p>
+								<p>
+									<span>Justify-items: stretch</span> - за замовчуванням, заповнює всю ширину комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-items: stretch;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-items-stretch">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-items: start</span> - вирівнює вміст по лівій стороні комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-items: start;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-items-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-items: end</span> - вирівнює вміст по правій стороні комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-items: end;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-items-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-items: center</span> - вирівнює вміст по центру ширини комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-items: center;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-items-center">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Вирівнювання ВМІСТУ вздовж вертикальної лінії
+							</h3>
+							<h3 class="grid__subtitle">
+								Властивість align-items
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Align-items</span> - вирівнює вміст сітки вздовж вертикальної осі. Це значення
+									застосовується до всіх елементів сітки всередині контейнера. Власність не успадкована.
+								</p>
+								<p>
+									<span>Align-items: stretch</span> - за замовчуванням, заповнює всю висоту комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-items: stretch;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-items-stretch">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-items: start</span> - вирівнює вміст по верхній стороні комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-items: start;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-items-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-items: end</span> - вирівнює вміст по верхній нижній стороні комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-items: end;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-items-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-items: center</span> - вирівнює вміст по центру висоти комірки.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-items: center;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-items-center">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Вирівнювання СІТКИ вздовж горизонтальної лінії
+							</h3>
+							<h3 class="grid__subtitle">
+								Властивість justify-content
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content</span> - вирівнює сітку вздовж горизонтальної осі. Власність не успадкована.
+								</p>
+								<p>
+									<span>Justify-content: start</span> - за замовчуванням, вирівнює сітку по лівій стороні контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> height: 300px; <br> grid-template:
+											repeat(2,100px) / repeat(3,200px);
+											<br>justify-content: start;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: end</span> - вирівнює сітку по правій стороні контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: end;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-items-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: center</span> - вирівнює сітку по центру верхньої частини контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: center;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-center">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: stretch</span> - масштабує елементи, щоб сітка могла заповнити всю ширину
+									контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: stretch;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-stretch">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: space-around
+									</span> - однаковий простір між елементами та напів розмірним відступом по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: space-around
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-space-around
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: space-between
+									</span> - однаковий простір між елементами та без відступів по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: space-between
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-space-between
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Justify-content: space-evenly
+									</span> - однаковий простір між елементами та повнорозмірні відступи по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>justify-content: space-evenly
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--justify-content-space-evenly
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Вирівнювання СІТКИ вздовж вертикальної лінії
+							</h3>
+							<h3 class="grid__subtitle">
+								Властивість align-content
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Align-content</span> - вирівнює сітку вздовж вертикальної осі. Власність не успадкована.
+								</p>
+								<p>
+									<span>Align-content: start</span> - за замовчуванням, вирівнює сітку по верхній стороні контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> height: 300px; <br> grid-template:
+											repeat(2,100px) / repeat(3,200px);
+											<br>align-content: start;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: end</span> - за замовчуванням, вирівнює сітку по нижній стороні контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-items: end;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: center</span> - вирівнює сітку по центру лівої частини контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-content: center;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-center">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: stretch</span> - масштабує елементи, щоб сітка могла заповнити всю ширину
+									контейнера.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-content: stretch;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-stretch">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: space-around
+									</span> - однаковий простір між елементами по рядках та напів розмірним відступом по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-content: space-around
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-space-around
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: space-between
+									</span> - однаковий простір між елементами по рядках та без відступів по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-content: space-between
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-space-between
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Align-content: space-evenly
+									</span> - однаковий простір між елементами по рядках та повнорозмірні відступи по краях.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template: repeat(2,100px) /
+											repeat(3,1fr);
+											<br>align-content: space-evenly
+											;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--align-content-space-evenly
+								">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Властивості grid-елементів
+							</h3>
+							<div class="grid__text">
+								<p>
+									<span>Grid-row-start </span> - задає першу горизонтальну лінію для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-row-start: 2;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-row-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Grid-column-start </span> - задає першу вертикальну лінію для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-column-start: 3;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-column-start">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Grid-row-end </span> - задає останню горизонтальну лінію для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-row-end: 3;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-row-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Grid-column-end </span> - задає останню вертикальну лінію для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-column-end: 3;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-column-end">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Grid-column </span> - це універсальна властивість, для скороченого запису першої та останньої
+									вертикальної лінії для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-column: 1 / 3;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-column">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-column: span 2;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-column-span">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__text">
+								<p>
+									<span>Grid-row </span> - це універсальна властивість, для скороченого запису першої та останньої
+									горизонтальної лінії для елемента.
+								</p>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-row: 1 / 3;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-row">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-row: span 2;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-row-span">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Grid-area та grid-template-areas
+							</h3>
+							<div class="grid__box">
+								<div class="grid__text">
+									<p>
+										<span>Grid-area</span> - це універсальна властивість, для скороченого запису: <br>
+										grid-row-start (задає першу горизонтальну лінію для елемента); <br>
+										grid-column-start (задає першу вертикальну лінію для елемента); <br>
+										grid-row-end (задає останню горизонтальну лінію для елемента); <br>
+										grid-column-end (задає останню вертикальну лінію для елемента)
+									</p>
+								</div>
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(3,100px) / repeat(3, 1fr);}</span>
+									</p>
+									<p>
+										Властивість II .grid-елемента <br> <span>{grid-area: 2 / 2 / 4 / 4;}</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-area">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+									<div class="grid__item grid__item--pink-1">Елемент #7</div>
+									<div class="grid__item grid__item--olive-2">Елемент #8</div>
+									<div class="grid__item grid__item--green-3">Елемент #9</div>
+								</div>
+							</div>
+							<div class="grid__box">
+								<div class="grid__text">
+									<p>
+										<span>Grid-template-areas</span> - визначає шаблон сітки, на який можна буде посилатися з grid-area;
+										можна вказати порожню клітинку, використовуючи символ (.)
+									</p>
+								</div>
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											1fr 5fr 1fr / 1fr 3fr; <br> grid-template-areas: <br> "header header" <br> "sidebar content"<br>
+											". content"<br>"footer footer" }</span>
+									</p>
+									<p>
+										Властивість .grid-елементів по черзі <br> <span> I {grid-area: header;} <br> II {grid-area:
+											sidebar;} <br> III I {grid-area: content;} <br> IV {grid-area: footer;} </span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-template-areas">
+									<div class="grid__item grid__item--pink-1">Header</div>
+									<div class="grid__item grid__item--olive-2">Sidebar</div>
+									<div class="grid__item grid__item--green-3">Content</div>
+									<div class="grid__item grid__item--pink-1">Footer</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__block">
+							<h3 class="grid__subtitle">
+								Grid (fr) + gap
+							</h3>
+							<div class="grid__box">
+								<div class="grid__text">
+									<p>
+										<span>Grid (fr) + gap</span> - працює з grid у f, але не в %.
+									</p>
+								</div>
+								<div class="grid__subtext">
+									<p>
+										Властивість .grid-контейнера <br> <span>{display: grid; <br> grid-template:
+											repeat(2,100px) / repeat(3, 1fr); <br> gap: 20px; }</span>
+									</p>
+								</div>
+								<div class="grid__body grid__body--display-grid grid__body--grid-gap">
+									<div class="grid__item grid__item--pink-1">Елемент #1</div>
+									<div class="grid__item grid__item--olive-2">Елемент #2</div>
+									<div class="grid__item grid__item--green-3">Елемент #3</div>
+									<div class="grid__item grid__item--pink-1">Елемент #4</div>
+									<div class="grid__item grid__item--olive-2">Елемент #5</div>
+									<div class="grid__item grid__item--green-3">Елемент #6</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="euphoria">
+				<div class="euphoria__container">
+					<div class="offers">
+						<div class="offers__item item item--bg-yellow">
+							<h4 class="item__label">
+								Low Price
+							</h4>
+							<h3 class="item__title">
+								High Coziness
+							</h3>
+							<div class="item__text">
+								UPTO 50% OFF
+							</div>
+							<a href="#" class="item__link">
+								Explore Items
+							</a>
+						</div>
+						<div class="offers__item item item--bg-blue">
+							<h4 class="item__label">
+								Beyoung Presents
+							</h4>
+							<h3 class="item__title">
+								Breezy Summer Style
+							</h3>
+							<div class="item__text">
+								UPTO 50% OFF
+							</div>
+							<a href="#" class="item__link">
+								Explore Items
+							</a>
+						</div>
+					</div>
+					<div class="new">
+						<h2 class="new__title">
+							New Arrival
+						</h2>
+						<div class="new__content">
+							<button class="new__button new__button--left" type="button">
+								<svg class="new__icon-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="14"
+									viewBox="0 0 16 14" fill="none">
+									<path
+										d="M14.5857 7L1.58569 7M6.58569 13L1.2928 7.70711C0.902277 7.31658 0.902277 6.68342 1.2928 6.29289L6.58569 0.999999"
+										stroke="#3C4242" stroke-width="1.6" stroke-linecap="round" />
+								</svg>
+							</button>
+							<div class="new__slider slider">
+								<div class="slider__item">
+									<a href="#" class="slider__link-img">
+										<img class="slider__img" src="img/new/new__product-1/new__product-1_1x.webp" alt="pants"
+											srcset="img/new/new__product-1/new__product-1_1x.webp 1x, img/new/new__product-1/new__product-1_2x.webp 2x">
+									</a>
+									<div class="slider__body">
+										<a href="#" class="slider__link-title">
+											<h4 class="slider__title">Knitted Joggers</h4>
+										</a>
+									</div>
+								</div>
+								<div class="slider__item">
+									<a href="#" class="slider__link-img">
+										<img class="slider__img" src="img/new/new__product-2/new__product-2_1x.webp" alt="man"
+											srcset="img/new/new__product-2/new__product-2_1x.webp 1x, img/new/new__product-2/new__product-2_2x.webp 2x">
+									</a>
+									<div class="slider__body">
+										<a href="#" class="slider__link-title">
+											<h4 class="slider__title">Full Sleeve</h4>
+										</a>
+									</div>
+								</div>
+								<div class="slider__item">
+									<a href="#" class="slider__link-img">
+										<img class="slider__img" src="img/new/new__product-3/new__product-3_1x.webp" alt="man"
+											srcset="img/new/new__product-3/new__product-3_1x.webp 1x, img/new/new__product-3/new__product-3_2x.webp 2x">
+									</a>
+									<div class="slider__body">
+										<a href="#" class="slider__link-title">
+											<h4 class="slider__title">Active T-Shirts</h4>
+										</a>
+									</div>
+								</div>
+								<div class="slider__item">
+									<a href="#" class="slider__link-img">
+										<img class="slider__img" src="img/new/new__product-4/new__product-4_1x.webp" alt="woman"
+											srcset="img/new/new__product-4/new__product-4_1x.webp 1x, img/new/new__product-4/new__product-4_2x.webp 2x">
+									</a>
+									<div class="slider__body">
+										<a href="#" class="slider__link-title">
+											<h4 class="slider__title">Urban Shirts</h4>
+										</a>
+									</div>
+								</div>
+							</div>
+							<button class="new__button new__button--right" type="button">
+								<svg class="new__icon-arrow new__icon-arrow--right" xmlns="http://www.w3.org/2000/svg" width="16"
+									height="14" viewBox="0 0 16 14" fill="none">
+									<path
+										d="M14.5857 7L1.58569 7M6.58569 13L1.2928 7.70711C0.902277 7.31658 0.902277 6.68342 1.2928 6.29289L6.58569 0.999999"
+										stroke="#3C4242" stroke-width="1.6" stroke-linecap="round" />
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="saving">
+						<h2 class="saving__title">
+							Big Saving Zone
+						</h2>
+						<div class="saving__content">
+							<div class="saving__item item-saving">
+								<img class="item-saving__image" src="img/saving/saving__product-1/saving__product-1_1x.webp" alt="man"
+									srcset="img/saving/saving__product-1/saving__product-1_1x.webp 1x, img/saving/saving__product-1/saving__product-1_2x.webp 2x">
+								<div class="item-saving__body item-saving__body--white">
+									<div class="item-saving__inner">
+										<h3 class="item-saving__title">
+											Hawaiian Shirts
+										</h3>
+										<div class="item-saving__label">
+											Dress up in summer vibe
+										</div>
+										<div class="item-saving__text">
+											UPTO 50% OFF
+										</div>
+										<img class="item-saving__arrow item-saving__arrow--margin-left" src="img/saving/arrow--white.svg"
+											alt="arrow">
+										<a href="#" class="item-saving__link item-saving__link--white">
+											SHOP NOW
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="saving__item item-saving">
+								<img class="item-saving__image" src="img/saving/saving__product-2/saving__product-2_1x.webp" alt="man"
+									srcset="img/saving/saving__product-2/saving__product-2_1x.webp 1x, img/saving/saving__product-2/saving__product-2_2x.webp 2x">
+								<div class="item-saving__body item-saving__body--white">
+									<div class="item-saving__inner item-saving__inner--right item-saving__inner--text-align-right">
+										<a href="#" class="item-saving__limited">
+											Limited Stock
+										</a>
+										<h3 class="item-saving__title">
+											Printed <br>T-Shirt
+										</h3>
+										<div class="item-saving__label">
+											New Designs Every Week
+										</div>
+										<div class="item-saving__text">
+											UPTO 40% OFF
+										</div>
+										<img class="item-saving__arrow item-saving__arrow--margin-right" src="img/saving/arrow--white.svg"
+											alt="arrow">
+										<a href="#" class="item-saving__link item-saving__link--white">
+											SHOP NOW
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="saving__item item-saving">
+								<img class="item-saving__image" src="img/saving/saving__product-3/saving__product-3_1x.webp" alt="man"
+									srcset="img/saving/saving__product-3/saving__product-3_1x.webp 1x, img/saving/saving__product-3/saving__product-3_2x.webp 2x">
+								<div class="item-saving__body item-saving__body--padding-right-16px item-saving__body--black">
+									<div class="item-saving__inner item-saving__inner--right">
+										<h3 class="item-saving__title">
+											Cargo Joggers
+										</h3>
+										<div class="item-saving__label">
+											Move with style & comfort
+										</div>
+										<div class="item-saving__text">
+											UPTO 50% OFF
+										</div>
+										<img class="item-saving__arrow item-saving__arrow--margin-left" src="img/saving/arrow--black.svg"
+											alt="arrow">
+										<a href="#" class="item-saving__link item-saving__link--white">
+											SHOP NOW
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="saving__item item-saving">
+								<img class="item-saving__image" src="img/saving/saving__product-4/saving__product-4_1x.webp" alt="man"
+									srcset="img/saving/saving__product-4/saving__product-4_1x.webp 1x, img/saving/saving__product-4/saving__product-4_2x.webp 2x">
+								<div class="item-saving__body item-saving__body--padding item-saving__body--black">
+									<div class="item-saving__inner item-saving__inner--right">
+										<h3 class="item-saving__title item-saving__title--big">
+											Urban <br> T-Shirts
+										</h3>
+										<div class="item-saving__label item-saving__label--big">
+											Live In Comfort
+										</div>
+										<div class="item-saving__text">
+											FLAT 60% OFF
+										</div>
+										<img class="item-saving__arrow item-saving__arrow--margin-left" src="img/saving/arrow--black.svg"
+											alt="arrow">
+										<a href="#" class="item-saving__link item-saving__link--white">
+											SHOP NOW
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="saving__item item-saving">
+								<img class="item-saving__image" src="img/saving/saving__product-5/saving__product-5_1x.webp" alt="man"
+									srcset="img/saving/saving__product-5/saving__product-5_1x.webp 1x, img/saving/saving__product-5/saving__product-5_2x.webp 2x">
+								<div class="item-saving__body item-saving__body--padding item-saving__body--black">
+									<div class="item-saving__inner item-saving__inner--right">
+										<h3 class="item-saving__title item-saving__title--big">
+											Oversized <br> T-Shirts
+										</h3>
+										<div class="item-saving__label item-saving__label--big">
+											Street Style Icon
+										</div>
+										<div class="item-saving__text">
+											FLAT 60% OFF
+										</div>
+										<img class="item-saving__arrow item-saving__arrow--margin-left" src="img/saving/arrow--black.svg"
+											alt="arrow">
+										<a href="#" class="item-saving__link item-saving__link--white">
+											SHOP NOW
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
