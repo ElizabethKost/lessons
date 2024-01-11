@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #24</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<section class="exercise">
+					<h2 class="exercise__title">
+						Задача №1
+					</h2>
+					<div class="exercise__condition">
+						<p>
+							Що потрапить в консоль?
+						</p>
+						<p class="exercise__code">
+							let someVar = 0;<br>
+							++someVar;<br>
+							<br>
+							if (someVar) {<br>
+							console.log(someVar);<br>
+							}
+						</p>
+					</div>
+					<div class="exercise__solution">
+						<p>
+							Розв'язок:
+						</p>
+						<p>
+							Якщо someVar = 0, і в наступному рядку до нього застосовується префіксний інкремент "++", який збільшує
+							число на 1, то матимемо: <br>
+							someVar = 0 + 1 = 1
+						</p>
+						<p>
+							Відповідь: 1
+						</p>
+					</div>
+				</section>
+				<section class="exercise">
+					<h2 class="exercise__title">
+						Задача №2
+					</h2>
+					<div class="exercise__condition">
+						<p>
+							За допомогою циклу FOR виведіть в консоль 10 рядків:
+						</p>
+						<p class="exercise__code">
+							Пункт №1 <br>
+							Пункт №2 <br>
+							і т.д.
+						</p>
+					</div>
+					<div class="exercise__solution">
+						<p>
+							Розв'язок:
+						</p>
+						<p>
+							Створюємо змінну listItem зі значенням: "Пункт №", а номер пункту буде задаватись через цикл "for". <br>
+							Таким чином цикл "for" буде використовувати змінну "і", значення якої буде починатись з 1, закінчується
+							цикл при умові "i <= 10", з кроком "++і"="+1" . <br>
+								Отже, в консоль виводимо: console.log(listItem + i) , тобто: "Пункт №" + "і"
+						</p>
+						<p class="exercise__code">
+							let listItem = "Пункт №" <br>
+							<br>
+							for (let i = 1; i <= 10; ++i) { <br>
+								console.log(listItem + i) <br>
+								}
+						</p>
+						<p>
+							Відповідь: в консоль виводимо: console.log(listItem + i)
+						</p>
+					</div>
+				</section>
+				<section class="exercise">
+					<h2 class="exercise__title">
+						Задача №3
+					</h2>
+					<div class="exercise__condition">
+						<p>
+							Що потрапить в консоль ?
+						</p>
+						<p class="exercise__code">
+							if (2 * 20 <= 10 || 30 / 2 < 5 && 10 <="10" || 20==="20" ) { <br>
+								console.log('000'); <br>
+								}
+						</p>
+					</div>
+					<div class="exercise__solution">
+						<p>
+							Розв'язок:
+						</p>
+						<p>
+							<b>І варіант.</b> Для того щоб спростити розв'язок можемо виокремити у душки дії у "рівнянні"<br>
+							Тобто, тепер почергово розв'язуємо: <br><b>
+								(((2 * 20) <= 10) || (((30 / 2) < 5) && (10 <="10" )) || (20==="20" )) </b><br>
+									1. ((2 * 20) <= 10)=40 <=10 - false <br>
+										2. ((30 / 2) < 5)=15 < 5 - false <br>
+											3. (10 <="10" ) - true <br>
+												4. (20==="20") - false (адже "20" це текст, і оператор "===" не перетворює в число) <br>
+												5. Перевіряємо оператор &&, тобто: дію 2. && дію 3. <br>
+												Маємо: false && true - false (адже не обидва значення true) <br>
+												6. Перевіряємо оператор ||, тобто: дію 1. || дію 5. || дію 4. <br>
+												Маємо: false || false || false - false (адже не має значення true, тому отримаємо останнє false)
+						</p>
+						<p>
+							<b>ІІ варіант.</b> Розв'язуємо по пріоритетності операторів, у цьому "рівнянні" маємо такий порядок:
+							<br>1. *,
+							/; <br>2. <=, <; <br>3. ===; <br>4. &&; <br>5. ||.<br>
+								<b>1.</b> 2 * 20 = 40 <br>
+								30 / 2 = 15 <br>
+								Маємо: (40 <= 10 || 15 < 5 && 10 <="10" || 20==="20" ) <br>
+									<b>2.</b> 40 <= 10 - false <br>
+										15 < 5 - false <br>
+											10 <="10" - true <br>
+												Маємо: (false || false && true || 20==="20" ) <br>
+												<b>3.</b> 20 === "20" - false (адже "20" це текст, і оператор "===" не перетворює в число) <br>
+												Маємо: (false || false && true || false ) <br>
+												<b>4.</b> false && true false (адже не обидва значення true) <br>
+												Маємо: (false || false || false ) <br>
+												<b>5.</b> false || false || false - false (адже не має значення true, тому отримаємо останнє
+												false)
+						</p>
+						<p>
+
+						</p>
+						<p class="exercise__code">
+							let helloTrue = "Привіт! В нас тут true" <br>
+							let helloFalse = "Привіт! В нас тут false" <br>
+							<br>
+							if (2 * 20 <= 10 || 30 / 2 < 5 && 10 <="10" || 20==="20" ) { <br>
+								console.log(helloTrue) <br>
+								} <br>
+								else { <br>
+								console.log(helloFalse) <br>
+								} <br>
+								//------Змінюємо на 2 > 5 і все Ок------------ <br>
+								if (2 * 20 <= 10 || 30 / 2> 5 && 10 <= "10" || 20==="20" ) { <br>
+										console.log(helloTrue) <br>
+										} <br>
+										else { <br>
+										console.log(helloFalse) <br>
+										}
+						</p>
+						<p>
+							Відповідь: false, в консоль виведеться: helloFalse
+						</p>
+					</div>
+				</section>
+				<section class="exercise">
+					<h2 class="exercise__title">
+						Задача №4
+					</h2>
+					<div class="exercise__condition">
+						<p>
+							Створіть функцію, яка повертає результат ділення числа a на число b з додаванням рядка "Результат ділення:
+							"
+							Викличте функцію передаючи різні значення, у тому числі не передаючи зовсім.
+							Функція не має повертати NaN, Infinite або помилку
+						</p>
+					</div>
+					<div class="exercise__solution">
+						<p>
+							Розв'язок:
+						</p>
+						<p>
+							Задаємо для початку функцію <b>"showMessage"</b> для виводу в консоль текстового повідомлення зі зміною
+							"text" з
+							значенням за замовченням "Нічого не вказано" <br>
+							<br>
+							Задаємо функцію "checkTypeNumber" для перевірки чи вказаний тип параметрів "someVar" для функції є
+							числовим: <br> (typeof someVar == "number"), якщо так, то тоді повертаємо значення "someVar" для
+							подальшого ділення, якщо ні - false. <br>
+							<br>
+							Далі задаємо функцію безпосередньо для ділення з назвою <b>"calcDivision"</b> з параметрами "a" = 0 (за
+							замовченням), "b" = 0 (за замовченням) <br>
+							В функції задаємо зміну "divisionText" = з значенням "Результат ділення: " (для виводу тексту перед
+							результатом ділення) <br>
+							Та зміну "divisionTextError" = з значенням "ділення неможливе" (для виводу тексту, якщо ділимо на 0, або
+							не вказані число/-а, тобто результат Infinite, NaN і т.д.)<br>
+							<br>
+							Перевіряємо чи обидва наші типи параметрів одночасно є числовими за допомогою раніше створеної функції
+							"checkTypeNumber": <br>
+							if (checkTypeNumber(a) && checkTypeNumber(b)) <br>
+							якщо так, всередині умови перевіряємо чи дільник "b" строго не дорівнює (!==) 0, адже ділення на
+							0 виведе значення "Infinite": <br>
+							if (b !== 0)
+							<br>
+							і аж лише тоді якщо вона виконується, виводимо результат ділення: <br>
+							return divisionText += a / b <br>
+							<br>
+							але, якщо хоча б одна з цих умов не виконується (тип даних вказаний рядковий, чи дільник = 0), то виводимо
+							(return) в консоль текст "Результат ділення: ділення неможливе" (divisionText +=
+							divisionTextError)
+						</p>
+						<p class="exercise__code">
+							function showMessage(text = "Нічого не вказано") {
+							console.log(text) <br>
+							}
+							<br>
+							<br>
+							let checkTypeNumber = (someVar) => typeof someVar == "number" ? someVar : false
+							<br>
+							<br>
+							function calcDivision(a = 0, b = 0) { <br>
+							let divisionText = "Результат ділення: " <br>
+							let divisionTextError = "ділення неможливе" <br>
+							if (checkTypeNumber(a) && checkTypeNumber(b)) { <br>
+							if (b !== 0) { <br>
+							return divisionText += a / b <br>
+							} <br>
+							else { <br>
+							return divisionText += divisionTextError
+							}<br>
+							}<br>
+							else {<br>
+							return divisionText += divisionTextError
+							}<br>
+							}
+							<br>
+							<br>
+							showMessage(calcDivision(6, 3)) <br>
+							showMessage(calcDivision(6, "3")) <br>
+							showMessage(calcDivision(6, false)) <br>
+							showMessage(calcDivision(6, 0)) <br>
+							showMessage(calcDivision(6)) <br>
+						</p>
+						<p>
+							Відповідь: в консолі виведеться:<br>
+							<br> І варіант: Результат ділення: 2 <br>
+							<br> ІІ варіант: Результат ділення: ділення неможливе<br>
+							<br> ІІІ варіант: Результат ділення: ділення неможливе<br>
+							<br> ІV варіант: Результат ділення: ділення неможливе<br>
+							<br> V варіант: Результат ділення: ділення неможливе
+						</p>
+					</div>
+				</section>
+				<section class="exercise">
+					<h2 class="exercise__title">
+						Задача №5
+					</h2>
+					<div class="exercise__condition">
+						<p>
+							Створіть масив даних - 5 елементів, один з яких число 10
+							Обробіть масив за допомогою методу перебору
+							Перевіряйте елемент на відповідність числу 10, та у разі відповідності, виводьте в консоль
+						</p>
+					</div>
+					<div class="exercise__solution">
+						<p>
+							Розв'язок:
+						</p>
+						<p>
+							Задаємо масив даних "score" зі п'ятьма значеннями:<br> <b>"10"</b> (текст "10"),<br> <b>"десять"</b>
+							(текст "десять"),
+							<br><b>10</b> (число
+							10), <br><b>"5" + 5</b> (текст "5" до якого приєднуємо число 5 = 55 (тут оператор "+" є унарним, тобто це
+							не
+							математичне додавання)), <br><b>5 * 3</b> (число 15).
+						</p>
+						<p class="exercise__code">
+							let score = ["10", "десять", 10, "5" + 5, 5 * 3]
+						</p>
+						<p>
+							<b>І варіант.</b> Використовуємо метод перебору масиву <b>"forEach"</b>.<br>
+							Тобто, якщо (if) значення (value) === (строго дорівнює) 10, <br> то виводимо в консоль це значення
+							(console.log(value)) <br>і номер комірки (console.log(index))
+						</p>
+						<p class="exercise__code">
+							let score = ["10", "десять", 10, "5" + 5, 5 * 3]<br>
+							<br>
+							score.forEach((value, index) => { <br>
+							if (value === 10) { <br>
+							console.log(index) <br>
+							console.log(value) <br>
+							}<br>
+							})
+						</p>
+						<p>
+							<b>ІІ варіант.</b> Використовуємо <b>includes</b>. <br>
+							Тобто, якщо (if) масив (score) включає (includes) число 10, <br>то виводимо в консоль текст "Вітаю! 10 з
+							10", <br>якщо не включає - текст "Все пропало!"
+
+						</p>
+						<p class="exercise__code">
+							let score = ["10", "десять", 10, "5" + 5, 5 * 3] <br>
+							<br>
+							if (score.includes(10)) { <br>
+							console.log("Вітаю! 10 з 10") <br>
+							} <br>
+							else { <br>
+							console.log("Все пропало!") <br>
+							}
+						</p>
+						<p>
+							<b>ІІІ варіант.</b> Використовуємо <b>includes</b> тільки з оператором умови <b>?</b>, що скорочує код.
+							<br>
+							Тобто, чи масив (score) включає (includes) число 10 ?, <br> якщо так, то виводимо в консоль текст "Знову
+							10 з 10", <br>якщо не включає - текст "Все пропало!"
+
+						</p>
+						<p class="exercise__code">
+							let score = ["10", "десять", 10, "5" + 5, 5 * 3] <br>
+							<br>
+							score.includes(10) ? console.log("Знову 10 з 10") : console.log("Все пропало!")
+						</p>
+						<p>
+							Відповідь: в консолі виведеться:<br>
+							<br> І варіант:<br> номер комірки: 2; <br> значення: 10 false<br>
+							<br>
+							ІІ варіант:<br> Вітаю! 10 з 10 <br>
+							<br>
+							ІІІ варіант:<br> Знову 10 з 10
+						</p>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

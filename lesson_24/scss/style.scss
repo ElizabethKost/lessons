@@ -1,0 +1,98 @@
+//--------Оператори--------
+@use "sass:math";
+//-------- Ширина спрацьовування першого брейкпоінту--------
+$minWidth: 320; // Мінімальна ширина сторінки
+$maxWidth: 1920; // Ширина полотна (макету)
+$maxWidthContainer: 1270; // Ширина обмежувального контейнера (0 = немає обмеження)
+$containerPadding: 30; // Загальний відступ у контейнера (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerWidth: $maxWidthContainer + $containerPadding; // Ширина спрацьовування першого брейкпоінту
+//--------Обнулення--------
+@import "_reset.scss";
+//--------Шрифти--------
+@import "_fonts.scss";
+// Компоненти
+@import "_common.scss";
+// Функції
+@import "_functions.scss";
+// break points
+$pc: toEm(1239.98);
+$tablet: toEm(991.98);
+$mobile: toEm(767.98);
+$mobileSmall: toEm(479.98);
+//--------Змінні--------
+$font: #2f2e2d;
+$mainBackground: #bcbdb5;
+$background: #cbb187be;
+//--------Загальні--------
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.wrapper>main {
+	flex-grow: 1;
+}
+[class*="__container"] {
+	max-width: #{$containerWidth}px;
+	margin: 0 auto;
+	padding: 0 toRem(15);
+}
+//--------code--------
+.page {
+	background-image: url("../img/pattern.webp");
+	@include adaptiveValue("background-size", 400, 100);
+	@include adaptiveValue("padding", 80, 15);
+	// .page__container
+	&__container {
+		&>*:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 40);
+		}
+	}
+}
+.exercise {
+	background: $mainBackground;
+	border: toEm(1) solid $font;
+	box-shadow: inset 0 0 5px 3px rgba(102, 100, 85, 0.645);
+	color: $font;
+	border-radius: toRem(15);
+	font-family: "Raleway", sans-serif;
+	@include adaptiveValue("font-size", 18, 16);
+	@include adaptiveValue("padding", 30, 15);
+	@include adaptiveValue("max-width", 700, 300);
+	margin: 0 auto;
+	&>*:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+	// .exercise__title
+	&__title {
+		@include adaptiveValue("font-size", 30, 22);
+		text-align: center;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	// .exercise__condition
+	&__condition {
+		&>*:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 10);
+		}
+	}
+	// .exercise__code
+	&__code {
+		font-family: "Anonymous Pro", serif;
+		background: $background;
+		font-weight: 600;
+		border: toEm(1) solid rgb(102, 100, 85);
+		@include adaptiveValue("padding", 15, 10);
+	}
+	// .exercise__solution
+	&__solution {
+		&>*:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 10);
+		}
+		&>*:last-child,
+		&>*:first-child {
+			font-weight: 600;
+		}
+	}
+}
