@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
+					</p>
+				</div>
+				<script>
+					"use strict"
+					const priceOfProduct = parseFloat(prompt("Введіть вартість одиниці товару:"))
+					const quantityOfProduct = parseFloat(prompt("Введіть кількість одиниць товару:"))
+
+					const totalCost = priceOfProduct * quantityOfProduct
+					const perVat = 0.05
+					const totalVat = totalCost * perVat
+
+					document.write(`
+					<p>Відповідь:</p>
+					<p>Загальна вартість: ${totalCost}</p>
+					<p>ПДВ (5% від загальної вартості): ${totalVat}</p>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

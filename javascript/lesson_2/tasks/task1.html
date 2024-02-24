@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let number1 = parseFloat(prompt("Введіть значення для першої невідомої: a"))
+					let number2 = parseFloat(prompt("Введіть значення для другої невідомої: b"))
+
+					let sumNum = number1 + number2
+					let productNum = number1 * number2
+					let quotientNum = number1 / number2
+
+					document.write(
+						`
+					<table class="page__table">
+					<thead>
+						<tr>
+							<th>Обчислити</th>
+							<th>Результат</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Сума дійсних чисел = a + b
+							</td>
+							<td>
+								${number1} + ${number2} = ${sumNum}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Добуток дійсних чисел = a * b
+							</td>
+							<td>
+								${number1} * ${number2} = ${productNum}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Частка дійсних чисел = a / b
+							</td>
+							<td>
+								${number1} / ${number2} = ${quotientNum}
+							</td>
+						</tr>
+					</tbody>
+				</table>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

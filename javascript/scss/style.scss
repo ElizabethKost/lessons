@@ -1,0 +1,87 @@
+//--------Оператори--------
+@use "sass:math";
+//-------- Ширина спрацьовування першого брейкпоінту--------
+$minWidth: 320; // Мінімальна ширина сторінки
+$maxWidth: 1920; // Ширина полотна (макету)
+$maxWidthContainer: 1220; // Ширина обмежувального контейнера (0 = немає обмеження)
+$containerPadding: 30; // Загальний відступ у контейнера (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerWidth: $maxWidthContainer + $containerPadding; // Ширина спрацьовування першого брейкпоінту
+//--------Обнулення--------
+@import "_reset.scss";
+//--------Шрифти--------
+@import "_fonts.scss";
+// Компоненти
+@import "_common.scss";
+// Функції
+@import "_functions.scss";
+// break points
+$pc: toEm(1239.98);
+$tablet: toEm(991.98);
+$mobile: toEm(767.98);
+$mobileSmall: toEm(479.98);
+//--------Змінні--------
+$mainColor: #0E333D;
+//--------Загальні--------
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.wrapper>main {
+	flex-grow: 1;
+}
+[class*="__container"] {
+	max-width: #{$containerWidth}px;
+	margin: 0 auto;
+	padding: 0 toRem(15);
+}
+// Хедер + футер
+.header,
+.footer {
+	background: url("../img/code.webp") 0 -70px /380px;
+	height: 120px;
+	border-bottom: toRem(5) double #97233cde;
+}
+.footer {
+	transform: rotate(180deg);
+}
+.wrapper {
+	background: url("../img/sheet.webp") 0 0 /380px;
+	color: $mainColor;
+}
+.header {}
+.page {
+	padding: toRem(30) 0;
+	font-family: "Play", sans-serif;
+	font-size: toRem(28);
+	// .page__container
+	&__container {
+		&>*:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+	// .page__title
+	&__title {
+		font-size: toRem(36);
+		font-weight: 700;
+	}
+	// .page__list
+	&__list {
+		&>*:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .page__item
+	&__item {}
+	// .page__link
+	&__link {
+		transition: all 0.3s ease-in;
+		@media (any-hover:hover) {
+			&:hover {
+				color: #185758;
+				text-decoration: underline;
+			}
+		}
+	}
+}

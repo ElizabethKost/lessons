@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+					</p>
+				</div>
+				<script>
+					"use strict"
+					const lengthCm = parseFloat(prompt("Введіть довжину у сантиметрах:"))
+					const cmIn1M = 100
+					const cmIn1Km = 100000
+
+					const lengthM = lengthCm / cmIn1M
+					const lengthKm = lengthCm / cmIn1Km
+
+					const totalKm = Math.floor(lengthCm / cmIn1Km)
+					const totalM = Math.floor((lengthCm % cmIn1Km) / cmIn1M)
+					const totalCm = lengthCm % cmIn1M
+
+
+					document.write(`
+					<p>Відповідь:</p>
+					<p>Довжина переведена у метри: ${lengthM}</p>
+					<p>Довжина переведена у кілометри: ${lengthKm}</p><br>
+					<p>Довжина ${lengthCm}см: ${totalKm}км ${totalM}м ${totalCm}см</p>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару
+						окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+					</p>
+				</div>
+
+				<script>
+					"use strict"
+					const quantityProductOne = parseInt(prompt("Введіть кількість першого товару - морозиво:"))
+					const priceProductOne = parseFloat(prompt("Введіть ціну першого товару - морозиво:"))
+					const quantityProductTwo = parseInt(prompt("Введіть кількість першого товару - хліб:"))
+					const priceProductTwo = parseFloat(prompt("Введіть ціну першого товару - хліб:"))
+					const quantityProductThree = parseFloat(prompt("Введіть кількість першого товару - картопля:"))
+					const priceProductThree = parseFloat(prompt("Введіть ціну першого товару - картопля:"))
+
+					const costProductOne = quantityProductOne * priceProductOne
+					const costProductTwo = quantityProductTwo * priceProductTwo
+					const costProductThree = quantityProductThree * priceProductThree
+					const totalCost = costProductOne + costProductTwo + costProductThree
+
+
+					document.write(`
+				<div class="checkout">
+					<h3 class="checkout__title"> Чек #1 </h3>
+					<div class="checkout__list">
+						<div class="checkout__item">
+							<h4 class="checkout__product">
+								Морозиво
+							</h4>
+							<p class="checkout__math">
+								${quantityProductOne}шт * ${priceProductOne.toFixed(2)}грн
+							</p>
+							<div class="checkout__price">
+							${costProductOne.toFixed(2)}грн
+							</div>
+						</div>
+						<div class="checkout__item">
+							<h4 class="checkout__product">
+								Хліб
+							</h4>
+							<p class="checkout__math">
+								${quantityProductTwo}шт * ${priceProductTwo.toFixed(2)}грн
+							</p>
+							<div class="checkout__price">
+								${costProductTwo.toFixed(2)}грн
+							</div>
+						</div>
+						<div class="checkout__item">
+							<h4 class="checkout__product">
+								Картопля
+							</h4>
+							<p class="checkout__math">
+								${quantityProductThree.toFixed(2)}кг * ${priceProductThree.toFixed(2)}грн
+							</p>
+							<div class="checkout__price">
+								${costProductThree.toFixed(2)}грн
+							</div>
+						</div>
+						<div class="checkout__item">
+							<h4 class="checkout__text-total">
+								До оплати:
+							</h4>
+							<p class="checkout__total-cost">
+								${totalCost.toFixed(2)}грн
+							</p>
+						</div>
+					</div>
+				</div>
+				`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
