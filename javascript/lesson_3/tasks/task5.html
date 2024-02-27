@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №5</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль).
+						Вивести на екран назву транспортного засобу, яким він може керувати.
+					</p>
+				</div>
+				<script>
+					"use strict"
+					const driverCategoryName = prompt("Введіть назву категорії водія великою англійською літерою:", "A")
+					let result
+
+					switch (driverCategoryName) {
+						case "A": result = "Мотоцикл - транспортний засіб, яким Ви можете керувати"
+							break
+						case "B": result = "Автомобіль - транспортний засіб, яким Ви можете керувати"
+							break
+						case "C": result = "Вантажний автомобіль - транспортний засіб, яким Ви можете керувати"
+							break
+						default: result = "Помилка даних"
+							break
+					}
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+						працівником, пенсіонером).
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const userAge = parseInt(prompt("Введіть свій вік в роках:"))
+					let result
+
+					if (userAge <= 6) result = "Вітаємо! Ви - дитина у садочку"
+					else if (userAge <= 17) result = "Вітаємо! Ви - школяр"
+					else if (userAge <= 21) result = "Вітаємо! Ви - студент"
+					else if (userAge <= 64) result = "Вітаємо! Ви - працівник"
+					else if (userAge <= 130) result = "Вітаємо! Ви - пенсіонер"
+					else result = "Помилка даних"
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

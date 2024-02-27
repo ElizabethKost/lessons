@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let minRandomNumber = 1
+					let maxRandomNumber = 5
+					const randomNumber = minRandomNumber + Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1))
+					console.log(randomNumber)
+
+					let userNumberAttempt = parseInt(prompt("Спробуйте вгадати число від 1 до 5 за 2 спроби. Перша спроба:", "2"))
+
+
+					let result
+
+					if (userNumberAttempt === randomNumber) result = `Ви вгадали число ${randomNumber}`
+					else {
+						userNumberAttempt = parseInt(prompt("Спробуйте вгадати число від 1 до 5 за 2 спроби. Друга спроба:", "3"))
+						if (userNumberAttempt === randomNumber) result = `Ви вгадали число ${randomNumber}`
+						else result = `Ви не вгадали за 2 спроби число: ${randomNumber}`
+					}
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

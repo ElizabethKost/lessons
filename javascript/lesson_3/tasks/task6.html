@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+					</p>
+				</div>
+
+				<script>
+					"use strict"
+					const dayNumber = prompt("Введіть номер дня тижня (від 1 до 7):", "1")
+					let result
+
+					switch (dayNumber) {
+						case "1": result = "Понеділок"
+							break
+						case "2": result = "Вівторок"
+							break
+						case "3": result = "Середа"
+							break
+						case "4": result = "Четвер"
+							break
+						case "5": result = "П'ятниця"
+							break
+						case "6": result = "Субота"
+							break
+						case "7": result = "Неділя"
+							break
+						default: result = "Помилка даних"
+							break
+					}
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

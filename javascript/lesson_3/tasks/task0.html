@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.0</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №0</h1>
+				<div class="page__text">
+					<p>
+						Обчислити значення виразів:
+					</p>
+					<p>
+						S1=a+12+b
+					</p>
+					<p>
+						S2=&radic;(a+b)/2a
+					</p>
+					<p>
+						S3=&#8731;(a+b)*c
+					</p>
+					<p>
+						S4=sin⁡(a/(-b))
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const a = parseFloat(prompt("Введіть значення для невідомої: а"))
+					const b = parseFloat(prompt("Введіть значення для невідомої: b"))
+					const c = parseFloat(prompt("Введіть значення для невідомої: c"))
+
+					let calculation1 = a + 12 + b
+					let calculation2 = Math.sqrt((a + b) / (2 * a))
+					let calculation3 = Math.cbrt((a + b) * c)
+					let calculation4 = Math.sin(a / (-b))
+
+					document.write(`<p>1) S1 = a + 12 + b = ${a} + 12 + ${b} = ${calculation1} </p><br>
+					<p>2) S2 = &radic;(a + b) / 2a = &radic;(${a} + ${b}) / (2 * ${a}) = ${calculation2} </p><br>
+					<p>2) S3 = &#8731;(a + b) * c = &#8731;(${a} + 
+					${b}) * ${c} = ${calculation3} </p><br>
+					<p>2) S4 = sin⁡(a / (-b)) = sin⁡(${a} / (-${b})) = ${calculation4} </p>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

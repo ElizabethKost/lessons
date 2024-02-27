@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводяться імена двох дітей та кількість у них цукерок. Вивести не екран ім’я тієї дитини, у
+						якої кількість цукерок є більшою, або вивести, що кількість однакова.
+					</p>
+				</div>
+				<script>
+					"use strict"
+					const childName1 = prompt("Введіть ім'я першої дитини:", "Іван")
+					const childName2 = prompt("Введіть ім'я другої дитини:", "Тарас")
+					const quantityOfCandiesChildName1 = parseInt(prompt("Введіть кількість цукерок першої дитини:", "20"))
+					const quantityOfCandiesChildName2 = parseInt(prompt("Введіть кількість цукерок другої дитини:", "10"))
+
+					let result
+
+					if (quantityOfCandiesChildName1 > quantityOfCandiesChildName2) result = `${childName1} має більшу кількість цукерок`
+					else if (quantityOfCandiesChildName2 > quantityOfCandiesChildName1) result = `${childName2} має більшу кількість цукерок`
+					else result = `Кількість цукерок у ${childName1} та ${childName2} однакова`
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

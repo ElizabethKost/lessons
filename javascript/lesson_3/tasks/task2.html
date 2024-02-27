@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці,
+						інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+					</p>
+				</div>
+				<script>
+					"use strict"
+					const priceOfProduct = parseFloat(prompt("Введіть ціну товару:", "20.35грн"))
+					const amountOfMoney = parseFloat(prompt("Введіть кількість грошей:", "22грн"))
+					const priceOfLottery = 4
+					let result
+
+
+					if
+						(amountOfMoney < priceOfProduct) result = "Не вистачає коштів"
+					else if ((amountOfMoney - priceOfLottery) >= priceOfProduct)
+						result = "Вистачає коштів на товар, та ще лотерею, бажаєте придбати?"
+					else result = "Вистачає коштів лише на товар"
+
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

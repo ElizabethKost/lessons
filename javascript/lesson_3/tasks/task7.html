@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #2.7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №7</h1>
+				<div class="page__text">
+					<p>
+						З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+					</p>
+				</div>
+
+				<script>
+					"use strict"
+					const dayNumber = parseInt(prompt("Введіть номер місяця (від 1 до 12):", "1"))
+					let result
+
+					switch (dayNumber) {
+						case 1:
+						case 2:
+						case 12:
+							result = "Пора року - зима"
+							break
+						case 3:
+						case 4:
+						case 5:
+							result = "Пора року - весна"
+							break
+						case 6:
+						case 7:
+						case 8:
+							result = "Пора року - літо"
+							break
+						case 9:
+						case 10:
+						case 11:
+							result = "Пора року - осінь"
+							break
+						default:
+							result = "Помилка даних"
+							break
+					}
+
+					document.write(result)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
