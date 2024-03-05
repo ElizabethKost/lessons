@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.-2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №-2</h1>
+				<div class="page__text">
+					<p>
+						Поступово генерувати 100 випадкових чисел від 1 до 1000. Підрахувати яких чисел більше: парних чи непарних.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let countEvenRandomNumber = 0
+					let countOddRandomNumber = 0
+					let result
+
+					for (let i = 0; i < 100; i++) {
+						let randomNumber = 1 + Math.floor(Math.random() * 1000)
+						randomNumber % 2 === 0 ? countEvenRandomNumber++ : countOddRandomNumber++
+					}
+
+					countEvenRandomNumber > countOddRandomNumber ? result = "парних" : result = "непарних"
+
+					document.write(`
+					<div class="page__results">При генеруванні отримуємо: ${countEvenRandomNumber} парних та ${countOddRandomNumber} непарних</div>
+					<div class="page__results">Таким чином, більше ${Math.max(countEvenRandomNumber, countOddRandomNumber)}, тобто ${result} чисел</div>
+					`)
+					// спробувала через math max
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+
+	</div>
+</body>
+
+</html>

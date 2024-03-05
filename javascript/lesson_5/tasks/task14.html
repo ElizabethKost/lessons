@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.14</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №14</h1>
+				<div class="page__text">
+					<p>
+						Каса. Користувачу повідомляють суму, яку йому треба сплатити.
+					</p>
+					<p>
+						Користувач поступово вводить суму грошей до тих пір, поки суми не буде достатньо для оплати товарів
+						(кожного разу користувачу
+						повідомляють, яку ще суму потрібно ввести).
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const randomCheckMoney = 1 + Math.floor(Math.random() * 1000)
+					let checkPay = randomCheckMoney
+					alert(`Вам потрібно сплатити ${randomCheckMoney}грн`)
+					let userMoney = parseFloat(prompt('Введіть суму грошей:', "100"))
+
+					while (userMoney < checkPay) {
+						checkPay -= userMoney
+						alert(`Вам потрібно ще сплатити ${checkPay}грн`)
+						userMoney = parseFloat(prompt('Введіть суму грошей:', "100"))
+					}
+					if (userMoney > checkPay) {
+						let restMoney = userMoney - checkPay
+						document.write(`<div class="page__results">Отримайте Вашу решту: ${restMoney}грн.</div>`)
+					}
+
+					document.write(`<div class="page__results">Дякуємо за покупку! Ви сплатили всю суму ${randomCheckMoney}грн.</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

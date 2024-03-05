@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.9</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №9</h1>
+				<div class="page__text">
+					<p>
+						Користувач загадує число від 1 до 100. Комп'ютер задає питання поки не вгадає число користувача (використати
+						confirm).
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let correctNum = false
+
+					do {
+						let randomNum = 1 + Math.floor(Math.random() * 100)
+						correctNum = confirm(`Ваше число (від 1 до 100): ${randomNum}`)
+					} while (!correctNum)
+
+					document.write(`<div class="page__results">Комп'ютер вгадав Ваше число</div>`)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

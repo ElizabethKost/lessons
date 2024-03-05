@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Вивести з використанням циклів маркований список з випадковими числами (1-100). Кількість випадкових
+						чисел вводиться користувачем. Приклад:
+					</p>
+					<img src="../img/1.png" alt="Приклад">
+				</div>
+				<script>
+					"use strict"
+
+					const randomNumQuantity = parseInt(prompt("Введіть кількість випадкових чисел:", "10"))
+
+					document.write('<ul class="page__list page__list--padding">')
+					for (let liElement = 0; liElement < randomNumQuantity; liElement++) {
+						let randomNum = 1 + Math.floor(Math.random() * 100)
+						document.write(`<li> ${randomNum}</li>`)
+					}
+					document.write("</ul>")
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

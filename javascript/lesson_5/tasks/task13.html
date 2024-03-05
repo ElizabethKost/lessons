@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.13</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №13</h1>
+				<div class="page__text">
+					<p>
+						Морський бій. Комп'ютер випадково розташовує 1-ний корабель на полі розміром N*M. Маючи К снарядів
+						користувач намагається потопити корабель. спроба
+					</p>
+				</div>
+				<script>
+					"use strict"
+					alert("Зіграємо в морський бій! Комп'ютер випадково розташовує 1-ний корабель. Задай розмір поля N*M та кількість К снарядів. Зможеш влучити?")
+
+					const horizontalCellAmount = parseInt(prompt('Введіть горизонтальний розмір поля (N):', "5"))
+					const verticalCellAmount = parseInt(prompt('Введіть вертикальний розмір поля (M):', "5"))
+					const totalAttemptAmount = parseInt(prompt('Введіть кількість снарядів (K):', "2"))
+					const randomHorizontalCell = 1 + Math.floor(Math.random() * horizontalCellAmount)
+					const randomVerticalCell = 1 + Math.floor(Math.random() * verticalCellAmount)
+
+					for (let attempt = 1; attempt <= totalAttemptAmount; attempt++) {
+						alert(`Снаряд №${attempt}`)
+						const horizontalCoordinate = parseInt(prompt('Введіть горизонтальну координату', "4"))
+						const verticalCoordinate = parseInt(prompt('Введіть вертикальну координату', "4"))
+						if (horizontalCoordinate === randomHorizontalCell && verticalCoordinate === randomVerticalCell) {
+							alert("Потопив!")
+							break
+						}
+						attempt != totalAttemptAmount ? alert(`Спробуй ще! Залишилося снарядів: ${totalAttemptAmount - attempt}`) : alert(`Ви програли!`)
+					}
+
+					document.write(`<div class="page__results">Корабель був на координатах: ${randomHorizontalCell}, ${randomVerticalCell}</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

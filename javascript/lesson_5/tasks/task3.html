@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Вивести таблицю з одним рядком і 7 стовпцями.
+					</p>
+				</div>
+				<img src="../img/3.png" alt="Приклад">
+				<script>
+					"use strict"
+
+					document.write('<table class="page__table"><tr>')
+					for (let tdElement = 1; tdElement <= 7; tdElement++) {
+						document.write(`<td>${tdElement}</td>`)
+					}
+					document.write('</tr></table>')
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

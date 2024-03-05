@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.16</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №16</h1>
+				<div class="page__text">
+					<p>
+						Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів
+					</p>
+					<p>
+						Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const weeksAmount = parseInt(prompt('Введіть кількість тижнів (N) для введення прибутку магазину:', "2"))
+					let weekProfit = 0
+					let dayProfit = 0
+					let sumProfit = 0
+					let tableProfit = '<table class="page__table"><thead><tr><th>№ тижня</th><th>Величина прибутку</th></tr></thead><tbody>'
+
+					for (let weekNum = 1; weekNum <= weeksAmount; weekNum++) {
+						for (let dayNum = 1; dayNum <= 7; dayNum++) {
+							dayProfit = parseFloat(prompt(`Введіть величину прибутку за тиждень №${weekNum} день №${dayNum}:`, "100"))
+							if (isFinite(dayProfit)) weekProfit += dayProfit
+						}
+						tableProfit += `<tr><td>${weekNum}</td><td>${weekProfit}грн</td></tr>`
+						sumProfit += weekProfit
+						weekProfit = 0
+					}
+
+					tableProfit += `<tr class="page__results"><td>Сума прибутку</td><td>${sumProfit}грн</td></tr></tbody></table>`
+
+					document.write(tableProfit)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

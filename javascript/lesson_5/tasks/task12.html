@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.12</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №12</h1>
+				<div class="page__text">
+					<p>
+						Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне
+						з чотирьох зображень.
+					</p>
+					<p>
+						Вивести ці зображення і повідомити виграш користувача (три
+						перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+					</p>
+					<p>
+						Використати цикли і switch (для вибору зображення за номером).
+					</p>
+				</div>
+				<img src="../img/12.png" alt="Приклад">
+				<script>
+					"use strict"
+
+					//		const firstPriseImg = '<img class="loto-image" src="../img/loto/citrus.svg" alt="Лимон">'
+					//		const secondPriseImg = '<img class="loto-image" src="../img/loto/orange.svg" alt="Апельсин">'
+					//		const thirdPriseImg = '<img class="loto-image" src="../img/loto/lucky.svg" alt="Лист">'
+					//		const fourthPriseImg = '<img class="loto-image" src="../img/loto/seven.svg" alt="Сім">'
+					let slotMachine = '<div class="page__results loto">'
+					let priseMoney = 0
+					let firstResult = 0
+					let secondResult = 0
+					const firstPrise = 100
+					const secondPrise = 200
+					const thirdPrise = 500
+					const fourthPrise = 1000
+
+
+					for (let slotItem = 1; slotItem <= 3; slotItem++) {
+						let randomPriseNum = 1 + Math.floor(Math.random() * 4)
+						slotMachine += `<img class="loto__image" src="../img/loto/prise-${randomPriseNum}.svg" alt="слот${slotItem}">`
+						if (slotItem === 1) firstResult = randomPriseNum
+						else if (slotItem === 2) secondResult = randomPriseNum
+						else if (firstResult === secondResult && secondResult === randomPriseNum) {
+							switch (randomPriseNum) {
+								case 1: priseMoney = firstPrise
+									break
+								case 2: priseMoney = secondPrise
+									break
+								case 3: priseMoney = thirdPrise
+									break
+								case 4: priseMoney = fourthPrise
+									break
+							}
+						}
+						/* 2 варіант з switch
+						switch (slotItem) {
+							case 1: firstResult = randomPriseNum
+								break
+							case 2: secondResult = randomPriseNum
+								break
+							case 3: if (firstResult === secondResult && secondResult === randomPriseNum) {
+								switch (randomPriseNum) {
+									case 1: priseMoney = firstPrise
+										break
+									case 2: priseMoney = secondPrise
+										break
+									case 3: priseMoney = thirdPrise
+										break
+									case 4: priseMoney = fourthPrise
+										break
+								}
+							}
+								break
+						}*/
+					}
+
+					slotMachine += `<br><br><div class="page__results">Ви виграли: ${priseMoney}грн</div></div>`
+
+					document.write(slotMachine)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

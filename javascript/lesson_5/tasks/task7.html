@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №7</h1>
+				<div class="page__text">
+					<p>
+						Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+					</p>
+				</div>
+				<img src="../img/7.png" alt="Приклад">
+				<script>
+					"use strict"
+
+					let countParagraph = parseInt(prompt("Введіть кількість абзаців:", 5))
+					let htmlTable = ""
+
+					for (let titleItem = 1; titleItem <= countParagraph; titleItem++) {
+						htmlTable += `<h2 class="page__results">Заголовок ${titleItem}</h2>`
+						for (let paragraphItem = 1; paragraphItem <= countParagraph; paragraphItem++) {
+							htmlTable += `<p>Розділ ${titleItem}, параграф ${paragraphItem}</p>`
+							if (paragraphItem === titleItem) break
+						}
+						htmlTable += `<br>`
+					}
+
+					document.write(htmlTable)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

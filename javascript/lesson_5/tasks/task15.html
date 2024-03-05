@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.15</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №15</h1>
+				<div class="page__text">
+					<p>
+						Користувача поступово вводить показники температури протягом року. Знайти середню
+						температуру.
+					</p>
+				</div>
+				<script>
+					"use strict"
+					/* я зрозуміла що вводиться температура не визначена кількість раз*/
+
+
+					let userTemperature
+					let countPromptTemperature = 0
+					let sumTemperature = 0
+
+					do {
+						userTemperature = parseFloat(prompt('Введіть показник температури:', "10"))
+						if (isFinite(userTemperature)) {
+							sumTemperature += userTemperature
+							countPromptTemperature++
+						}
+					} while (userTemperature)
+
+					const averageTemperature = sumTemperature / countPromptTemperature
+
+					isFinite(averageTemperature) ? document.write(`<div class="page__results">Отже, середня температуру ${averageTemperature}.</div>`) : document.write(`<div class="page__results">Не вказана температура</div>`)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

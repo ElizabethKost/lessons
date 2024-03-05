@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #5.10</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №10</h1>
+				<div class="page__text">
+					<p>
+						Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let firstNum = parseInt(prompt("Введіть перше число"))
+					let secondNum = parseInt(prompt("Введіть друге число"))
+					let sumOddNum = 0
+
+					if (firstNum < secondNum) { // якщо користувач ввів перше число більше
+						++firstNum // якщо умова не включає в суму задані числа
+						while (firstNum < secondNum) {
+							if (firstNum % 2 !== 0) sumOddNum += firstNum
+							firstNum++
+						}
+					} else {
+						--firstNum
+						while (firstNum > secondNum) {
+							if (firstNum % 2 !== 0) sumOddNum += firstNum
+							firstNum--
+						}
+					}
+
+					document.write(`<div class="page__results">Сума непарних чисел = ${sumOddNum}</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
