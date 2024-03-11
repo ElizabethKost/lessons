@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.9</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №9</h1>
+				<div class="page__text">
+					<p>
+						Інвестор вклав тис. грн на 20 років під 20% річних, а потім на
+						17 років під 27% річних. Визначити за допомогою циклів суму, яку він одержить.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const userMoney = parseFloat(prompt("Введіть суму вкладу:", 5000))
+					let depositMoney = userMoney
+					const interestRate1 = 20 / 100
+					const interestRate2 = 27 / 100
+
+					for (let depositYear = 1; depositYear <= 20; depositYear++) {
+						depositMoney += depositMoney * interestRate1
+					}
+					console.log(depositMoney)
+					for (let depositYear = 1; depositYear <= 17; depositYear++) {
+						console.log(depositMoney)
+						depositMoney += depositMoney * interestRate2
+					}
+
+					document.write(`<div class="page__results">Початкова інвестиція: ${userMoney}грн. <br>Сума, яку отримує інвестор: ${depositMoney.toFixed(1)}грн.</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

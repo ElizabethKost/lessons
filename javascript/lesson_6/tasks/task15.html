@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.15</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №15</h1>
+				<div class="page__text">
+					<p>
+						Написати програму виведення на екран кожного символу
+						латинського алфавіту та поруч з кожним з них символу, що передує йому та що слідує за ним.
+
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const letterAaASCII = 65
+					let letterASCII = letterAaASCII
+					let previewLetterASCII = 0
+					let followLetterASCII = 0
+
+					for (let rowIndex = 0; rowIndex < 26; rowIndex++, letterASCII++) {
+						previewLetterASCII = letterASCII - 1
+						followLetterASCII = letterASCII + 1
+						if (previewLetterASCII < 65) previewLetterASCII = letterASCII + 25
+						if (followLetterASCII > 90) followLetterASCII = letterASCII - 25
+						document.write(`${String.fromCharCode(previewLetterASCII)} ${String.fromCharCode(letterASCII)} ${String.fromCharCode(followLetterASCII)}<br>`)
+					}
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

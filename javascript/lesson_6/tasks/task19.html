@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.19</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №19</h1>
+				<div class="page__text">
+					<p>
+						На складі зберігається певна кількість ящиків з яблуками (наприклад, 15).
+						Коли під’їде машина для завантаження, попросити користувача ввести,
+						скільки ящиків завантажити у першу машину,
+						у другу і т. д., поки на складі не закінчаться ящики з яблуками.
+						Передбачити той випадок, коли користувач вводить кількість, що перевищує
+						поточну кількість ящиків на складі.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let totalAmountAppleBox = parseInt(prompt('Введіть кількість ящиків з яблуками, яка зберігається на складі', 36))
+
+					document.write('<div class="page__results">')
+					while (totalAmountAppleBox > 0) {
+						const clientAmountAppleBox = parseInt(prompt('Введіть кількість ящиків з яблуками, яку хочете придбати', 16))
+						clientAmountAppleBox <= totalAmountAppleBox ? totalAmountAppleBox -= clientAmountAppleBox : alert(`Ви не може придбати: ${clientAmountAppleBox} ящиків з яблуками, залишилося на складі: ${totalAmountAppleBox}`)
+					}
+
+					document.write('Викупили, всі ящики з яблуками</div>')
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

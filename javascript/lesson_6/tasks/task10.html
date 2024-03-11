@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.10</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №10</h1>
+				<div class="page__text">
+					<p>
+						Вивести на екран послідовність символів. Всього символів 82.
+					</p>
+					<p>
+						а о а о а о а о а о …
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					document.write('<div class="page__results word-wrap">')
+					for (let letterIndex = 1; letterIndex <= 82; letterIndex++) {
+						letterIndex % 2 === 0 ? document.write('o') : document.write('a')
+					}
+
+					document.write('<div>')
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

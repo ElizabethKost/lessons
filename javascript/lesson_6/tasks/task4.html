@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Відобразити трикутник за допомогою символів «о»
+					</p>
+					<p>
+						оооооооооооо <br>
+						ооооооооооо <br>
+						оооооооооо <br>
+						ооооооооо <br>
+						оооооооо <br>
+						ооооооо <br>
+						оооооо <br>
+						ооооо <br>
+						оооо <br>
+						ооо <br>
+						оо <br>
+						о
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					document.write('<div class="page__results">')
+					for (let rowIndex = 0; rowIndex < 12; rowIndex++) {
+						for (let letterIndex = 11; letterIndex >= rowIndex; letterIndex--) {
+							document.write('o')
+						}
+						document.write('<br>')
+					}
+					document.write('<div>')
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

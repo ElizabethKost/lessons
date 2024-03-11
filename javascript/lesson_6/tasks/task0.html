@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.0</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №0</h1>
+				<div class="page__text">
+					<p>
+						Вивести на екран
+					</p>
+					<p>
+						A B C D E <br>
+						B C D E F <br>
+						C D E F G <br>
+						D E F G H <br>
+						E F G H I
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const letterAaASCII = 65
+
+					for (let rowIndex = 0; rowIndex < 5; rowIndex++) {
+						let letterElementASCII = letterAaASCII + rowIndex
+						for (let letterIndex = 0; letterIndex < 5; letterIndex++) {
+							document.write(`<span style="padding:5px;">${String.fromCharCode(letterElementASCII + letterIndex)}</span>`)
+						}
+						if (rowIndex !== 5) document.write("<br>")
+					}
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.14</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №14</h1>
+				<div class="page__text">
+					<p>
+						Вивести на екран усі трицифрові числа,
+						у яких перша цифра є більшою або рівною за суму другої і третьої.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					document.write('<div class="page__results">')
+					for (let firstNum = 1; firstNum <= 9; firstNum++) {
+						for (let secondNum = 0; secondNum <= 9; secondNum++) {
+							for (let thirdNum = 0; thirdNum <= 9; thirdNum++) {
+								if (firstNum >= (secondNum + thirdNum)) document.write(` ${firstNum}${secondNum}${thirdNum} `)
+							}
+						}
+						document.write('<br>')
+					}
+
+					document.write('<div>')
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

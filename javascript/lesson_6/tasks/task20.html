@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #6.20</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №20</h1>
+				<div class="page__text">
+					<p>
+						Написати програму, яка показуватиме на екрані піднесене до квадрату число, що вводиться користувачем.
+						Користувач вирішує самостійно – виходити з програми або продовжувати ввід. (Підказка: потрібно запустити
+						нескінчений цикл, в тілі якого передбачити його переривання у випадку настання певної умови).
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let userNum
+
+					while (userNum) {
+						userNum = parseFloat(prompt('Введіть число', 36))
+						if (userNum) {
+							alert(`Ваше число ${userNum} піднесене до квадрату = ${userNum ** 2}`)
+						} else break
+					}
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
