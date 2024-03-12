@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №5</h1>
+				<div class="page__text">
+					<p>
+						Створити окремі функції, які переводять: <br>
+						Сантиметри у дюйми; <br>
+						Кілограми у фунти; <br>
+						Кілометри у милі.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function calcCmtoIn(num) {
+						return num * 0.39370
+					}
+
+					function calcKgtoLb(num) {
+						return num * 2.20462262
+					}
+
+					function calcKltoMi(num) {
+						return num * 0.621371192
+					}
+
+					const userNum = getUserAnswer(parseFloat, "What is your number?")
+					showResultsInDocument('Your number:', userNum)
+					showResultsInDocument('Cantimetres to Inches = ', calcCmtoIn(userNum).toFixed(2))
+					showResultsInDocument('Kilograms to Pounds = ', calcKgtoLb(userNum).toFixed(2))
+					showResultsInDocument('Kilometres to Miles = ', calcKltoMi(userNum).toFixed(2))
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

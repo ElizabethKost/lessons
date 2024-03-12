@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.0</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №0</h1>
+				<div class="page__text">
+					<p>
+						Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getSeasonFromMonth(month) {
+						let season
+						switch (month) {
+							case 12:
+							case 1:
+							case 2:
+								season = "winter"
+								break;
+							case 3:
+							case 4:
+							case 5:
+								season = "spring"
+								break;
+							case 6:
+							case 7:
+							case 8:
+								season = "summer"
+								break;
+							case 9:
+							case 10:
+							case 11:
+								season = "autumn"
+								break;
+						}
+						return season
+					}
+
+					function getUserAnswerParseInt(question) {
+						return parseInt(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const userMonth = getUserAnswerParseInt('Який місяць?')
+					const userSeason = getSeasonFromMonth(userMonth)
+					showResultsInDocument('Your season:', userSeason)
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

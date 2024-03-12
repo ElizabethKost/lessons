@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function getWorkOrWeekendDay(dayNum) {
+						return dayNum < 6 ? 'workday' : 'weekend'
+					}
+
+					const userDayNum = getUserAnswer(parseInt, "What is the day number?")
+					const userWorkOrWeekendDay = getWorkOrWeekendDay(userDayNum)
+					showResultsInDocument(`Your day №${userDayNum} of the week is`, userWorkOrWeekendDay)
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

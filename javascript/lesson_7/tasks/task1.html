@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Створити функцію, яка за номером місяця повертає його назву.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function getMonthName(month) {
+						let nameMonth
+						switch (month) {
+							case 1: nameMonth = "January"
+								break;
+							case 2:
+								nameMonth = "February"
+								break;
+							case 3:
+								nameMonth = "March"
+								break;
+							case 4:
+								nameMonth = "April"
+								break;
+							case 5:
+								nameMonth = "May"
+								break;
+							case 6:
+								nameMonth = 'June'
+								break;
+							case 7:
+								nameMonth = "July"
+								break;
+							case 8:
+								nameMonth = "August"
+								break;
+							case 9:
+								nameMonth = "September"
+								break;
+							case 10:
+								nameMonth = "October"
+								break;
+							case 11:
+								nameMonth = "November"
+								break;
+							case 12:
+								nameMonth = "December"
+								break;
+						}
+						return nameMonth
+					}
+
+					const userMonth = getUserAnswer(parseInt, "Який номер місяця?")
+					const userMonthName = getMonthName(userMonth)
+					showResultsInDocument('Your month name:', userMonthName)
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

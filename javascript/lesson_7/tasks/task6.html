@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим
+						фіксованим повідомленням).
+				</div>
+				<script>
+					"use strict"
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function createTable(rows, columns, text) {
+						document.write('<table class="page__table">')
+						for (let trElement = 0; trElement < rows; trElement++) {
+							document.write('<tr>')
+							for (let tdElement = 0; tdElement < columns; tdElement++) {
+								document.write(`<td>${text}</td>`)
+							}
+							document.write('</tr>')
+						}
+						document.write('</table>')
+					}
+
+					const userRows = getUserAnswer('parseInt', 'Input amount of rows')
+					const userColumns = getUserAnswer('parseInt', 'Input amount of columns')
+					const userText = prompt('Input your text for table')
+					createTable(userRows, userColumns, userText)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
+
+<table>
+
+
+	<tr>
+
+
+		<td>...</td>
+
+
+	</tr>
+
+
+</table>

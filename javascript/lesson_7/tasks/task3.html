@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Створити окремі функції, які для 4 чисел знаходять:
+						1)суму; <br>
+						2)добуток; <br>
+						3)середнє арифметичне; <br>
+						4)мінімальне значення.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function getRandomNum(min = 1, max = 20) {
+						return min + Math.floor(Math.random() * (max - min + 1))
+					}
+
+					function calcSum(num1, num2, num3, num4) {
+						return num1 + num2 + num3 + num4
+					}
+
+					function calcProduct(num1, num2, num3, num4) {
+						return num1 * num2 * num3 * num4
+					}
+
+					function calcAverage(num1, num2, num3, num4) {
+						return (num1 + num2 + num3 + num4) / 4
+					}
+
+					function calcMin(num1, num2, num3, num4) {
+						return Math.min(num1, num2, num3, num4)
+					}
+
+					const num1 = getRandomNum()
+					const num2 = getRandomNum()
+					const num3 = getRandomNum()
+					const num4 = getRandomNum()
+
+					showResultsInDocument('Random four numbers (1 to 20):', `${num1}, ${num2}, ${num3}, ${num4}`)
+					showResultsInDocument('Summary = ', calcSum(num1, num2, num3, num4))
+					showResultsInDocument('Product = ', calcProduct(num1, num2, num3, num4))
+					showResultsInDocument('Average = ', calcAverage(num1, num2, num3, num4))
+					showResultsInDocument('Minimal = ', calcMin(num1, num2, num3, num4))
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

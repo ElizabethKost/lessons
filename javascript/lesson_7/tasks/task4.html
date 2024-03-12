@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #7.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних,
+						кількість додатних, кількість більших за 100.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					// я зрозуміла, що знайти кількість парних, додатних, > за 100, серед заданих чисел
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function calcEvenPositiveBigger100(num1, num2, num3) {
+						let evenNumbers = 0, positiveNumbers = 0, bigger100 = 0
+						if (num1 % 2 === 0) evenNumbers++
+						if (num2 % 2 === 0) evenNumbers++
+						if (num3 % 2 === 0) evenNumbers++
+						if (num1 > 0) positiveNumbers++
+						if (num2 > 0) positiveNumbers++
+						if (num3 > 0) positiveNumbers++
+						if (num1 > 100) bigger100++
+						if (num2 > 100) bigger100++
+						if (num3 > 100) bigger100++
+						document.write(`<div class="page__results"> Even numbers amount = ${evenNumbers}<br> Positive numbers amount = ${positiveNumbers}<br> Bigger then 100 numbers amount = ${bigger100}</div>`)
+					}
+
+
+					const num1 = getUserAnswer(parseFloat, 'Input your number #1:')
+					const num2 = getUserAnswer(parseFloat, 'Input your number #2:')
+					const num3 = getUserAnswer(parseFloat, 'Input your number #3:')
+					showResultsInDocument('Your four numbers:', `${num1}, ${num2}, ${num3}`)
+					calcEvenPositiveBigger100(num1, num2, num3)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
