@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран: <br>
+						номери днів, протягом яких кількість відвідувачів була меншою за 20; <br>
+						номери днів, коли кількість відвідувачів була мінімальною; <br>
+						загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					function getRandomAmountCustomers(minScore = 0, maxScore = 100) {
+						return (minScore + Math.floor(Math.random() * (maxScore - minScore + 1)))
+					}
+
+					function getCustomersInArray(amountDay = 7) {
+						let customersList = []
+						for (let dayNum = 1; dayNum <= amountDay; dayNum++) {
+							let customers = getRandomAmountCustomers()
+							customersList.push(customers)
+						}
+						return customersList
+					}
+
+
+					function getDayNumCustomerBelow20(customersList) {
+						let dayList = []
+						for (let dayNum = 0; dayNum < customersList.length; dayNum++) {
+							if (customersList[dayNum] < 20) dayList.push(dayNum + 1)
+						}
+						return dayList.length === 0 ? dayList = "немає днів" : dayList
+					}
+
+
+					function getDayNumCustomerMin(customersList) {
+						// 1в, 2в
+						//     let dayList = []
+						let minCustomers = +Infinity, dayIndex
+						for (let dayNum = 0; dayNum < customersList.length; dayNum++) {
+							// 1в не зрозуміла умови. чи 0 клієнтів чи скільки? 
+							//	   if (customersList[dayNum] === 0) dayList.push(dayNum + 1) 
+							// 2в. Я вибрала < 10 щоб хоч інколи були значення
+							//     if (customersList[dayNum] <= 10) dayList.push(dayNum + 1)
+							// 3в. чи серед усіх днів мінімальне
+
+							if (customersList[dayNum] < minCustomers) {
+								minCustomers = customersList[dayNum]
+								dayIndex = dayNum + 1
+							}
+						}
+						// 1в, 2в
+						//     return dayList
+						return dayIndex
+					}
+
+
+					function getTotalWorkdayCustomer(customersList) {
+						let workdayTotalCustomer = 0
+						for (let dayNum = 0; dayNum < 5; dayNum++) {
+							workdayTotalCustomer += customersList[dayNum]
+						}
+						return workdayTotalCustomer
+					}
+
+
+					function getTotalWeekendCustomer(customersList) {
+						let weekendTotalCustomer = 0
+						for (let dayNum = 5; dayNum < 7; dayNum++) {
+							weekendTotalCustomer += customersList[dayNum]
+						}
+						return weekendTotalCustomer
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const customersList = getCustomersInArray()
+					const dayNumCustomerBelow20 = getDayNumCustomerBelow20(customersList)
+					const dayNumCustomerMin = getDayNumCustomerMin(customersList)
+					const totalWorkdayCustomer = getTotalWorkdayCustomer(customersList)
+					const totalWeekendCustomer = getTotalWeekendCustomer(customersList)
+
+					showResultsInDocument('Номери днів, протягом яких кількість відвідувачів була меншою за 20:', dayNumCustomerBelow20)
+					showResultsInDocument('Номери днів, коли кількість відвідувачів була мінімальною:', dayNumCustomerMin)
+					showResultsInDocument('Загальна кількість клієнтів у робочі дні:', totalWorkdayCustomer)
+					showResultsInDocument('Загальна кількість днів на вихідних:', totalWeekendCustomer)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

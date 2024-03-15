@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі дозволити
+						користувач (кількість грошей задається).
+						Приклад збереження даних: <br>
+						let productsPrices = [1000, 20, 31] <br>
+						let productsTitles = ['cheese', 'juice', 'bread']
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const productsPrices = [1000, 20, 31, 200, 320, 50, 48, 6, 25, 89]
+					const productsTitles = ['whiskey', 'juice', 'milk', 'cheese', 'wine', 'beer', 'chips', 'candy', 'bread', 'pasta']
+
+
+					function getProductsUserCanPay(prices, title, money) {
+						let arrayProducts = []
+						for (let indexProduct = 0; indexProduct < prices.length; indexProduct++) {
+							if (money >= prices[indexProduct]) arrayProducts.push(title[indexProduct])
+						}
+						return arrayProducts
+					}
+
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					const userMoney = getUserAnswer('parseInt', "Input amount of money")
+					const productsUserCanPay = getProductsUserCanPay(productsPrices, productsTitles, userMoney)
+
+					showResultsInDocument('You can pay for:', productsUserCanPay)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
+
+<table>
+
+
+	<tr>
+
+
+		<td>...</td>
+
+
+	</tr>
+
+
+</table>

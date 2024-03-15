@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.9</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №9</h1>
+				<div class="page__text">
+					<p>
+						Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних
+						кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці
+						0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди
+						стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getRandom0or1(min = 0, max = 1) {
+						return (min + Math.floor(Math.random() * (max - min + 1)))
+					}
+
+					function getArrayForBattle(amountShips) {
+						let lengthOfArray = getUserAnswer('parseInt', 'Введіть кількість клітинок одновимірного масиву')
+						let sumOfShips = 0
+						let arrayForBattle = []
+						do {
+							sumOfShips = 0
+							arrayForBattle = []
+							for (let arrayElement = 0; arrayElement < lengthOfArray; arrayElement++) {
+								let elementRandomHasShip = getRandom0or1()
+								sumOfShips += elementRandomHasShip
+								arrayForBattle.push(elementRandomHasShip)
+							}
+						} while (sumOfShips !== amountShips)
+						return arrayForBattle
+					}
+
+
+					function startBattle(arrayForBattle, sumOfShips) {
+						// якщо треба перевірити суму, а для зменшення коду можна перенести в параметр 
+						/*
+						let sumOfShips = 0
+						for (let elementIndex = 0; elementIndex < arrayForBattle.length; elementIndex++) {
+							sumOfShips += arrayForBattle[elementIndex]
+						}*/
+						do {
+							let userShot = getUserAnswer('parseInt', `Введіть номер клітинки для пострілу від 0 до ${arrayForBattle.length - 1}`)
+							if (isNaN(userShot)) break
+							if (arrayForBattle[userShot] === 1) --sumOfShips
+						} while (sumOfShips > 0)
+						return sumOfShips === 0 ? alert('Ви потопили всі кораблі!') : alert('Ви здались!')
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					function getUserAnswer(parseType, question) {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					const userAmountShip = getUserAnswer('parseInt', 'Введіть кількість одиночних кораблів')
+					const userArrayForBattle = getArrayForBattle(userAmountShip)
+					const battle = startBattle(userArrayForBattle, userAmountShip)
+
+					showResultsInDocument('Вітаємо! Ви знищили всі кораблі в масиві:', userArrayForBattle)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

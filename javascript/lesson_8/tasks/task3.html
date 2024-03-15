@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+				</div>
+				<script>
+					"use strict"
+
+					const studentsNameList = ['Іван', 'Юра', 'Марія', 'Марко', 'Тетяна', 'Ірина', 'Іван', 'Ігор', 'Оксана', 'Олена', 'Іван', 'Андрій']
+
+
+					function checkIvan(studentsList) {
+						let countIvan = 0
+						for (let nameIndex = 0; nameIndex < studentsList.length; nameIndex++) {
+							if (studentsList[nameIndex] === 'Іван') ++countIvan
+						}
+						return countIvan
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					const countIvan = checkIvan(studentsNameList)
+
+					showResultsInDocument('Ім`я "Іван" зустрічається разів:', countIvan)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

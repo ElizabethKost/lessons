@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №7</h1>
+				<div class="page__text">
+					<p>
+						Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за: <br>
+						за весь рік; <br>
+						у першій половині року; <br>
+						у другій половині року; <br>
+						за літо; <br>
+						за ІІ квартал; <br>
+						за парні місяці (з парними номерами); <br>
+						за місяці, які є початковими у сезоні (весна, літо, осінь, зима). <br>
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					function getRandomAmountPayment(minScore = 0, maxScore = 5000) {
+						return (minScore + Math.floor(Math.random() * (maxScore - minScore + 1)))
+					}
+
+
+					function getPaymentsInYearInArray(monthStart = 1, monthEnd = 12) {
+						let paymentsList = []
+						for (let monthIndex = monthStart; monthIndex <= monthEnd; monthIndex++) {
+							let payment = getRandomAmountPayment()
+							paymentsList.push(payment)
+						}
+						return paymentsList
+					}
+
+
+					function calcPaymentsInYear(paymentsList, monthStart, monthEnd, step) {
+						let sum = 0
+						for (let paymentIndex = monthStart; paymentIndex < monthEnd; paymentIndex += step) {
+							sum += paymentsList[paymentIndex]
+						}
+						return sum
+					}
+
+					/*
+										function calcPaymentsInFirstHalfYear(paymentsList) {
+											let sum = 0
+											for (let paymentIndex = 0; paymentIndex < 6; paymentIndex++) {
+												sum += paymentsList[paymentIndex]
+											}
+											return sum
+										}
+					
+					
+										function calcPaymentsInLastHalfYear(paymentsList) {
+											let sum = 0
+											for (let paymentIndex = 6; paymentIndex < 12; paymentIndex++) {
+												sum += paymentsList[paymentIndex]
+											}
+											return sum
+										}
+					
+					
+										function calcPaymentsInSummer(paymentsList) {
+											let sum = 0
+											for (let paymentIndex = 5; paymentIndex < 8; paymentIndex++) {
+												sum += paymentsList[paymentIndex]
+											}
+											return sum
+										}
+					
+										function calcPaymentsIn2Quarter(paymentsList) {
+											let sum = 0
+											for (let paymentIndex = 3; paymentIndex < 6; paymentIndex++) {
+												sum += paymentsList[paymentIndex]
+											}
+											return sum
+										}
+					
+					
+					function calcPaymentsInEvenMonth(paymentsList) {
+						let sum = 0
+						for (let evenMonthIndex = 1; evenMonthIndex < paymentsList.length; evenMonthIndex += 2) {
+							sum += paymentsList[evenMonthIndex]
+						}
+						return sum
+					}
+
+
+					function calcPaymentsInFirstSeasonMonth(paymentsList) {
+						let sum = 0
+						for (let firstSeasonMonthIndex = 2; firstSeasonMonthIndex < paymentsList.length; firstSeasonMonthIndex += 3) {
+							sum += paymentsList[firstSeasonMonthIndex]
+						}
+						return sum
+					}
+*/
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					//можна і константи не писати, але я вивела під кожне завдання
+					const userPaymentsInYearInArray = getPaymentsInYearInArray()
+					const userPaymentsInYear = calcPaymentsInYear(userPaymentsInYearInArray, 0, 12, 1)
+					const userPaymentsInFirstHalfYear = calcPaymentsInYear(userPaymentsInYearInArray, 0, 6, 1)
+					const userPaymentsInLastHalfYear = calcPaymentsInYear(userPaymentsInYearInArray, 6, 12, 1)
+					const userPaymentsInSummer = calcPaymentsInYear(userPaymentsInYearInArray, 5, 8, 1)
+					const userPaymentsIn2Quarter = calcPaymentsInYear(userPaymentsInYearInArray, 3, 6, 1)
+					const userPaymentsInEvenMonth = calcPaymentsInYear(userPaymentsInYearInArray, 1, 12, 2)
+					const userPaymentsInFirstSeasonMonth = calcPaymentsInYear(userPaymentsInYearInArray, 2, 12, 3)
+
+					showResultsInDocument('Your payments in year:', userPaymentsInYear)
+					showResultsInDocument('Your payments in first half year:', userPaymentsInFirstHalfYear)
+					showResultsInDocument('Your payments in last half year:', userPaymentsInLastHalfYear)
+					showResultsInDocument('Your payments in summer:', userPaymentsInSummer)
+					showResultsInDocument('Your payments in 2 quarter:', userPaymentsIn2Quarter)
+					showResultsInDocument('Your payments in even month:', userPaymentsInEvenMonth)
+					showResultsInDocument('Your payments in first season month:', userPaymentsInFirstSeasonMonth)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

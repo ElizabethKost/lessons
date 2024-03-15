@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він
+						відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є
+						хоча би одна трійка)).
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getRandomScore(minScore = 2, maxScore = 5) {
+						return (minScore + Math.floor(Math.random() * (maxScore - minScore + 1)))
+					}
+
+
+					function getStudentScoreInArray(amountScoreK = 5) {
+						let subjectList = []
+						for (let subject = 0; subject < amountScoreK; subject++) {
+							let score = getRandomScore()
+							subjectList.push(score)
+						}
+						return subjectList
+					}
+
+
+					function getStudentCategory5score(subjectList) {
+						let minScore = subjectList[0], category
+						for (let subject = 0; subject < subjectList.length; subject++) {
+							if (subjectList[subject] < minScore) minScore = subjectList[subject]
+						}
+						switch (minScore) {
+							case 2: category = "двійочник"
+								break;
+							case 3: category = "трійочник"
+								break;
+							case 4: category = "хорошист"
+								break;
+							case 5: category = "відмінник"
+								break;
+						}
+						return category
+					}
+
+					/*
+										function getStudentCategory5score(subjectList) {
+											let count2score = 0, count3score = 0, count4score = 0, count5score = 0
+											let category
+											for (let subject = 0; subject < subjectList.length; subject++) {
+												if (subjectList[subject] === 5) ++count5score
+												else if (subjectList[subject] === 4) ++count4score
+												else if (subjectList[subject] === 3) ++count3score
+												else ++count2score
+											}
+											if (count5score === subjectList.length) category = "відмінник"
+											else if ((count4score + count5score) === subjectList.length) category = "хорошист"
+											else if (count2score > 0) category = "двійочник"
+											else if (count3score > 0) category = "трійочник"
+											else category = "невідома категорія учня"
+											return category
+										}
+					*/
+
+					function calcAverageScore(subjectList) {
+						let sumScore = 0
+						for (let score = 0; score < subjectList.length; score++) {
+							sumScore += subjectList[score]
+						}
+						return sumScore / subjectList.length
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					const studentScoreList = getStudentScoreInArray()
+					const studentCategory = getStudentCategory5score(studentScoreList)
+					const studentAverageScore = calcAverageScore(studentScoreList)
+
+					showResultsInDocument('Середній бал студента:', studentAverageScore)
+					showResultsInDocument('Категорія студента:', studentCategory)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

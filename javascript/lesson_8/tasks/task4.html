@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які: <br>
+						• починаються на букву «А»; <br>
+						• перша і остання літери співпадають; <br>
+						• (складаються з більше ніш 5 символів - всі) => сума реєстраційного номера > 20
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const carPlateList = ["АА1234ВА", "КМ5678АС", "ВН9012ЕІ", "ОР3456МК", "АІ7890СН", "СВ2345ОН", "АА6789ВК", "КО4321ІА", "ВС8765УВ", "НК2109ТМ", "КЕ5678ІМ", "ВО9012СВ", "МС3456АР", "АІ7890ЛА", "ОН2345ОВ", "СМ6789ТК", "ВК4321РВ", "ВХ8765ІВ", "ВО2109НК", "АА5432МВ"]
+
+					function checkCarPlateStartsLetterA(carList) {
+						let letterAASCII = 1040, countA = 0
+						for (let carIndex = 0; carIndex < carList.length; carIndex++) {
+							if (carList[carIndex].charCodeAt(0) === letterAASCII) ++countA
+						}
+						return countA
+					}
+
+
+					function checkFirstLastLetter(carList) {
+						let count = 0
+						for (let carIndex = 0; carIndex < carList.length; carIndex++) {
+							let a = carList[carIndex].charCodeAt(0)
+							let b = carList[carIndex].charCodeAt(7)
+							if (carList[carIndex].charCodeAt(0) === carList[carIndex].charCodeAt(7)) ++count
+						}
+						return count
+					}
+
+
+					// сума реєстраційного номера > 20
+					function calcSumRegisterPlate(carList) {
+						let count = 0
+						for (let carIndex = 0; carIndex < carList.length; carIndex++) {
+							let sum = 0
+							for (let letterIndex = 2; letterIndex <= 5; letterIndex++) {
+								let a = Number(carList[carIndex][letterIndex])
+								sum += Number(carList[carIndex][letterIndex])
+							}
+							if (sum > 20) ++count
+						}
+						return count
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					const countCarPlateStartsLetterA = checkCarPlateStartsLetterA(carPlateList)
+					const countFirstLastLetter = checkFirstLastLetter(carPlateList)
+					const countSumRegisterPlateBigger20 = calcSumRegisterPlate(carPlateList)
+
+					showResultsInDocument('Кількість номерів, які починаються на букву «А»:', countCarPlateStartsLetterA)
+					showResultsInDocument('Кількість номерів, у яких перша і остання літери співпадають:', countFirstLastLetter)
+					showResultsInDocument('Кількість номерів, cума реєстраційного номера > 20:', countSumRegisterPlateBigger20)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

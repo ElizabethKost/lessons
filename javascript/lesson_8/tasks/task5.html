@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #8.5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №5</h1>
+				<div class="page__text">
+					<p>
+						Дано послідовність оцінок учня. Підрахувати кількість: <br>
+						1) двійок <br>
+						2) кількість хороших оцінок (7 <= добре, відмінно <=12); <br>
+							3) кількість оцінок, які нижче середнього.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					function getRandomScore(minScore = 2, maxScore = 12) {
+						return (minScore + Math.floor(Math.random() * (maxScore - minScore + 1)))
+					}
+
+
+					function getStudentScoreInArray(amountScoreK = 10) {
+						let subjectList = []
+						for (let subject = 0; subject < amountScoreK; subject++) {
+							let score = getRandomScore()
+							subjectList.push(score)
+						}
+						return subjectList
+					}
+
+
+					function calcCount2Score(subjectList) {
+						let count2score = 0
+						for (let subject = 0; subject < subjectList.length; subject++) {
+							if (subjectList[subject] === 2) ++count2score
+						}
+						return count2score
+					}
+
+
+					function calcCountGoodScore(subjectList) {
+						let countGoodscore = 0
+						for (let subject = 0; subject < subjectList.length; subject++) {
+							if (subjectList[subject] >= 7) ++countGoodscore
+						}
+						return countGoodscore
+					}
+
+					function calcAverageScore(subjectList) {
+						let sumScore = 0
+						for (let score = 0; score < subjectList.length; score++) {
+							sumScore += subjectList[score]
+						}
+						return sumScore / subjectList.length
+					}
+
+
+					function calcBelowAverageScore(subjectList) {
+						let countBelowAverage = 0
+						for (let score = 0; score < subjectList.length; score++) {
+							if (subjectList[score] < calcAverageScore(subjectList)) ++countBelowAverage
+						}
+						return countBelowAverage
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					const studentScoreList = getStudentScoreInArray()
+					const studentCount2Score = calcCount2Score(studentScoreList)
+					const studentCountGoodScore = calcCountGoodScore(studentScoreList)
+					const studentBelowAverageScore = calcBelowAverageScore(studentScoreList)
+
+					showResultsInDocument('Кількість двійок студента:', studentCount2Score)
+					showResultsInDocument('Кількість хороших оцінок (7 <= добре, відмінно <= 12) студента:', studentCountGoodScore)
+					showResultsInDocument('Кількість оцінок, які нижче середнього студента:', studentBelowAverageScore)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
