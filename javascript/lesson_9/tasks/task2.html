@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга
+						заповнена 7-ками.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getArraySameNumInHalfs(amount, firstHalfNum = 1, secondHalfNum = 7) {
+						const halfAmount = Math.floor(amount / 2);
+						let array = new Array(amount).fill(firstHalfNum, 0, halfAmount).fill(secondHalfNum, halfAmount)
+						return array
+					}
+
+					function getUserAnswerParse(question, parseType = 'parseInt') {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const userNum = getUserAnswerParse("Введіть кількість елементів масиву:")
+					showResultsInDocument('Масив, у якому перша половина заповнена 1-цями, а друга заповнена 7-ками.:', getArraySameNumInHalfs(userNum))
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

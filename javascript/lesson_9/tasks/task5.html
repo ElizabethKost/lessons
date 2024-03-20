@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №5</h1>
+				<div class="page__text">
+					<p>
+						Дано масив елементів. Знайти добуток додатних елементів
+						<br>Тут використати цикл for..of
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const numList = [-42, -187, 34, -365, -98, 53, -223, -76, 13, -829]
+					let sumEvenNum = 1, countEvenNum = 0
+
+					document.write(`<div class="page__results"> ${numList} <br> II<br>V<br>`)
+					for (const num of numList) {
+						if (num > 0) {
+							sumEvenNum *= num
+							++countEvenNum
+						}
+					}
+
+					if (countEvenNum === 0) sumEvenNum = 0
+
+					document.write(`${sumEvenNum}</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

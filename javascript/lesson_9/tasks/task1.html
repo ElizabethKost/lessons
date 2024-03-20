@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Користувач вводить кількість елементів. Створити масив, що складається з вказаної кількості елементів
+						заповнених нулями.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					function getUserAnswerParse(question, parseType = 'parseInt') {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const userNum = getUserAnswerParse("Введіть кількість елементів масиву:")
+					const userArrey = new Array(userNum).fill(0)
+
+
+					showResultsInDocument('Масив, що складається з вказаної кількості елементів заповнених нулями:', userArrey)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

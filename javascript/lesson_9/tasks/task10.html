@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.10</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №9</h1>
+				<div class="page__text">
+					<p>
+						Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у
+						грн.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const priceArray = [675, 142, 520, 89, 453, 787, 234, 657, 31, 932];
+
+					showResultsInDocument('Масив:', priceArray)
+
+					function getArrayTax(array, tax = 20) {
+						return array.map((price) => price * tax / 100)
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const listAmountTax = getArrayTax(priceArray)
+
+					showResultsInDocument('Масив, який буде містити величину сплаченого податку 20%:', listAmountTax)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

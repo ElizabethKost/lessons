@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.9</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №9</h1>
+				<div class="page__text">
+					<p>
+						Дано масив імен. Сформувати масив з перших літер цих імен.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const nameList = ['Іван', 'Юра', 'Марія', 'Марко', 'Тетяна', 'Ірина', 'Степан', 'Ігор', 'Оксана', 'Олена', 'Володимир', 'Андрій']
+
+					showResultsInDocument('Масив:', nameList)
+
+
+					function getArrayFromNamesByLetter(array, letterIndex = 0) {
+						return array.map((name) => name[0])
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const listFromNamesByFirstLetter = getArrayFromNamesByLetter(nameList)
+
+					showResultsInDocument('Масив з перших літер цих імен:', listFromNamesByFirstLetter)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const numList = [142, 187, 34, 365, 98, 53, 223, 76, 13, 829]
+					// можна функцію, я зробила без
+
+					document.write(`<div class="page__results"> ${numList} <br> II<br>V<br>`)
+
+					numList.forEach((item, index, baseArray) => {
+						if (item > baseArray[0]) baseArray[index] *= 2
+					});
+
+					document.write(`${numList}</div>`)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
+
+<table>
+
+
+	<tr>
+
+
+		<td>...</td>
+
+
+	</tr>
+
+
+</table>

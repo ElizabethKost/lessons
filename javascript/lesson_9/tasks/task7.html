@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №7</h1>
+				<div class="page__text">
+					<p>
+						Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const numList = [142, 2187, 34, 1365, 98, 53, 223, 1076, 13, 829]
+					// можна функцію, я зробила з
+
+					document.write(`<div class="page__results"> ${numList} <br> II<br>V<br>`)
+
+					function getListOfPriceLowerThenNumByPercent(list, num = 1000, percent = 30) {
+						list.forEach((item, index, baseArray) => {
+							if (item > num) baseArray[index] = baseArray[index] - (percent / 100 * baseArray[index])
+						})
+						return list
+					}
+
+					document.write(`${getListOfPriceLowerThenNumByPercent(numList)}</div>`)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #9.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Користувач вводить кількість елементів. Створити масив, у якому перші 5 елементів заповнені 1-цями, а інші
+						до кінця масиву заповнені 7-ками.
+				</div>
+				<script>
+					"use strict"
+
+					function getArraySameNumInFirst5(amount, first5Num = 1, lastNum = 7) {
+						let array = new Array(amount).fill(first5Num, 0, 5).fill(lastNum, 5)
+						return array
+					}
+
+					function getUserAnswerParse(question, parseType = 'parseInt') {
+						return parseType === 'parseInt' ? parseInt(prompt(question)) : parseFloat(prompt(question))
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const userNum = getUserAnswerParse("Введіть кількість елементів масиву:")
+					showResultsInDocument('Масив, у якому перша половина заповнена 1-цями, а друга заповнена 7-ками.:', getArraySameNumInFirst5(userNum))
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
