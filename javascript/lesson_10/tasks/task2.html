@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #10.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000). Сформувати новий масив,
+						у якому є номери тільки тих, що більші за 1000 грн.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const securitiesList = [4734, 2432, 987, 1234, 567, 8879, 9345, 5654, 123, 17]
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					/*
+					function getArrayOfIndexValueBiggerNum(list, num) {
+						let newList = []
+						for (const element of list) {
+							//*зробила не індекс, а номер (індекс + 1)
+							if (element > num) newList.push(list.indexOf(element) + 1)
+						}
+						return newList
+					}
+
+					const securitiesIndexBigger1000 = getArrayOfIndexValueBiggerNum(securitiesList, 1000)					
+					showResultsInDocument('Історія цін на цінні папери:', securitiesList)
+					showResultsInDocument('Новий масив, у якому є номери тільки тих, що більші за 1000 грн:', securitiesIndexBigger1000)
+					
+					*/
+
+					const securitiesIndexBigger1000 = securitiesList.reduce((prevIndexBigger1000, securities, index) => {
+						if (securities > 1000) prevIndexBigger1000.push(index + 1)
+						return prevIndexBigger1000
+					}, [])
+
+
+					showResultsInDocument('Історія цін на цінні папери:', securitiesList)
+					showResultsInDocument('Новий масив, у якому є номери тільки тих, що більші за 1000 грн:', securitiesIndexBigger1000)
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
