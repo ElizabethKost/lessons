@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #11.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<h2>Знайти суми елементів у вказаній області:</h2>
+					<ol>
+						<li>номери рядків від 0 до половини, стовпці від 0 до половини <br>
+							[XXX][-----] <br>
+							[-----][-----]
+						</li>
+						<li>номери рядків від 0 до половини, стовпці від половини до кінця <br>
+							[-----][XXX] <br>
+							[-----][-----]
+						</li>
+						<li>номери рядків від половини до кінця, стовпці від 0 до половини
+							<br>
+							[-----][-----] <br>
+							[XXX][-----]
+						</li>
+						<li>номери рядків від половини до кінця , стовпці від половини до кінця
+							<br>
+							[-----][-----] <br>
+							[-----][XXX]
+						</li>
+						<li>
+							Суму парних рядків
+						</li>
+						<li>
+							Суму непарних стовпців
+						</li>
+						<li>
+							У парних рядках – непарні стовпці, у непарних – парні.
+						</li>
+					</ol>
+				</div>
+				<script>
+					"use strict"
+
+					function getRandomNum(min = 1, max = 50) {
+						return min + Math.floor(Math.random() * (max - min + 1))
+					}
+
+					function getMultiArray(rowsNum = 6, columnsNum = 5) {
+						let array = []
+						for (let rowIndex = 0; rowIndex < rowsNum; rowIndex++) {
+							let row = []
+							for (let columnIndex = 0; columnIndex < columnsNum; columnIndex++) {
+								let randomNum = getRandomNum()
+								row.push(randomNum)
+							}
+							array.push(row)
+						}
+						return array
+					}
+
+					function calcHalfIndexOfArray(array) {
+						return Math.floor(array.length / 2)
+					}
+
+					function calcSumFromMultiArrayByRowColumn(array, startRow, endRow, stepRow, startColumn, endColumn, stepColumn) {
+						let sum = 0
+						for (let rowIndex = startRow; rowIndex < endRow; rowIndex += stepRow) {
+							for (let columnIndex = startColumn; columnIndex < endColumn; columnIndex += stepColumn) {
+								sum += array[rowIndex][columnIndex]
+							}
+						}
+						return sum
+					}
+
+					function showArrayInTable(array) {
+						let table = ''
+						for (const row of array) {
+							table += `[${row}]<br>`
+						}
+						return table
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const multiArray = getMultiArray()
+					const arrayInTable = showArrayInTable(multiArray)
+					console.log(multiArray)
+					const halfIndexOfRowInArray = calcHalfIndexOfArray(multiArray)
+					const halfIndexOfColumnInArray = calcHalfIndexOfArray(multiArray[0])
+					const lengthOfRowInArray = multiArray.length
+					const lengthOfColumnInArray = multiArray[0].length
+					showResultsInDocument('Масив відображений в таблиці:<br>', arrayInTable)
+					showResultsInDocument('Номер індексу половини рядків 2-вимірного масиву:', halfIndexOfRowInArray)
+					showResultsInDocument('Номер індексу половини стовпців 2-вимірного масиву:', halfIndexOfColumnInArray)
+
+
+					//---------1) номери рядків від 0 до половини, стовпці від 0 до половини
+					const sumFrom0ToHalfRowFrom0ToHalfColumns = calcSumFromMultiArrayByRowColumn(multiArray, 0, halfIndexOfRowInArray, 1, 0, halfIndexOfColumnInArray, 1)
+					showResultsInDocument('Суми елементів: номери рядків від 0 до половини, стовпці від 0 до половини:', sumFrom0ToHalfRowFrom0ToHalfColumns)
+
+					//---------2) номери рядків від 0 до половини, стовпці від половини до кінця
+					const sumFrom0ToHalfRowFromHalfToEndColumns = calcSumFromMultiArrayByRowColumn(multiArray, 0, halfIndexOfRowInArray, 1, halfIndexOfColumnInArray, lengthOfColumnInArray, 1)
+					showResultsInDocument('Суми елементів: номери рядків від 0 до половини, стовпці від половини до кінця:', sumFrom0ToHalfRowFromHalfToEndColumns)
+
+					//---------3) номери рядків від половини до кінця, стовпці від 0 до половини
+					const sumFromHalfToEndRowFrom0ToHalfColumns = calcSumFromMultiArrayByRowColumn(multiArray, halfIndexOfRowInArray, lengthOfRowInArray, 1, 0, halfIndexOfColumnInArray, 1)
+					showResultsInDocument('Суми елементів: номери рядків від половини до кінця, стовпці від 0 до половини:', sumFromHalfToEndRowFrom0ToHalfColumns)
+
+					//---------4) номери рядків від половини до кінця , стовпці від половини до кінця
+					const sumFromHalfToEndRowFromHalfToEndColumns = calcSumFromMultiArrayByRowColumn(multiArray, halfIndexOfRowInArray, lengthOfRowInArray, 1, halfIndexOfColumnInArray, lengthOfColumnInArray, 1)
+					showResultsInDocument('Суми елементів: номери рядків від половини до кінця , стовпці від половини до кінця:', sumFromHalfToEndRowFromHalfToEndColumns)
+
+					//---------5) Суму парних рядків
+					const sumEvenRows = calcSumFromMultiArrayByRowColumn(multiArray, 0, lengthOfRowInArray, 2, 0, lengthOfColumnInArray, 1)
+					showResultsInDocument('Суму парних рядків:', sumEvenRows)
+
+					//---------6) Суму непарних стовпців
+					const sumOddColumns = calcSumFromMultiArrayByRowColumn(multiArray, 0, lengthOfRowInArray, 1, 1, lengthOfColumnInArray, 2)
+					showResultsInDocument('Суму парних рядків:', sumOddColumns)
+
+					//---------7) Суму: в парних рядках – непарні стовпці, у непарних – парні.
+					const sumInEvenRowsOddColumns = calcSumFromMultiArrayByRowColumn(multiArray, 0, lengthOfRowInArray, 2, 1, lengthOfColumnInArray, 2)
+					const sumInOddRowsEvenColumns = calcSumFromMultiArrayByRowColumn(multiArray, 1, lengthOfRowInArray, 2, 0, lengthOfColumnInArray, 2)
+					showResultsInDocument('Суму в парних рядках – непарні стовпці:', sumInEvenRowsOddColumns)
+					showResultsInDocument('Суму у непарних – парні:', sumInOddRowsEvenColumns)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #11.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Морський бій. Випадковим чином на двовимірному полі розміром 6*6 розташовується 5 кораблів. Користувач
+						стріляє вказуючи координати. Гра продовжується поки не потоплено усі кораблі або у користувача не
+						закінчаться снаряди.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					function getRandomNum(min, max) {
+						return min + Math.floor(Math.random() * (max - min + 1))
+					}
+
+					function getPlayground(rowsNum = 6, columnsNum = 6, ships = 5) {
+						let playground = []
+						for (let rowIndex = 0; rowIndex < rowsNum; rowIndex++) {
+							let playgroundRow = new Array(columnsNum).fill(0)
+							playground.push(playgroundRow)
+						}
+						while (ships > 0) {
+							let rowCoordinate = getRandomNum(0, rowsNum - 1)
+							let columnCoordinate = getRandomNum(0, columnsNum - 1)
+							if (playground[rowCoordinate][columnCoordinate] !== 1) {
+								playground[rowCoordinate][columnCoordinate] = 1
+								ships--
+							}
+						}
+						return playground
+					}
+
+					function getUserShoot(arrayGame, missle = 10, ships = 5) {
+						while (ships > 0 && missle > 0) {
+							let userRowCoordinate = parseInt(prompt('Введіть горизонтальну координату від 1 до 6:', 3)) - 1
+							let userColumnCoordinate = parseInt(prompt('Введіть вертикальну координату від 1 до 6:', 3)) - 1
+							if (arrayGame[userRowCoordinate][userColumnCoordinate] === 1) {
+								arrayGame[userRowCoordinate][userColumnCoordinate] = 0
+								ships--
+								alert('Є влучання!')
+							} else alert('Промах!')
+							missle--
+						}
+						let results = ''
+						if (ships === 0) results = "Всі підбитті! Перемога!"
+						else results = 'Програш!'
+						return alert(`${results}`)
+					}
+
+					function showArrayInTable(array) {
+						let table = ''
+						for (const row of array) {
+							table += `[${row}]<br>`
+						}
+						return table
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const playgroundArray = getPlayground()
+					const game = getUserShoot(playgroundArray)
+					const playgroundTable = showArrayInTable(playgroundArray)
+					showResultsInDocument('Масив відображений в таблиці:<br>', playgroundTable)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
