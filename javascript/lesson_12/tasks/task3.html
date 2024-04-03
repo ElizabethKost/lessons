@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #12.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів та порівнянь чисел під
+						час сортування включеннями.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					function getRandomNum(min = -100, max = 100) {
+						return min + Math.floor(Math.random() * (max - min + 1))
+					}
+
+					function getArray(elementsNum = 30) {
+						let array = []
+						for (let elIndex = 0; elIndex < elementsNum; elIndex++) {
+							let randomNum = getRandomNum()
+							array.push(randomNum)
+						}
+						return array
+					}
+
+
+					function getArraySortInclusionType(array) {
+						let compareEl, prevIndex, changeCount = 0, comparisonCount = 0
+						for (let indexEl = 1; indexEl < array.length; indexEl++) {
+							compareEl = array[indexEl];
+							prevIndex = indexEl - 1
+							while (prevIndex >= 0 && compareEl < array[prevIndex]) {
+								array[prevIndex + 1] = array[prevIndex]
+								prevIndex--
+								changeCount++
+								comparisonCount++
+							}
+							array[prevIndex + 1] = compareEl
+							changeCount++
+						}
+						return [array, changeCount, comparisonCount]
+					}
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const numArray = getArray()
+					showResultsInDocument('Масив:<br>', numArray)
+					const sortArrayResults = getArraySortInclusionType(numArray)
+					const sortArray = sortArrayResults[0]
+					showResultsInDocument('Сортування включеннями:<br>', sortArray)
+					const changeCount = sortArrayResults[1]
+					showResultsInDocument('Кількість обмінів:', changeCount)
+					const comparisonCount = sortArrayResults[2]
+					showResultsInDocument('Кількість порівнянь:', comparisonCount)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

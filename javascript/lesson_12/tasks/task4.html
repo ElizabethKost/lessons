@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #12.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних
+						таблиць за зразком.
+					</p>
+					<p>
+						Тобто кожного разу після обміну елементів вивести поточний стан масиву на екран (стрілки не потрібні).
+					</p>
+				</div>
+				<img src="../img/task-4.png" alt="Image">
+				<script>
+					"use strict"
+
+
+					function getArraySortBubbleType(array) {
+						document.write(`<div class="page__results"> ${array}</div>`)
+						let change, changeCount = 0, comparisonCount = 0
+						do {
+							change = false
+							for (let elIndex = 1; elIndex < array.length; elIndex++) {
+								comparisonCount++
+								if (array[elIndex - 1] > array[elIndex]) {
+									let temporaryEl = array[elIndex - 1]
+									array[elIndex - 1] = array[elIndex]
+									array[elIndex] = temporaryEl
+									change = true
+									changeCount++
+									document.write(`<div class="page__results"> ${array}</div>`)
+								}
+							}
+						} while (change);
+						return [array, changeCount, comparisonCount]
+					}
+
+
+					function getArraySortMixingType(array) {
+						document.write(`<div class="page__results"> ${array}</div>`)
+						let leftIndex = 0, rightIndex = array.length - 1, change, changeCount = 0, comparisonCount = 0
+						while (leftIndex < rightIndex) {
+							change = false
+							for (let elIndex = leftIndex + 1; elIndex <= rightIndex; elIndex++) {
+								comparisonCount++
+								if (array[elIndex - 1] > array[elIndex]) {
+									let temporaryEl = array[elIndex - 1]
+									array[elIndex - 1] = array[elIndex]
+									array[elIndex] = temporaryEl
+									change = true
+									changeCount++
+									document.write(`<div class="page__results"> ${array}</div>`)
+								}
+							}
+							rightIndex--
+							if (!change) break
+							change = false
+							for (let elIndex = rightIndex; elIndex > leftIndex; elIndex--) {
+								comparisonCount++
+								if (array[elIndex - 1] > array[elIndex]) {
+									let temporaryEl = array[elIndex - 1]
+									array[elIndex - 1] = array[elIndex]
+									array[elIndex] = temporaryEl
+									change = true
+									changeCount++
+									document.write(`<div class="page__results"> ${array}</div>`)
+								}
+							}
+							leftIndex++
+							if (!change) break
+						}
+						return [array, changeCount, comparisonCount]
+					}
+
+
+					function getArraySortInclusionType(array) {
+						document.write(`<div class="page__results"> ${array}</div>`)
+						let compareEl, prevIndex, changeCount = 0, comparisonCount = 0
+						for (let indexEl = 1; indexEl < array.length; indexEl++) {
+							compareEl = array[indexEl];
+							prevIndex = indexEl - 1
+							while (prevIndex >= 0 && compareEl < array[prevIndex]) {
+								array[prevIndex + 1] = array[prevIndex]
+								prevIndex--
+								changeCount++
+								comparisonCount++
+								array[prevIndex + 1] = 'X' // для прикладу
+								document.write(`<div class="page__results"> ${array}</div>`)
+							}
+							array[prevIndex + 1] = compareEl
+							changeCount++
+							document.write(`<div class="page__results"> ${array}</div>`)
+						}
+						return [array, changeCount, comparisonCount]
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					//--------------------------------------------------
+					const numArray = [3, 5, 1, 4, 2]
+					const numArray1 = [...numArray]
+					const numArray2 = [...numArray]
+					const numArray3 = [...numArray]
+					showResultsInDocument('Масив:', numArray)
+
+
+					document.write('==========================================================')
+					document.write('<div class="page__results">Cортування бульбашкою:<br></div>')
+					document.write('---------------------------------')
+					const sortArrayResultsBubbleType = getArraySortBubbleType(numArray1)
+					document.write('---------------------------------')
+					const changeCountBubbleType = sortArrayResultsBubbleType[1]
+					showResultsInDocument('Кількість обмінів:', changeCountBubbleType)
+					const comparisonCountBubbleType = sortArrayResultsBubbleType[2]
+					showResultsInDocument('Кількість порівнянь:', comparisonCountBubbleType)
+
+
+
+					document.write('==========================================================')
+					document.write('<div class="page__results">Сортування змішуванням:<br></div>')
+					document.write('---------------------------------')
+					const sortArrayResultsMixingType = getArraySortMixingType(numArray2)
+					document.write('---------------------------------')
+					const changeCountMixingType = sortArrayResultsMixingType[1]
+					showResultsInDocument('Кількість обмінів:', changeCountMixingType)
+					const comparisonCountMixingType = sortArrayResultsMixingType[2]
+					showResultsInDocument('Кількість порівнянь:', comparisonCountMixingType)
+
+
+
+					document.write('==========================================================')
+					document.write('<div class="page__results">Сортування включеннями:<br></div>')
+					document.write('---------------------------------')
+					const sortArrayResultsInclusionType = getArraySortInclusionType(numArray3)
+					document.write('---------------------------------')
+					const changeCountInclusionType = sortArrayResultsInclusionType[1]
+					showResultsInDocument('Кількість обмінів:', changeCountInclusionType)
+					const comparisonCountInclusionType = sortArrayResultsInclusionType[2]
+					showResultsInDocument('Кількість порівнянь:', comparisonCountInclusionType)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
