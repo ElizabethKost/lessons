@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class*=__container] {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+.header,
+.footer {
+  background: url("../img/code.webp") 0 -70px/380px;
+  height: 120px;
+  border-bottom: 0.3125rem double rgba(151, 35, 60, 0.8705882353);
+}
+
+.footer {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.wrapper {
+  background: url("../img/sheet.webp") 0 0/380px;
+  color: #0E333D;
+}
+
+.page {
+  padding: 1.875rem 0;
+  font-family: "Play", sans-serif;
+  font-size: 1.75rem;
+}
+.page__container > *:not(:last-child) {
+  margin-bottom: 1.5625rem;
+}
+.page__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.page__list > *:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+.page__list--padding {
+  padding-left: 6.25rem;
+}
+.page__item > *:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+.page__link, .page__button {
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+@media (any-hover: hover) {
+  .page__link:hover, .page__button:hover {
+    color: #185758;
+    text-decoration: underline;
+  }
+}
+.page__text {
+  padding-left: 3.125rem;
+}
+.page__text > *:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+.page__text--small {
+  font-size: 1.25rem;
+}
+.page__table-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3.125rem;
+}
+.page__table {
+  border: 0.1875rem solid rgba(14, 51, 61, 0.5333333333);
+  min-width: 25rem;
+  margin: 0 auto;
+}
+.page__table td {
+  border: 0.1875rem solid rgba(14, 51, 61, 0.5333333333);
+  text-align: right;
+  padding: 0.3125rem;
+  background-color: rgba(136, 112, 208, 0.4156862745);
+}
+.page__results {
+  font-size: 1.875rem;
+  font-weight: 700;
+  word-break: break-all;
+}
+.page__button {
+  background: rgb(238, 174, 202);
+  background: linear-gradient(144deg, rgb(238, 174, 202) 0%, rgb(148, 187, 233) 100%);
+  padding: 0.9375rem 1.875rem;
+  border: 0.125rem solid rgba(14, 51, 61, 0.5333333333);
+  border-radius: 0.625rem;
+}
+.page__button:not(:last-child) {
+  margin-right: 0.625rem;
+}
+.page__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.9375rem;
+}
+.page__form input {
+  border: 0.0625rem solid rgba(14, 51, 61, 0.5333333333);
+}
+.page__image {
+  width: 12.5rem;
+  border-radius: 5%;
+  border: 0.3125rem solid #7582ac;
+  background-color: #c8d1ee;
+}
+
+.banner {
+  max-width: 25rem;
+  margin: 0 auto;
+}
+.banner > *:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.banner h2 {
+  text-align: center;
+}
+.banner img {
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media (any-hover: hover) {
+  .banner a:hover img {
+    opacity: 0.9;
+    border-radius: 5%;
+  }
+}

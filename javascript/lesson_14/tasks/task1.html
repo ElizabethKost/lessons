@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #14.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Описати масив об’єктів – сайтів розроблених компанією з такими властивостями <br><br>
+						----- Властивості ------ <br>
+						назва компанії на час розробки (назву періодично змінюють)<br>
+						власник компанії<br>
+						споснсори (масив спонсорів)<br>
+						* прізвище спонсора<br>
+						* ім’я спонсора<br>
+						* сума вкладень спонсора<br>
+						рік випуску<br>
+						вартість сайту<br><br>
+						Знайти: <br>
+					</p>
+					<ol>
+						<li>загальну вартість усіх сайтів</li>
+						<li>кількість сайтів, що було зроблено між 2000 та 2009 рр.</li>
+						<li>кількість сайтів, де сума спонсорських вкладень була більшою за 100000</li>
+						<li>створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+						</li>
+						<li>знайти рік, коли прибуток був найбільшим</li>
+						<li>упорядкувати список за спаданням прибутку</li>
+						<li>Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000
+						</li>
+					</ol>
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					let websites = [
+						{
+							name: 'Сільпо',
+							owner: 'ТОВ Фоззі',
+							sponsors: [
+								{
+									surname: 'Шатайло',
+									name: 'Єгор',
+									investment: 20000
+								},
+								{
+									surname: 'Сенін',
+									name: 'Антон',
+									investment: 50000
+								},
+								{
+									surname: 'Іванов',
+									name: 'Сергій',
+									investment: 35000
+								}
+							],
+							releaseYear: 2004,
+							cost: 50000,
+						},
+						{
+							name: 'Деліція',
+							owner: 'ТОВ ЛДК',
+							sponsors: [
+								{
+									surname: 'Німак',
+									name: 'Влад',
+									investment: 10000
+								},
+								{
+									surname: 'Коротков',
+									name: 'Євген',
+									investment: 3000
+								},
+								{
+									surname: 'Петров',
+									name: 'Сергій',
+									investment: 5000
+								}
+							],
+							releaseYear: 2008,
+							cost: 8000,
+						},
+						{
+							name: 'Лідер Снек',
+							owner: 'ФОП Герасимюк',
+							sponsors: [
+								{
+									surname: 'Прокопова',
+									name: 'Івана',
+									investment: 10000
+								},
+								{
+									surname: 'Качура',
+									name: 'Євген',
+									investment: 1000
+								},
+								{
+									surname: 'Семенюк',
+									name: 'Сергій',
+									investment: 5000
+								}
+							],
+							releaseYear: 2020,
+							cost: 11000,
+						},
+						{
+							name: 'CoffeBike',
+							owner: 'ФОП Прокоп',
+							sponsors: [
+								{
+									surname: 'Григраш',
+									name: 'Іван',
+									investment: 1000
+								},
+								{
+									surname: 'Євчук',
+									name: 'Оксана',
+									investment: 3000
+								},
+								{
+									surname: 'Шевчук',
+									name: 'Тетяна',
+									investment: 2000
+								}
+							],
+							releaseYear: 2023,
+							cost: 6000,
+						},
+						{
+							name: 'Тіва',
+							owner: 'ФОП Данилюк',
+							sponsors: [
+								{
+									surname: 'Остапенко',
+									name: 'Дмитро',
+									investment: 10000
+								},
+								{
+									surname: 'Степанисько',
+									name: 'Ніна',
+									investment: 2000
+								},
+								{
+									surname: 'Карась',
+									name: 'Євген',
+									investment: 5000
+								}
+							],
+							releaseYear: 2015,
+							cost: 12000,
+						},
+					]
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+
+					//=======загальну вартість усіх сайтів
+					const totalCostWebsites = websites.reduce((prevSum, website) => prevSum + website.cost, 0)
+					showResultsInDocument('Загальну вартість усіх сайтів:', totalCostWebsites)
+
+
+					//=======кількість сайтів, що було зроблено між 2000 та 2009
+					const quantityWebsitesReleaseYearBetween2000to2009 = websites.reduce((prevCount, website) => (website.releaseYear > 2000 && website.releaseYear < 2009) ? ++prevCount : prevCount, 0)
+					showResultsInDocument('Кількість сайтів, що було зроблено між 2000 та 2009:', quantityWebsitesReleaseYearBetween2000to2009)
+
+
+					//=======кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+					const quantityWebsitesTotalInvestmentsBigger100000 = websites.reduce((prevCount, website) => website.sponsors.reduce((prevSum, sponsors) => prevSum + sponsors.investment, 0) > 100000 ? ++prevCount : prevCount, 0)
+					showResultsInDocument('Кількість сайтів, де сума спонсорських вкладень була більшою за 100000:', quantityWebsitesTotalInvestmentsBigger100000)
+
+
+					//=======створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+					const sponsorsList = websites.map((website) => website.sponsors)
+					showResultsInDocument('Cтворити загальний список усіх спонсорів,', '(поки можуть повторюватись, просто зібрати усі у масив):')
+
+					for (const sponsorsArray of sponsorsList) {
+						for (const sponsors of sponsorsArray) {
+							for (const propertyName in sponsors) {
+								document.write(`<p class="page__text page__text--small"> ${propertyName}: ${sponsors[propertyName]}</p>`)
+							}
+						}
+					}
+
+
+					//=======знайти рік, коли прибуток був найбільшим
+					function calcYearBiggestProfit(array) {
+						let websiteBiggestCost = 0, resultYear = 0
+						for (const website of array) {
+							if (website.cost > websiteBiggestCost) {
+								websiteBiggestCost = website.cost
+								resultYear = website.releaseYear
+							}
+						}
+						/*
+						for (let websiteIndex = 0; websiteIndex < array.length; websiteIndex++) {
+							if (array[websiteIndex].cost > websiteBiggestCost) {
+								websiteBiggestCost = array[websiteIndex].cost
+								resultYear = array[websiteIndex].releaseYear
+							}
+						}
+						*/
+						return resultYear
+					}
+
+
+					const yearBiggestProfit = calcYearBiggestProfit(websites)
+					showResultsInDocument('Знайти рік, коли прибуток був найбільшим:', yearBiggestProfit)
+
+
+					//=======упорядкувати список за спаданням прибутку
+					let websiteCopy1 = JSON.parse(JSON.stringify(websites))
+
+					function getSortByPropertyObjectInArray(array, propertyObject) {
+						const prevLastIndex = array.length - 2
+						for (let i = 0; i <= prevLastIndex; i++) {
+							let minIndex = i
+							for (let j = i + 1; j < array.length; j++) {
+								if (array[j][propertyObject] < array[minIndex][propertyObject]) {
+									minIndex = j
+								}
+							}
+							if (i !== minIndex) {
+								let temporary = array[i]
+								array[i] = array[minIndex]
+								array[minIndex] = temporary
+							}
+						}
+						return array
+					}
+
+
+					//=======Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000
+					let websiteCopy2 = JSON.parse(JSON.stringify(websites))
+					const websitesCostBigger10000 = websiteCopy2.filter(website => website.cost > 10000)
+					const websitesCostLower10000 = websiteCopy2.filter(website => website.cost < 10000)
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

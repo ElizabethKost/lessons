@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #14.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити, який буде рік через N місяців.
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const date = {
+						day: 6,
+						month: 4,
+						year: 2024,
+					}
+
+					function calcYearFromObject(object, monthNum) {
+						let totalMonth = object.month + monthNum
+						let totalYear = object.year + (totalMonth / 12)
+						let resultYear = Math.floor(totalYear)
+						return resultYear
+
+						//	return Math.floor(object.year + ((object.month + monthNum) / 12))
+					}
+
+
+					function showResultsInDocument(text, results) {
+						document.write(`<div class="page__results"> ${text} ${results}</div>`)
+					}
+
+					const userMonthNum = parseInt(prompt('Введіть N місяців:'))
+					const userYear = calcYearFromObject(date, userMonthNum)
+					showResultsInDocument(`Через ${userMonthNum} місяців, буде рік: `, userYear)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
