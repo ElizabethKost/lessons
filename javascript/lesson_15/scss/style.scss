@@ -1,0 +1,179 @@
+//--------Оператори--------
+@use "sass:math";
+//-------- Ширина спрацьовування першого брейкпоінту--------
+$minWidth: 320; // Мінімальна ширина сторінки
+$maxWidth: 1920; // Ширина полотна (макету)
+$maxWidthContainer: 1220; // Ширина обмежувального контейнера (0 = немає обмеження)
+$containerPadding: 30; // Загальний відступ у контейнера (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerWidth: $maxWidthContainer + $containerPadding; // Ширина спрацьовування першого брейкпоінту
+//--------Обнулення--------
+@import "_reset.scss";
+//--------Шрифти--------
+@import "_fonts.scss";
+// Компоненти
+@import "_common.scss";
+// Функції
+@import "_functions.scss";
+// break points
+$pc: toEm(1239.98);
+$tablet: toEm(991.98);
+$mobile: toEm(767.98);
+$mobileSmall: toEm(479.98);
+//--------Змінні--------
+$mainColor: #0E333D;
+//--------Загальні--------
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.wrapper>main {
+	flex-grow: 1;
+}
+[class*="__container"] {
+	max-width: #{$containerWidth}px;
+	margin: 0 auto;
+	padding: 0 toRem(15);
+}
+// header + footer
+.header,
+.footer {
+	background: url("../img/code.webp") 0 -70px /380px;
+	height: 120px;
+	border-bottom: toRem(5) double #97233cde;
+}
+.footer {
+	transform: rotate(180deg);
+}
+.wrapper {
+	background: url("../img/sheet.webp") 0 0 /380px;
+	color: $mainColor;
+}
+.page {
+	padding: toRem(30) 0;
+	font-family: "Play", sans-serif;
+	font-size: toRem(28);
+	// .page__container
+	&__container {
+		&>*:not(:last-child) {
+			margin-bottom: toRem(25);
+		}
+	}
+	// .page__title
+	&__title {
+		font-size: toRem(36);
+		font-weight: 700;
+	}
+	// .page__list
+	&__list {
+		&>*:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+		//.page__list--padding
+		&--padding {
+			padding-left: toRem(100);
+		}
+	}
+	// .page__item
+	&__item {
+		&>*:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
+	// .page__link
+	&__link {
+		font-weight: 700;
+		transition: all 0.3s ease-in;
+		@media (any-hover:hover) {
+			&:hover {
+				color: #185758;
+				text-decoration: underline;
+			}
+		}
+	}
+	// .page__text
+	&__text {
+		padding-left: toRem(50);
+		&>*:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+		&--small {
+			font-size: toRem(20);
+		}
+	}
+	// .page__table-wrapper 
+	&__table-wrapper {
+		display: flex;
+		gap: toRem(50);
+	}
+	// .page__table 
+	&__table {
+		border: toRem(3) solid #0e333d88;
+		min-width: toRem(400);
+		margin: 0 auto;
+		& td {
+			border: toRem(3) solid #0e333d88;
+			text-align: right;
+			padding: toRem(5);
+			background-color: #8870d06a;
+		}
+	}
+	// .page__results
+	&__results {
+		font-size: toRem(30);
+		font-weight: 700;
+		word-break: break-all
+	}
+	//.page__button
+	&__button {
+		@extend.page__link;
+		background: rgb(238, 174, 202);
+		background: linear-gradient(144deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+		padding: toRem(15) toRem(30);
+		border: toRem(2) solid #0e333d88;
+		border-radius: toRem(10);
+		&:not(:last-child) {
+			margin-right: toRem(10);
+		}
+	}
+	// .page__form
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		& input {
+			border: toRem(1) solid #0e333d88;
+		}
+	}
+	&__image {
+		width: toRem(200);
+		border-radius: 5%;
+		border: toRem(5) solid #7582ac;
+		background-color: #c8d1ee;
+	}
+}
+.banner {
+	max-width: toRem(600);
+	margin: 0 auto;
+	&>*:not(:last-child) {
+		margin-bottom: toRem(20);
+	}
+	& h2 {
+		text-align: center;
+	}
+	& img {
+		width: 100%;
+		transition: all 0.3s ease-in-out;
+	}
+	& a {
+		@media (any-hover:hover) {
+			&:hover {
+				& img {
+					opacity: 0.9;
+					border-radius: 5%;
+				}
+			}
+		}
+	}
+}

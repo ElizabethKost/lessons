@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №4</h1>
+				<div class="page__text">
+					<p>
+						Розробити клас MultChecker для перевірки таблиці множення <br>
+						Поля:
+						Число, яке перевіряємо (наприклад, перевірка частини таблиці множення на 7);
+						Кількість правильних відповідей;
+						Кількість неправильних відповідей;<br>
+						Методи:
+						Генерування прикладу (метод випадковим чином визначає друге число, перше число фіксоване);
+						Перевірка правильності вказаної відповіді;
+						render - виведення інформації про тестування на екран
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					class MultChecker {
+						constructor(checkingNum) {
+							this.number = checkingNum
+							this.correctAnswers = 0
+							this.wrongAnswers = 0
+						}
+						getExampleOfMultiplication(min = 1, max = 9) {
+							const randomNum = min + Math.floor(Math.random() * (max - min + 1))
+							return [this.number, randomNum]
+						}
+						checkAnswer() {
+							const exampleArray = this.getExampleOfMultiplication()
+							const exampleAnswer = exampleArray[0] * exampleArray[1]
+							const userAnswer = parseInt(prompt(`Введіть відповідь: ${exampleArray[0]} * ${exampleArray[1]}`))
+							userAnswer === exampleAnswer ? this.correctAnswers++ : this.wrongAnswers++
+						}
+						render() {
+							document.write(`<div class="page__results"> Кількість правильних відповідей: ${this.correctAnswers}, кількість неправильних відповідей: ${this.wrongAnswers}</div>`)
+						}
+					}
+
+
+					let testMultiplication = new MultChecker(parseInt(prompt('Введіть число для таблиці множення:', 5)))
+
+					let playTest = true
+					do {
+						testMultiplication.checkAnswer()
+						playTest = confirm('Ще приклад?')
+					} while (playTest)
+
+					testMultiplication.render()
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

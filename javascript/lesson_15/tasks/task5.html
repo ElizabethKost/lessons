@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №5</h1>
+				<div class="page__text">
+					<p>
+						Розробити клас Baner <br>
+						Поля:
+						Масив об’єктів ( графічних зображень та посилань на сайти) <br>
+						методи:
+						Метод випадкового вибору об’єкта (графічного зображення та посилання)
+						Метод виведення випадкового банера
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+
+					class Baner {
+						constructor(imagesLinkArray) {
+							this.imagesLinkArrayOfObjects = imagesLinkArray
+						}
+						getRandomImageAndLink() {
+							const maxIndex = this.imagesLinkArrayOfObjects.length - 1
+							const randomIndex = Math.floor(Math.random() * (maxIndex + 1))
+							return this.imagesLinkArrayOfObjects[randomIndex]
+						}
+						showRandomImageAndLink() {
+							const imageAndLink = this.getRandomImageAndLink()
+							document.write(`
+							<div class="banner"> 
+								<a href="${imageAndLink.link}">
+									<img src="${imageAndLink.img}" alt="Image">
+								</a>
+							</div>`)
+						}
+					}
+
+					const homeBaner = new Baner(
+						[
+							{
+								img: 'https://static-cse.canva.com/blob/674445/sagegreen15.23cd9038.png',
+								link: 'https://www.canva.com/colors/color-palettes/birth-spring/'
+							},
+							{
+								img: 'https://static-cse.canva.com/blob/676006/Brown05.462d6121.png',
+								link: 'https://www.canva.com/colors/color-palettes/space-for-everything/'
+							},
+							{
+								img: 'https://static-cse.canva.com/blob/679629/Grey_Set7_7.6712bba8.png',
+								link: 'https://www.canva.com/colors/color-palettes/room-for-comfort/'
+							},
+							{
+								img: 'https://static-cse.canva.com/blob/674109/rosered12.b1c4385a.png',
+								link: 'https://www.canva.com/colors/color-palettes/pomegranate-crush/'
+							},
+							{
+								img: 'https://static-cse.canva.com/blob/672246/FrozenBerries.d50b2c4a.png',
+								link: 'https://www.canva.com/colors/color-palettes/frozen-berries/'
+							},
+							{
+								img: 'https://static-cse.canva.com/blob/680828/RoseQuartz_Set6_3.d4602c4f.png',
+								link: 'https://www.canva.com/colors/color-palettes/fresh-for-picking/'
+							},
+							{
+								img: 'https://static-cse.canva.com/image/2987/Burgundy21.4f832644.png',
+								link: 'https://www.canva.com/colors/color-palettes/cherry-blossom-swirl/'
+							}
+						]
+					)
+					homeBaner.showRandomImageAndLink()
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

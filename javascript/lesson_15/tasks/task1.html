@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №1</h1>
+				<div class="page__text">
+					<p>
+						Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, а у
+						іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних
+						значенням. <br>
+						Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const object1 = {
+						numList: [5, 30, 20, 8, 9, 15, 14, 2, 45, 63],
+						getSum: function (min, max) {
+							return this.numList.reduce((prevSum, number) => number > min && number < max ? prevSum + number : prevSum, 0)
+						},
+						toString: function () {
+							return `Масив №1: ${this.numList}`
+						}
+					}
+
+
+					const object2 = {
+						numList: [30, 21, 6, 12, 2, 1, 17, 29, 57, 43],
+						getMultiplication: function (min, max) {
+							return this.numList.reduce((prevMultiplication, number) => number > min && number < max ? prevMultiplication * number : prevMultiplication, 1)
+						},
+						toString: function () {
+							return `Масив №2: ${this.numList}`
+						}
+					}
+
+
+
+					document.write(`<div class="page__results">${object1}</div>`)
+					document.write(`<div class="page__results">Сума масиву №1: ${object1.getSum(1, 15)}</div>`)
+					const multiplicationObject1 = object2.getMultiplication.call(object1, 5, 25)
+					document.write(`<div class="page__results">Добуток масиву №1: ${multiplicationObject1}</div> <br> <br>`)
+
+
+					document.write(`<div class="page__results">${object2}</div>`)
+					const sumObject2 = object1.getSum.apply(object2, [5, 25])
+					document.write(`<div class="page__results">Сума масиву №2: ${sumObject2}</div>`)
+					document.write(`<div class="page__results">Добуток масиву №2: ${object2.getMultiplication(1, 15)}</div>`)
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

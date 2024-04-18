@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №3</h1>
+				<div class="page__text">
+					<p>
+						Створити об’єкт «Авто». <br>
+						Авто <br>
+						Поля(властивості):
+						Марка;
+						Розмір бака;
+						Кількість наявних літрів;
+						Кількість місць;
+						Кількість пасажирів;<br>
+						Методи (дії):
+						Заправка на вказану кількість літрів;
+						Виведення кількості пасажирів;
+						Додавання пасажирів;
+						Висадка пасажирів
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const auto = {
+						brand: 'Audi',
+						tankSize: 70,
+						numberOfLitersAvailable: 10,
+						numberOfSeats: 5,
+						numberOfPassangers: 2,
+						getRefuelingForLiters: function (litersNum) {
+							this.numberOfLitersAvailable += litersNum
+							if (this.numberOfLitersAvailable > this.tankSize) {
+								this.numberOfLitersAvailable = this.tankSize
+								alert(`Ви заправили повний бак на ${this.tankSize}л, отримайте решту!`)
+							}
+						},
+						showNumberOfPassangers: function () {
+							document.write(`<div class="page__results">Кількість пасажирів: ${this.numberOfPassangers}.</div>`)
+						},
+						getNewPassangers: function (passangersNum) {
+							let freeSeats = this.numberOfSeats - this.numberOfPassangers - 1
+							if (passangersNum > freeSeats || passangersNum <= 0) {
+								alert(`Введіть коректну кількість пасажирів від 1 до ${freeSeats}`)
+							} else {
+								this.numberOfPassangers += passangersNum
+							}
+						},
+						getUnloadPassanger: function (passangersNum) {
+							if (passangersNum > this.numberOfPassangers || passangersNum <= 0) {
+								alert(`Введіть коректну кількість пасажирів для висадки від 1 до ${this.numberOfPassangers}`)
+							} else {
+								this.numberOfPassangers -= passangersNum
+							}
+						}
+					}
+
+
+					auto.getRefuelingForLiters(100)
+					auto.showNumberOfPassangers()
+					auto.getNewPassangers(1)
+					auto.showNumberOfPassangers()
+					auto.getUnloadPassanger(6)
+					auto.showNumberOfPassangers()
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

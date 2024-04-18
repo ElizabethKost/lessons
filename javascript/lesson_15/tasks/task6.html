@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.6</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №6</h1>
+				<div class="page__text">
+					<p>
+						Розробити клас «Керівник танців» <br>
+						Поля:
+						Масив імен хлопців;
+						Масив імен дівчат; <br>
+						Методи:
+						Метод випадкового вибору імені хлопця
+						Метод випадкового вибору імені дівчини
+						Метод виведення пари для танців
+						Метод run , який ініціює через кожні 5 секунд виведення нової пари для танців
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					class HeadOfDanceClasses {
+						constructor(boysNamesList, girlsNamesList) {
+							this.boysNames = boysNamesList
+							this.girlsNames = girlsNamesList
+						}
+						getRandomBoyName() {
+							const maxIndex = this.boysNames.length - 1
+							const randomIndex = Math.floor(Math.random() * (maxIndex + 1))
+							return this.boysNames[randomIndex]
+						}
+						getRandomGirlName() {
+							const maxIndex = this.girlsNames.length - 1
+							const randomIndex = Math.floor(Math.random() * (maxIndex + 1))
+							return this.girlsNames[randomIndex]
+						}
+						getDancePair() {
+							const boy = this.getRandomBoyName()
+							const girl = this.getRandomGirlName()
+							document.write(`<div class="page__results"> Пара для танцю: ${boy}, ${girl}</div>`)
+						}
+						run() {
+							setInterval(() => this.getDancePair(), 5000);
+						}
+					}
+
+
+					const choreographer = new HeadOfDanceClasses(
+						['Ivan', 'Oleksa', 'Igor', 'Sergii', 'Felix', 'Vasyl', 'Marko'],
+						['Anna', 'Ira', 'Alla', 'Ganna', 'Katija', 'Daria', 'Lisa']
+					)
+					choreographer.run()
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>

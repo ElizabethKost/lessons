@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon">
+	<title>Homework #15.2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__container">
+				<h1 class="page__title">Задача №2</h1>
+				<div class="page__text">
+					<p>
+						Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку. <br>
+						Тир <br>
+						Поля(властивості):
+						Масив, у якому зберігається поле з зайцями <br>
+						Методи (дії):
+						Метод пострілу (задається позиція пострілу);
+						Виведення ігрового поля
+					</p>
+				</div>
+				<script>
+					"use strict"
+
+					const shootingGallery = {
+						field: [0, 1, 0, 0, 1, 1, 0],
+						getShoot: function (userShoot) {
+							if (this.field[userShoot - 1] === 1) {
+								this.field[userShoot - 1] = 0
+								return true
+							} else return false
+						},
+						showField: function () {
+							document.write(`<div class="page__results">Ігрове поле: [${this.field}]</div>`)
+						}
+					}
+
+					shootingGallery.showField()
+
+					let userShootAnswer = parseInt(prompt(`Введіть комірку для пострілу від 1 до ${shootingGallery.field.length}`))
+
+					shootingGallery.getShoot(userShootAnswer) ? document.write(`<div class="page__results">Влучили! Комірка:${userShootAnswer}</div>`) : document.write(`<div class="page__results">Не влучили! Комірка:${userShootAnswer}</div>`)
+
+
+				</script>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+</body>
+
+</html>
